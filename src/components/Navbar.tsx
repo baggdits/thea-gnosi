@@ -1,14 +1,17 @@
-import Image from "next/image";
-import { getSiteSettings } from "@/lib/wordpress";
+import Link from "next/link";
+import { getLessons, getSiteSettings } from "@/lib/wordpress";
 
 export default async function Navbar() {
-  const settings = await getSiteSettings();
+  const [settings, lessons] = await Promise.all([
+    getSiteSettings(),
+    getLessons(),
+  ]);
 
   return (
     <header className="site-header">
       <nav className="navbar" aria-label="Main navigation">
 
-        <a
+        <Link
           className="navbar-logo"
           href="/"
           aria-label={`${settings.site_name} home`}
@@ -22,18 +25,55 @@ export default async function Navbar() {
           ) : (
             settings.site_name
           )}
-        </a>
+        </Link>
 
         <div className="navbar-links">
-          <a href="/">Home</a>
-          <a href="/#about">About Us</a>
-          <a href="/#our-place">Our Place</a>
-          <a href="/#lessons">Lessons</a>
+          <Link href="/">Home</Link>
+
+          <Link href="/#about">
+            About Us
+          </Link>
+
+          <Link href="/our-place">
+            Our Place
+          </Link>
+
+          <div className="navbar-lessons">
+            <a
+               href="/lessons"
+               className="navbar-lessons-button"
+>
+                   Lessons
+               <span className="lessons-arrow">
+    ▼
+               </span>
+            </a>
+
+            <div className="lessons-dropdown">
+              {lessons.length > 0 ? (
+                lessons.map((lesson: any) => (
+                  <Link
+                    key={lesson.id}
+                    href={`/lessons/${lesson.slug}`}
+                  >
+                    {lesson.title.rendered}
+                  </Link>
+                ))
+              ) : (
+                <span className="lessons-empty">
+                  No lessons available
+                </span>
+              )}
+            </div>
+          </div>
         </div>
 
-        <a className="navbar-login" href="/login">
+        <Link
+          className="navbar-login"
+          href="/login"
+        >
           Login
-        </a>
+        </Link>
 
       </nav>
     </header>

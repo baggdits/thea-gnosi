@@ -1,12 +1,9 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import OurPlace from "@/components/OurPlace";
-import Reviews from "@/components/Reviews";
 import Footer from "@/components/Footer";
+import OurPlace from "@/components/OurPlace";
 import { getHomePage } from "@/lib/wordpress";
 
-export default async function Home() {
+export default async function OurPlacePage() {
   const home = await getHomePage();
 
   return (
@@ -14,10 +11,7 @@ export default async function Home() {
       <Navbar />
 
       <main>
-        <Hero data={home.hero} />
-        <About data={home.about} />
         <OurPlace data={home.our_place} />
-        <Reviews />
       </main>
 
       <Footer />
