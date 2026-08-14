@@ -1,5 +1,9 @@
 const WORDPRESS_URL = process.env.WORDPRESS_URL;
 
+
+/**
+ * Homepage
+ */
 export async function getHomePage() {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/home`,
@@ -17,6 +21,31 @@ export async function getHomePage() {
   return response.json();
 }
 
+
+/**
+ * Reviews
+ */
+export async function getReviews() {
+  const response = await fetch(
+    `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/reviews`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch reviews");
+  }
+
+  return response.json();
+}
+
+
+/**
+ * Lessons
+ */
 export async function getLessons() {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/wp/v2/lessons?per_page=100&_embed`,
@@ -34,6 +63,10 @@ export async function getLessons() {
   return response.json();
 }
 
+
+/**
+ * Site Settings
+ */
 export async function getSiteSettings() {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/settings`,
@@ -45,12 +78,18 @@ export async function getSiteSettings() {
   );
 
   if (!response.ok) {
-    throw new Error("Failed to fetch site settings from WordPress");
+    throw new Error(
+      "Failed to fetch site settings from WordPress"
+    );
   }
 
   return response.json();
 }
 
+
+/**
+ * Single Lesson
+ */
 export async function getLessonBySlug(slug: string) {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/wp/v2/lessons?slug=${encodeURIComponent(
