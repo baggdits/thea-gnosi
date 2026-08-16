@@ -1,6 +1,5 @@
 const WORDPRESS_URL = process.env.WORDPRESS_URL;
 
-
 /**
  * Homepage
  */
@@ -109,4 +108,25 @@ export async function getLessonBySlug(slug: string) {
   const lessons = await response.json();
 
   return lessons.length > 0 ? lessons[0] : null;
+}
+
+
+/**
+ * Our Place
+ */
+export async function getOurPlace() {
+  const response = await fetch(
+    `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/our-place`,
+    {
+      next: {
+        revalidate: 60,
+      },
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch Our Place");
+  }
+
+  return response.json();
 }
