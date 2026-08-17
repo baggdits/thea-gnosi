@@ -14,7 +14,9 @@ export async function getHomePage() {
   );
 
   if (!response.ok) {
-    throw new Error("Failed to fetch homepage data");
+    throw new Error(
+      "Failed to fetch homepage data"
+    );
   }
 
   return response.json();
@@ -35,7 +37,9 @@ export async function getReviews() {
   );
 
   if (!response.ok) {
-    throw new Error("Failed to fetch reviews");
+    throw new Error(
+      "Failed to fetch reviews"
+    );
   }
 
   return response.json();
@@ -56,7 +60,9 @@ export async function getLessons() {
   );
 
   if (!response.ok) {
-    throw new Error("Failed to fetch lessons");
+    throw new Error(
+      "Failed to fetch lessons"
+    );
   }
 
   return response.json();
@@ -89,7 +95,9 @@ export async function getSiteSettings() {
 /**
  * Single Lesson
  */
-export async function getLessonBySlug(slug: string) {
+export async function getLessonBySlug(
+  slug: string
+) {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/wp/v2/lessons?slug=${encodeURIComponent(
       slug
@@ -102,12 +110,16 @@ export async function getLessonBySlug(slug: string) {
   );
 
   if (!response.ok) {
-    throw new Error("Failed to fetch lesson");
+    throw new Error(
+      "Failed to fetch lesson"
+    );
   }
 
   const lessons = await response.json();
 
-  return lessons.length > 0 ? lessons[0] : null;
+  return lessons.length > 0
+    ? lessons[0]
+    : null;
 }
 
 
@@ -125,8 +137,44 @@ export async function getOurPlace() {
   );
 
   if (!response.ok) {
-    throw new Error("Failed to fetch Our Place");
+    throw new Error(
+      "Failed to fetch Our Place"
+    );
   }
 
   return response.json();
+}
+
+
+/**
+ * My Notes
+ *
+ * Requires a valid WordPress JWT.
+ */
+export async function getMyNotes(
+  token: string
+) {
+  const response = await fetch(
+    `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/my-notes`,
+    {
+      method: "GET",
+
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+
+      cache: "no-store",
+    }
+  );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(
+      data?.message ||
+        "Failed to fetch my notes"
+    );
+  }
+
+  return data;
 }
