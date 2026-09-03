@@ -38,12 +38,37 @@ section {
   scroll-margin-top: 80px;
 }
 
-.site-header {
-  position: sticky;
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar-shell {
+  position: fixed;
   top: 0;
-  z-index: 100;
-  background: rgb(247, 229, 173);
-  border-bottom: 1px solid #e5e5e5;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.site-header {
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
+/* Navbar after scrolling */
+.navbar-shell.navbar-scrolled .site-header {
+  background: #111111;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.15);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar {
@@ -55,6 +80,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  transition: min-height 0.3s ease;
+}
+
+/* Slightly smaller Navbar after scroll */
+.navbar-shell.navbar-scrolled .navbar {
+  min-height: 80px;
 }
 
 .navbar-logo {
@@ -74,51 +106,47 @@ section {
 .navbar-login {
   font-size: 0.95rem;
   font-weight: 500;
+  color: #ffffff;
+
+  transition: opacity 0.2s ease;
 }
 
 .navbar-links a:hover,
 .navbar-login:hover {
-  text-decoration: underline;
+  opacity: 0.7;
+  text-decoration: none;
 }
 
 .navbar-login {
   white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    width: min(100% - 24px, 1200px);
-    min-height: 64px;
-    gap: 16px;
-  }
 
-  .navbar-links {
-    gap: 14px;
-  }
-
-  .navbar-links a,
-  .navbar-login {
-    font-size: 0.85rem;
-  }
-
-  .navbar-logo {
-    font-size: 1.1rem;
-  }
-}
+/* =========================================================
+   NAVBAR LOGO IMAGE
+   ========================================================= */
 
 .navbar-logo-image {
   display: block;
   width: 170px;
   height: 90px;
   object-fit: fill;
+
+  transition:
+    width 0.3s ease,
+    height 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .navbar-logo-image {
-    width: 140px;
-    height: 50px;
-  }
+/* Smaller logo after scroll */
+.navbar-shell.navbar-scrolled .navbar-logo-image {
+  width: 150px;
+  height: 75px;
 }
+
+
+/* =========================================================
+   LESSONS DROPDOWN
+   ========================================================= */
 
 .navbar-lessons {
   position: relative;
@@ -133,15 +161,23 @@ section {
   padding: 0;
 
   background: transparent;
+
   cursor: pointer;
 
   font-size: 0.95rem;
   font-weight: 500;
-  color: inherit;
+  color: #ffffff;
+
+  transition: opacity 0.2s ease;
+}
+
+.navbar-lessons-button:hover {
+  opacity: 0.7;
 }
 
 .lessons-arrow {
   font-size: 0.65rem;
+
   transition: transform 0.2s ease;
 }
 
@@ -170,7 +206,7 @@ section {
 
   padding: 8px 10px;
 
-  background: white;
+  background: #ffffff;
 
   border: 1px solid #e5e5e5;
   border-radius: 6px;
@@ -216,140 +252,114 @@ section {
   font-size: 0.9rem;
 }
 
-.lessons-page {
-  width: min(1200px, 100% - 40px);
-  margin: 0 auto;
-  padding: 80px 0;
+
+/* =========================================================
+   AUTH NAV
+   ========================================================= */
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
-.lessons-header {
-  text-align: center;
-  margin-bottom: 50px;
+.navbar-username {
+  color: #ffffff;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: opacity 0.2s ease;
 }
 
-.lessons-header h1 {
-  margin-bottom: 12px;
+.navbar-username:hover {
+  opacity: 0.7;
 }
 
-.lessons-header p {
-  margin: 0;
-  color: #666;
-}
+.navbar-logout {
+  border: none;
+  padding: 0;
 
-.lessons-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
+  background: transparent;
 
-.lesson-card {
-  padding: 28px;
-  border: 1px solid #e5e5e5;
-  border-radius: 10px;
-}
+  color: #ffffff;
 
-.lesson-card h2 {
-  margin: 0 0 20px;
-}
-
-.lesson-card-link {
+  font-size: 0.95rem;
   font-weight: 500;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
 }
+
+.navbar-logout:hover {
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   NAVBAR MOBILE
+   ========================================================= */
 
 @media (max-width: 768px) {
-  .lessons-grid {
-    grid-template-columns: 1fr;
+  .navbar {
+    width: 100%;
+    min-height: 70px;
+
+    padding: 0 20px;
+
+    gap: 16px;
+  }
+
+  .navbar-shell.navbar-scrolled .navbar {
+    min-height: 64px;
+  }
+
+  .navbar-links {
+    gap: 14px;
+  }
+
+  .navbar-links a,
+  .navbar-login,
+  .navbar-lessons-button,
+  .navbar-username,
+  .navbar-logout {
+    font-size: 0.85rem;
+  }
+
+  .navbar-logo {
+    font-size: 1.1rem;
+  }
+
+  .navbar-logo-image {
+    width: 140px;
+    height: 50px;
+  }
+
+  .navbar-shell.navbar-scrolled .navbar-logo-image {
+    width: 130px;
+    height: 46px;
+  }
+
+  .navbar-auth {
+    gap: 10px;
+  }
+
+  .lessons-dropdown {
+    top: calc(100% + 12px);
+    min-width: 135px;
   }
 }
 
-.lesson-page {
-  min-height: 100vh;
-}
 
-.lesson-hero {
-  width: 100%;
-  padding: 100px 20px 80px;
-  text-align: center;
-}
-
-.lesson-hero-content {
-  width: min(900px, 100%);
-  margin: 0 auto;
-}
-
-.lesson-hero h1 {
-  margin: 0 0 20px;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  font-weight: 700;
-}
-
-.lesson-description {
-  max-width: 700px;
-  margin: 0 auto;
-
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #666;
-}
-
-.lesson-description p {
-  margin: 0;
-}
-
-.lesson-content {
-  width: min(900px, 100% - 40px);
-  margin: 0 auto;
-  padding: 20px 0 100px;
-
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-.lesson-content h2 {
-  margin-top: 50px;
-  margin-bottom: 15px;
-}
-
-.lesson-content h3 {
-  margin-top: 35px;
-  margin-bottom: 12px;
-}
-
-.lesson-content p {
-  margin-bottom: 20px;
-}
-
-.lesson-content img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 30px auto;
-  border-radius: 10px;
-}
-
-.lesson-content ul,
-.lesson-content ol {
-  margin: 20px 0;
-  padding-left: 30px;
-}
-
-.lesson-featured-image {
-  display: block;
-
-  width: min(900px, 100%);
-  height: 360px;
-
-  object-fit: cover;
-
-  margin: 0 auto 45px;
-
-  border-radius: 14px;
-}
-
+/* =========================================================
+   LESSONS PAGE
+   ========================================================= */
 
 .lessons-page {
   width: min(1200px, 100% - 40px);
   margin: 0 auto;
+
   padding: 90px 0 100px;
 }
 
@@ -368,6 +378,7 @@ section {
   margin: 0;
 
   color: #666;
+
   font-size: 1.05rem;
 }
 
@@ -386,10 +397,9 @@ section {
   overflow: hidden;
 
   text-decoration: none;
-
   color: inherit;
 
-  background: white;
+  background: #ffffff;
 
   border: 1px solid #e5e5e5;
   border-radius: 14px;
@@ -403,7 +413,7 @@ section {
   transform: translateY(-5px);
 
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.10);
+    0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .lesson-card-image-wrapper {
@@ -468,6 +478,7 @@ section {
 @media (max-width: 600px) {
   .lessons-page {
     width: min(100% - 30px, 500px);
+
     padding: 60px 0 80px;
   }
 
@@ -480,9 +491,111 @@ section {
   }
 }
 
-/* =========================
+
+/* =========================================================
+   LESSON SINGLE PAGE
+   ========================================================= */
+
+.lesson-page {
+  min-height: 100vh;
+}
+
+.lesson-hero {
+  width: 100%;
+
+  padding: 100px 20px 80px;
+
+  text-align: center;
+}
+
+.lesson-hero-content {
+  width: min(900px, 100%);
+
+  margin: 0 auto;
+}
+
+.lesson-hero h1 {
+  margin: 0 0 20px;
+
+  font-size: clamp(2.2rem, 5vw, 4rem);
+
+  font-weight: 700;
+}
+
+.lesson-description {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  font-size: 1.1rem;
+  line-height: 1.7;
+
+  color: #666;
+}
+
+.lesson-description p {
+  margin: 0;
+}
+
+.lesson-content {
+  width: min(900px, 100% - 40px);
+
+  margin: 0 auto;
+
+  padding: 20px 0 100px;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.lesson-content h2 {
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.lesson-content h3 {
+  margin-top: 35px;
+  margin-bottom: 12px;
+}
+
+.lesson-content p {
+  margin-bottom: 20px;
+}
+
+.lesson-content img {
+  display: block;
+
+  max-width: 100%;
+  height: auto;
+
+  margin: 30px auto;
+
+  border-radius: 10px;
+}
+
+.lesson-content ul,
+.lesson-content ol {
+  margin: 20px 0;
+  padding-left: 30px;
+}
+
+.lesson-featured-image {
+  display: block;
+
+  width: min(900px, 100%);
+  height: 360px;
+
+  object-fit: cover;
+
+  margin: 0 auto 45px;
+
+  border-radius: 14px;
+}
+
+
+/* =========================================================
    HERO
-========================= */
+   ========================================================= */
 
 .hero {
   position: relative;
@@ -501,6 +614,7 @@ section {
 
 .hero-image {
   position: absolute;
+
   inset: 0;
 
   width: 100%;
@@ -513,6 +627,7 @@ section {
 
 .hero-overlay {
   position: absolute;
+
   inset: 0;
 
   background: rgba(0, 0, 0, 0.35);
@@ -539,9 +654,9 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    STATIC TITLE
-========================= */
+   ========================================================= */
 
 .hero-title {
   margin: 0;
@@ -561,9 +676,9 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    ROLLER
-========================= */
+   ========================================================= */
 
 .hero-roller {
   position: relative;
@@ -579,7 +694,6 @@ section {
   cursor: grab;
 
   touch-action: none;
-
   user-select: none;
 
   outline: none;
@@ -595,30 +709,28 @@ section {
 }
 
 
-/* =========================
+/* =========================================================
    ROLLER TRACK
-========================= */
+   ========================================================= */
 
 .hero-roller-track {
   width: 100%;
   height: 100%;
 
   transition:
-    transform 0.65s
-    cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/* =========================
+/* =========================================================
    ROLLER WORD
-========================= */
+   ========================================================= */
 
 .hero-roller-word {
   width: 100%;
   height: 100%;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -637,9 +749,9 @@ section {
 }
 
 
-/* =========================
-   DESCRIPTION
-========================= */
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
 
 .hero-description {
   max-width: 650px;
@@ -654,9 +766,9 @@ section {
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* =========================================================
+   HERO BUTTON
+   ========================================================= */
 
 .hero-button {
   display: inline-flex;
@@ -670,13 +782,11 @@ section {
   border-radius: 999px;
 
   color: white;
-
   background: transparent;
 
   text-decoration: none;
 
   font-size: 16px;
-
   font-weight: 600;
 
   transition:
@@ -694,22 +804,17 @@ section {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   HERO MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
-
   .hero {
     min-height: 620px;
   }
 
   .hero-title {
-    font-size: clamp(
-      42px,
-      12vw,
-      70px
-    );
+    font-size: clamp(42px, 12vw, 70px);
   }
 
   .hero-roller {
@@ -717,11 +822,7 @@ section {
   }
 
   .hero-roller-word {
-    font-size: clamp(
-      48px,
-      14vw,
-      80px
-    );
+    font-size: clamp(48px, 14vw, 80px);
   }
 
   .hero-description {
@@ -731,63 +832,85 @@ section {
   }
 }
 
-/* =========================
+
+/* =========================================================
    REVIEWS
-========================= */
+   ========================================================= */
 
 .reviews-section {
   padding: 100px 6%;
+
   background: #f7f4ee;
 }
 
 .reviews-header {
   max-width: 700px;
+
   margin: 0 auto 50px;
+
   text-align: center;
 }
 
 .reviews-header h2 {
   margin: 0 0 15px;
+
   font-size: 42px;
+
   color: #111;
 }
 
 .reviews-header p {
   margin: 0;
+
   font-size: 18px;
+
   color: #555;
 }
 
 .reviews-grid {
   max-width: 1200px;
+
   margin: 0 auto;
+
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 28px;
 }
 
 .review-card {
   background: #fff;
+
   border: 1px solid #111;
+
   border-radius: 12px;
+
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .review-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .review-image-wrapper {
   width: 100%;
   height: 180px;
+
   overflow: hidden;
 }
 
 .review-image {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
@@ -797,19 +920,25 @@ section {
 
 .review-card-content h3 {
   margin: 0 0 10px;
+
   font-size: 22px;
+
   color: #111;
 }
 
 .review-rating {
   margin-bottom: 18px;
+
   font-size: 20px;
+
   letter-spacing: 2px;
+
   color: #111;
 }
 
 .review-text {
   color: #444;
+
   font-size: 16px;
   line-height: 1.7;
 }
@@ -819,9 +948,9 @@ section {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   REVIEWS MOBILE
+   ========================================================= */
 
 @media (max-width: 900px) {
   .reviews-grid {
@@ -847,9 +976,10 @@ section {
   }
 }
 
+
 /* =========================================================
    FOOTER
-========================================================= */
+   ========================================================= */
 
 .site-footer {
   position: relative;
@@ -865,8 +995,8 @@ section {
 
 
 /* =========================================================
-   INNER
-========================================================= */
+   FOOTER INNER
+   ========================================================= */
 
 .site-footer__inner {
   width: min(1200px, calc(100% - 48px));
@@ -890,8 +1020,8 @@ section {
 
 
 /* =========================================================
-   BRAND
-========================================================= */
+   FOOTER BRAND
+   ========================================================= */
 
 .site-footer__brand {
   max-width: 300px;
@@ -923,7 +1053,6 @@ section {
   transform: translateY(-2px);
 }
 
-
 .site-footer__tagline {
   margin: 22px 0 0;
 
@@ -938,15 +1067,13 @@ section {
 
 
 /* =========================================================
-   COLUMNS
-========================================================= */
+   FOOTER COLUMNS
+   ========================================================= */
 
 .site-footer__column {
   display: flex;
-
   flex-direction: column;
 }
-
 
 .site-footer__heading {
   margin: 0 0 22px;
@@ -966,8 +1093,8 @@ section {
 
 
 /* =========================================================
-   NAVIGATION
-========================================================= */
+   FOOTER NAVIGATION
+   ========================================================= */
 
 .site-footer__nav {
   display: flex;
@@ -976,7 +1103,6 @@ section {
 
   gap: 13px;
 }
-
 
 .site-footer__nav a,
 .site-footer__contact a,
@@ -994,7 +1120,6 @@ section {
     transform 0.2s ease;
 }
 
-
 .site-footer__nav a:hover,
 .site-footer__contact a:hover,
 .site-footer__legal a:hover {
@@ -1005,8 +1130,8 @@ section {
 
 
 /* =========================================================
-   CONTACT
-========================================================= */
+   FOOTER CONTACT
+   ========================================================= */
 
 .site-footer__contact {
   display: flex;
@@ -1018,15 +1143,14 @@ section {
 
 
 /* =========================================================
-   CTA
-========================================================= */
+   FOOTER CTA
+   ========================================================= */
 
 .site-footer__cta {
   padding-left: 25px;
 
   border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
-
 
 .site-footer__eyebrow {
   display: block;
@@ -1043,7 +1167,6 @@ section {
 
   letter-spacing: 0.12em;
 }
-
 
 .site-footer__cta h3 {
   max-width: 280px;
@@ -1063,8 +1186,8 @@ section {
 
 
 /* =========================================================
-   BUTTON
-========================================================= */
+   FOOTER BUTTON
+   ========================================================= */
 
 .site-footer__button {
   display: inline-flex;
@@ -1097,7 +1220,6 @@ section {
     transform 0.2s ease;
 }
 
-
 .site-footer__button span {
   font-size: 18px;
 
@@ -1105,7 +1227,6 @@ section {
 
   transition: transform 0.2s ease;
 }
-
 
 .site-footer__button:hover {
   background: #fff;
@@ -1115,15 +1236,14 @@ section {
   transform: translateY(-2px);
 }
 
-
 .site-footer__button:hover span {
   transform: translateX(4px);
 }
 
 
 /* =========================================================
-   BOTTOM
-========================================================= */
+   FOOTER BOTTOM
+   ========================================================= */
 
 .site-footer__bottom {
   width: min(1200px, calc(100% - 48px));
@@ -1143,7 +1263,6 @@ section {
   gap: 30px;
 }
 
-
 .site-footer__bottom p {
   margin: 0;
 
@@ -1151,7 +1270,6 @@ section {
 
   font-size: 13px;
 }
-
 
 .site-footer__legal {
   display: flex;
@@ -1161,18 +1279,16 @@ section {
   gap: 25px;
 }
 
-
 .site-footer__legal a {
   font-size: 13px;
 }
 
 
 /* =========================================================
-   TABLET
-========================================================= */
+   FOOTER TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
-
   .site-footer__inner {
     grid-template-columns:
       1fr
@@ -1194,16 +1310,14 @@ section {
 
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
-
 }
 
 
 /* =========================================================
-   MOBILE
-========================================================= */
+   FOOTER MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
-
   .site-footer__inner {
     width: min(100% - 36px, 1200px);
 
@@ -1214,16 +1328,13 @@ section {
     gap: 40px;
   }
 
-
   .site-footer__logo {
     font-size: 28px;
   }
 
-
   .site-footer__cta h3 {
     font-size: 32px;
   }
-
 
   .site-footer__bottom {
     width: min(100% - 36px, 1200px);
@@ -1237,12 +1348,11 @@ section {
     gap: 15px;
   }
 
-
   .site-footer__legal {
     gap: 18px;
   }
-
 }
+
 
 /* =========================================================
    OUR PLACE PAGE
@@ -1250,76 +1360,97 @@ section {
 
 .our-place-page {
   width: 100%;
+
   padding: 120px 6vw 100px;
 }
 
 
-/* ---------------------------------------------------------
-   HEADER
-   --------------------------------------------------------- */
+/* =========================================================
+   OUR PLACE HEADER
+   ========================================================= */
 
 .our-place-header {
   max-width: 900px;
+
   margin: 0 auto 70px;
+
   text-align: center;
 }
 
 .our-place-header h1 {
   margin: 0 0 20px;
+
   font-size: clamp(42px, 6vw, 76px);
+
   line-height: 1;
+
   letter-spacing: -0.04em;
 }
 
 .our-place-header p {
   max-width: 700px;
+
   margin: 0 auto;
+
   font-size: 18px;
+
   line-height: 1.7;
+
   opacity: 0.75;
 }
 
 
-/* ---------------------------------------------------------
-   GALLERY
-   --------------------------------------------------------- */
+/* =========================================================
+   OUR PLACE GALLERY
+   ========================================================= */
 
 .our-place-gallery {
   width: 100%;
+
   max-width: 1400px;
+
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: 70px 40px;
 }
 
 
-/* ---------------------------------------------------------
-   GALLERY ITEM
-   --------------------------------------------------------- */
+/* =========================================================
+   OUR PLACE GALLERY ITEM
+   ========================================================= */
 
 .our-place-gallery-item {
   min-width: 0;
 }
 
 
-/* ---------------------------------------------------------
-   IMAGE
-   --------------------------------------------------------- */
+/* =========================================================
+   OUR PLACE IMAGE
+   ========================================================= */
 
 .our-place-gallery-image {
   width: 100%;
+
   aspect-ratio: 4 / 3;
+
   overflow: hidden;
+
   border-radius: 18px;
+
   background: #eee;
 }
 
 .our-place-gallery-image img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 
   transition:
@@ -1332,9 +1463,9 @@ section {
 }
 
 
-/* ---------------------------------------------------------
-   CONTENT
-   --------------------------------------------------------- */
+/* =========================================================
+   OUR PLACE CONTENT
+   ========================================================= */
 
 .our-place-gallery-content {
   padding: 22px 4px 0;
@@ -1344,44 +1475,47 @@ section {
   margin: 0 0 10px;
 
   font-size: 24px;
+
   line-height: 1.2;
+
   letter-spacing: -0.02em;
 }
 
 .our-place-gallery-content p {
   max-width: 600px;
+
   margin: 0;
 
   font-size: 16px;
+
   line-height: 1.7;
+
   opacity: 0.72;
 }
 
 
-/* ---------------------------------------------------------
-   TABLET
-   --------------------------------------------------------- */
+/* =========================================================
+   OUR PLACE TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
-
   .our-place-page {
     padding: 100px 5vw 80px;
   }
 
   .our-place-gallery {
     grid-template-columns: 1fr;
+
     gap: 55px;
   }
-
 }
 
 
-/* ---------------------------------------------------------
-   MOBILE
-   --------------------------------------------------------- */
+/* =========================================================
+   OUR PLACE MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
-
   .our-place-page {
     padding: 80px 20px 60px;
   }
@@ -1417,30 +1551,37 @@ section {
   .our-place-gallery-content p {
     font-size: 15px;
   }
-
 }
 
-/* =========================================
+
+/* =========================================================
    ABOUT
-========================================= */
+   ========================================================= */
 
 .about {
   width: 100%;
+
   max-width: 1400px;
+
   margin: 0 auto;
+
   padding: 140px 60px;
 
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+
+  grid-template-columns:
+    0.9fr
+    1.1fr;
+
   gap: 90px;
 
   align-items: center;
 }
 
 
-/* =========================================
-   CONTENT
-========================================= */
+/* =========================================================
+   ABOUT CONTENT
+   ========================================================= */
 
 .about-content {
   max-width: 600px;
@@ -1450,14 +1591,19 @@ section {
   margin: 0 0 30px;
 
   font-size: clamp(42px, 5vw, 72px);
+
   line-height: 0.95;
+
   font-weight: 600;
+
   letter-spacing: -0.04em;
 }
 
 .about-content > div {
   font-size: 18px;
+
   line-height: 1.8;
+
   color: #666;
 }
 
@@ -1470,15 +1616,17 @@ section {
 }
 
 
-/* =========================================
-   IMAGE
-========================================= */
+/* =========================================================
+   ABOUT IMAGE
+   ========================================================= */
 
 .about-image {
   width: 100%;
+
   height: 620px;
 
   overflow: hidden;
+
   border-radius: 24px;
 }
 
@@ -1490,7 +1638,8 @@ section {
 
   object-fit: cover;
 
-  transition: transform 0.7s ease;
+  transition:
+    transform 0.7s ease;
 }
 
 .about-image:hover img {
@@ -1498,14 +1647,14 @@ section {
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+/* =========================================================
+   ABOUT TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
-
   .about {
     grid-template-columns: 1fr;
+
     gap: 50px;
 
     padding: 100px 30px;
@@ -1518,18 +1667,17 @@ section {
   .about-image {
     height: 500px;
   }
-
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* =========================================================
+   ABOUT MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
-
   .about {
     padding: 80px 20px;
+
     gap: 40px;
   }
 
@@ -1539,12 +1687,13 @@ section {
 
   .about-content > div {
     font-size: 16px;
+
     line-height: 1.7;
   }
 
   .about-image {
     height: 400px;
+
     border-radius: 18px;
   }
-
 }
