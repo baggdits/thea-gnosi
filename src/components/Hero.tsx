@@ -17,7 +17,6 @@ type HeroProps = {
 
 export default function Hero({ data }: HeroProps) {
   const heroRef = useRef<HTMLElement>(null);
-
   const rollerRef = useRef<HTMLDivElement>(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,7 +27,7 @@ export default function Hero({ data }: HeroProps) {
       : ["Γνώση", "Μάθηση", "Έμπνευση"];
 
   const dragging = useRef(false);
-  const startY = useRef(0);
+  const startX = useRef(0);
   const startIndex = useRef(0);
 
   /*
@@ -58,7 +57,7 @@ export default function Hero({ data }: HeroProps) {
 
     const handlePointerDown = (event: PointerEvent) => {
       dragging.current = true;
-      startY.current = event.clientY;
+      startX.current = event.clientX;
       startIndex.current = currentIndex;
 
       roller.setPointerCapture(event.pointerId);
@@ -67,16 +66,17 @@ export default function Hero({ data }: HeroProps) {
     const handlePointerMove = (event: PointerEvent) => {
       if (!dragging.current) return;
 
-      const difference = event.clientY - startY.current;
+      const difference = event.clientX - startX.current;
 
-      const threshold = 45;
+      const threshold = 110;
 
       if (Math.abs(difference) < threshold) return;
 
       const direction = difference > 0 ? -1 : 1;
 
-      const movement =
-        Math.floor(Math.abs(difference) / threshold);
+      const movement = Math.floor(
+        Math.abs(difference) / threshold
+      );
 
       let nextIndex =
         startIndex.current + direction * movement;
@@ -92,25 +92,10 @@ export default function Hero({ data }: HeroProps) {
       dragging.current = false;
     };
 
-    roller.addEventListener(
-      "pointerdown",
-      handlePointerDown
-    );
-
-    roller.addEventListener(
-      "pointermove",
-      handlePointerMove
-    );
-
-    roller.addEventListener(
-      "pointerup",
-      handlePointerUp
-    );
-
-    roller.addEventListener(
-      "pointercancel",
-      handlePointerUp
-    );
+    roller.addEventListener("pointerdown", handlePointerDown);
+    roller.addEventListener("pointermove", handlePointerMove);
+    roller.addEventListener("pointerup", handlePointerUp);
+    roller.addEventListener("pointercancel", handlePointerUp);
 
     return () => {
       roller.removeEventListener(
@@ -142,7 +127,7 @@ export default function Hero({ data }: HeroProps) {
   const handleKeyDown = (
     event: React.KeyboardEvent<HTMLDivElement>
   ) => {
-    if (event.key === "ArrowDown") {
+    if (event.key === "ArrowRight") {
       event.preventDefault();
 
       setCurrentIndex(
@@ -151,7 +136,7 @@ export default function Hero({ data }: HeroProps) {
       );
     }
 
-    if (event.key === "ArrowUp") {
+    if (event.key === "ArrowLeft") {
       event.preventDefault();
 
       setCurrentIndex(
@@ -196,7 +181,7 @@ export default function Hero({ data }: HeroProps) {
           <div
             className="hero-roller-track"
             style={{
-              transform: `translateY(-${
+              transform: `translateX(-${
                 currentIndex * 100
               }%)`,
             }}
