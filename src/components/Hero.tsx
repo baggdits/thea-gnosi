@@ -20,11 +20,21 @@ export default function Hero({ data }: HeroProps) {
   const rollerRef = useRef<HTMLDivElement>(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
 
   const words =
     data.roller_words && data.roller_words.length > 0
       ? data.roller_words
       : ["Γνώση", "Μάθηση", "Έμπνευση"];
+
+  /*
+   * Duplicate the words.
+   *
+   * Example:
+   * Γνώση → Μάθηση → Έμπνευση → Γνώση → Μάθηση → Έμπνευση
+   */
+
+  const carouselWords = [...words, ...words];
 
   const dragging = useRef(false);
   const startX = useRef(0);
@@ -38,13 +48,36 @@ export default function Hero({ data }: HeroProps) {
     if (words.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((current) => {
-        return (current + 1) % words.length;
-      });
+      setCurrentIndex((current) => current + 1);
     }, 2500);
 
     return () => clearInterval(interval);
   }, [words.length]);
+
+  /*
+   * SEAMLESS RESET
+   *
+   * When we reach the duplicated first word,
+   * instantly move back to the real first word
+   * after the animation has finished.
+   */
+
+  useEffect(() => {
+    if (currentIndex !== words.length) return;
+
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+      setCurrentIndex(0);
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitioning(true);
+        });
+      });
+    }, 750);
+
+    return () => clearTimeout(timer);
+  }, [currentIndex, words.length]);
 
   /*
    * MOUSE / TOUCH DRAG
@@ -57,6 +90,7 @@ export default function Hero({ data }: HeroProps) {
 
     const handlePointerDown = (event: PointerEvent) => {
       dragging.current = true;
+
       startX.current = event.clientX;
       startIndex.current = currentIndex;
 
@@ -72,18 +106,25 @@ export default function Hero({ data }: HeroProps) {
 
       if (Math.abs(difference) < threshold) return;
 
-      const direction = difference > 0 ? -1 : 1;
-
       const movement = Math.floor(
         Math.abs(difference) / threshold
       );
 
       let nextIndex =
-        startIndex.current + direction * movement;
+        startIndex.current +
+        (difference > 0 ? -movement : movement);
 
-      nextIndex =
-        ((nextIndex % words.length) + words.length) %
-        words.length;
+      /*
+       * Prevent going outside the carousel.
+       */
+
+      if (nextIndex < 0) {
+        nextIndex = 0;
+      }
+
+      if (nextIndex > words.length) {
+        nextIndex = words.length;
+      }
 
       setCurrentIndex(nextIndex);
     };
@@ -130,20 +171,25 @@ export default function Hero({ data }: HeroProps) {
     if (event.key === "ArrowRight") {
       event.preventDefault();
 
-      setCurrentIndex(
-        (current) =>
-          (current + 1) % words.length
-      );
+      setCurrentIndex((current) => {
+        if (current >= words.length) {
+          return 0;
+        }
+
+        return current + 1;
+      });
     }
 
     if (event.key === "ArrowLeft") {
       event.preventDefault();
 
-      setCurrentIndex(
-        (current) =>
-          (current - 1 + words.length) %
-          words.length
-      );
+      setCurrentIndex((current) => {
+        if (current <= 0) {
+          return words.length - 1;
+        }
+
+        return current - 1;
+      });
     }
   };
 
@@ -184,9 +230,12 @@ export default function Hero({ data }: HeroProps) {
               transform: `translateX(-${
                 currentIndex * 100
               }%)`,
+              transition: isTransitioning
+                ? "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)"
+                : "none",
             }}
           >
-            {words.map((word, index) => (
+            {carouselWords.map((word, index) => (
               <div
                 className="hero-roller-word"
                 key={`${word}-${index}`}
