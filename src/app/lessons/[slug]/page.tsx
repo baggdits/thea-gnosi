@@ -20,6 +20,9 @@ export default async function LessonPage({
     notFound();
   }
 
+  const featuredImage =
+    lesson._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+
   return (
     <>
       <Navbar />
@@ -28,44 +31,33 @@ export default async function LessonPage({
 
         <section className="lesson-hero">
 
-          {lesson._embedded?.["wp:featuredmedia"]?.[0]?.source_url && (
+          {featuredImage && (
             <img
-              src={lesson._embedded["wp:featuredmedia"][0].source_url}
+              src={featuredImage}
               alt={lesson.title.rendered}
               className="lesson-featured-image"
             />
           )}
 
           <div className="lesson-hero-content">
-
             <h1
               dangerouslySetInnerHTML={{
                 __html: lesson.title.rendered,
               }}
             />
-
-            {lesson.excerpt?.rendered && (
-              <div
-                className="lesson-description"
-                dangerouslySetInnerHTML={{
-                  __html: lesson.excerpt.rendered,
-                }}
-              />
-            )}
-
           </div>
 
         </section>
 
-        <article className="lesson-content">
-
-          <div
-            dangerouslySetInnerHTML={{
-              __html: lesson.content.rendered,
-            }}
-          />
-
-        </article>
+        {lesson.content?.rendered && (
+          <article className="lesson-content">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: lesson.content.rendered,
+              }}
+            />
+          </article>
+        )}
 
       </main>
 

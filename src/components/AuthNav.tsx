@@ -53,7 +53,7 @@ export default function AuthNav() {
   if (!user) {
     return (
       <Link className="navbar-login" href="/login">
-        Login
+        Σύνδεση
       </Link>
     );
   }

@@ -30,16 +30,16 @@ export default async function Navbar() {
         </Link>
 
         <div className="navbar-links">
-          <Link href="/">Home</Link>
-          <Link href="/#about">About Us</Link>
-          <Link href="/our-place">Our Place</Link>
+          <Link href="/">Αρχική</Link>
+          <Link href="/#about">Σχετικά με εμάς</Link>
+          <Link href="/our-place">Εγκαταστάσεις</Link>
 
           <div className="navbar-lessons">
             <a
               href="/lessons"
               className="navbar-lessons-button"
             >
-              Lessons
+              Μαθήματα
               <span className="lessons-arrow">▼</span>
             </a>
 
@@ -55,7 +55,7 @@ export default async function Navbar() {
                 ))
               ) : (
                 <span className="lessons-empty">
-                  No lessons available
+                  Δεν υπάρχουν μαθήματα
                 </span>
               )}
             </div>

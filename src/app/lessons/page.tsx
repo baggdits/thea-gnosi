@@ -13,10 +13,10 @@ export default async function LessonsPage() {
       <main className="lessons-page">
 
         <header className="lessons-header">
-          <h1>Lessons</h1>
+          <h1>Τα μαθήματα μας</h1>
 
           <p>
-            Explore our lessons and discover more.
+            Εξερεύνησε τα μαθηματά μας και μάθε περισσότερα.
           </p>
         </header>
 

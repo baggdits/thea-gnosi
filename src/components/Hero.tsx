@@ -1,10 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 type HeroData = {
   title?: string;
-  roller_words?: string[];
+  roller_words?: string[] | string;
   description?: string;
   button_text?: string;
   button_url?: string;
@@ -15,59 +20,154 @@ type HeroProps = {
   data: HeroData;
 };
 
-export default function Hero({ data }: HeroProps) {
-  const heroRef = useRef<HTMLElement>(null);
-  const rollerRef = useRef<HTMLDivElement>(null);
+export default function Hero({
+  data,
+}: HeroProps) {
+  const rollerRef =
+    useRef<HTMLDivElement>(null);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [currentIndex, setCurrentIndex] =
+    useState(0);
 
-  const words =
-    data.roller_words && data.roller_words.length > 0
-      ? data.roller_words
-      : ["Γνώση", "Μάθηση", "Έμπνευση"];
-
-  /*
-   * Duplicate the words.
-   *
-   * Example:
-   * Γνώση → Μάθηση → Έμπνευση → Γνώση → Μάθηση → Έμπνευση
-   */
-
-  const carouselWords = [...words, ...words];
+  const [
+    isTransitioning,
+    setIsTransitioning,
+  ] = useState(true);
 
   const dragging = useRef(false);
   const startX = useRef(0);
   const startIndex = useRef(0);
 
   /*
+   * =========================================================
+   * WORDPRESS ROLLER WORDS
+   * =========================================================
+   *
+   * Υποστηρίζει:
+   *
+   * Γνώση|Έμπνευση|Δημιουργία
+   *
+   * Γνώση, Έμπνευση, Δημιουργία
+   *
+   * ή μία λέξη ανά γραμμή.
+   */
+
+  const words = useMemo(() => {
+    let result: string[] = [];
+
+    if (Array.isArray(data.roller_words)) {
+      result = data.roller_words.flatMap(
+        (word) =>
+          String(word).split(/[|,\n\r]+/)
+      );
+    } else if (
+      typeof data.roller_words === "string"
+    ) {
+      result = data.roller_words.split(
+        /[|,\n\r]+/
+      );
+    }
+
+    result = result
+      .map((word) => word.trim())
+      .filter(Boolean);
+
+    return result;
+    
+  }, [data.roller_words]);
+
+  /*
+   * Διπλασιάζουμε τις λέξεις ώστε:
+   *
+   * Γνώση
+   * Έμπνευση
+   * Δημιουργία
+   * Γνώση
+   * Έμπνευση
+   * Δημιουργία
+   */
+
+  const carouselWords = useMemo(
+    () => [...words, ...words],
+    [words]
+  );
+
+  /*
+   * =========================================================
+   * RESET WHEN WORDPRESS DATA CHANGES
+   * =========================================================
+   */
+
+  useEffect(() => {
+    setIsTransitioning(false);
+    setCurrentIndex(0);
+
+    const frame =
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsTransitioning(true);
+        });
+      });
+
+    return () =>
+      cancelAnimationFrame(frame);
+  }, [words]);
+
+  /*
+   * =========================================================
    * AUTOMATIC ROLLER
+   * =========================================================
    */
 
   useEffect(() => {
     if (words.length <= 1) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((current) => current + 1);
+      setCurrentIndex(
+        (current) => current + 1
+      );
     }, 2500);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [words.length]);
 
   /*
-   * SEAMLESS RESET
-   *
-   * When we reach the duplicated first word,
-   * instantly move back to the real first word
-   * after the animation has finished.
+   * =========================================================
+   * SEAMLESS LOOP
+   * =========================================================
    */
 
   useEffect(() => {
-    if (currentIndex !== words.length) return;
+    if (
+      currentIndex !== words.length
+    ) {
+      return;
+    }
 
     const timer = setTimeout(() => {
+      /*
+       * Βρισκόμαστε στο duplicated
+       * πρώτο slide.
+       *
+       * Αφαιρούμε προσωρινά
+       * το transition.
+       */
+
       setIsTransitioning(false);
+
+      /*
+       * Επιστρέφουμε στο πραγματικό
+       * πρώτο slide.
+       */
+
       setCurrentIndex(0);
+
+      /*
+       * Ξαναενεργοποιούμε animation
+       * αφού ολοκληρωθεί το reset.
+       */
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -76,11 +176,18 @@ export default function Hero({ data }: HeroProps) {
       });
     }, 750);
 
-    return () => clearTimeout(timer);
-  }, [currentIndex, words.length]);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [
+    currentIndex,
+    words.length,
+  ]);
 
   /*
-   * MOUSE / TOUCH DRAG
+   * =========================================================
+   * POINTER / DRAG
+   * =========================================================
    */
 
   useEffect(() => {
@@ -88,55 +195,103 @@ export default function Hero({ data }: HeroProps) {
 
     if (!roller) return;
 
-    const handlePointerDown = (event: PointerEvent) => {
+    const handlePointerDown = (
+      event: PointerEvent
+    ) => {
       dragging.current = true;
 
       startX.current = event.clientX;
-      startIndex.current = currentIndex;
+      startIndex.current =
+        currentIndex;
 
-      roller.setPointerCapture(event.pointerId);
+      roller.setPointerCapture(
+        event.pointerId
+      );
     };
 
-    const handlePointerMove = (event: PointerEvent) => {
+    const handlePointerMove = (
+      event: PointerEvent
+    ) => {
       if (!dragging.current) return;
 
-      const difference = event.clientX - startX.current;
+      const difference =
+        event.clientX -
+        startX.current;
 
-      const threshold = 110;
+      const threshold = 100;
 
-      if (Math.abs(difference) < threshold) return;
+      if (
+        Math.abs(difference) <
+        threshold
+      ) {
+        return;
+      }
 
       const movement = Math.floor(
-        Math.abs(difference) / threshold
+        Math.abs(difference) /
+          threshold
       );
 
       let nextIndex =
         startIndex.current +
-        (difference > 0 ? -movement : movement);
+        (difference > 0
+          ? -movement
+          : movement);
 
       /*
-       * Prevent going outside the carousel.
+       * Δεν αφήνουμε το drag
+       * να φύγει εκτός carousel.
        */
 
       if (nextIndex < 0) {
         nextIndex = 0;
       }
 
-      if (nextIndex > words.length) {
-        nextIndex = words.length;
+      if (
+        nextIndex > words.length
+      ) {
+        nextIndex =
+          words.length;
       }
 
       setCurrentIndex(nextIndex);
     };
 
-    const handlePointerUp = () => {
+    const handlePointerUp = (
+      event: PointerEvent
+    ) => {
       dragging.current = false;
+
+      if (
+        roller.hasPointerCapture(
+          event.pointerId
+        )
+      ) {
+        roller.releasePointerCapture(
+          event.pointerId
+        );
+      }
     };
 
-    roller.addEventListener("pointerdown", handlePointerDown);
-    roller.addEventListener("pointermove", handlePointerMove);
-    roller.addEventListener("pointerup", handlePointerUp);
-    roller.addEventListener("pointercancel", handlePointerUp);
+    roller.addEventListener(
+      "pointerdown",
+      handlePointerDown
+    );
+
+    roller.addEventListener(
+      "pointermove",
+      handlePointerMove
+    );
+
+    roller.addEventListener(
+      "pointerup",
+      handlePointerUp
+    );
+
+    roller.addEventListener(
+      "pointercancel",
+      handlePointerUp
+    );
 
     return () => {
       roller.removeEventListener(
@@ -159,45 +314,69 @@ export default function Hero({ data }: HeroProps) {
         handlePointerUp
       );
     };
-  }, [currentIndex, words.length]);
+  }, [
+    currentIndex,
+    words.length,
+  ]);
 
   /*
+   * =========================================================
    * KEYBOARD
+   * =========================================================
    */
 
   const handleKeyDown = (
     event: React.KeyboardEvent<HTMLDivElement>
   ) => {
-    if (event.key === "ArrowRight") {
+    if (
+      event.key === "ArrowRight"
+    ) {
       event.preventDefault();
 
-      setCurrentIndex((current) => {
-        if (current >= words.length) {
-          return 0;
-        }
+      setCurrentIndex(
+        (current) => {
+          if (
+            current >=
+            words.length
+          ) {
+            return 0;
+          }
 
-        return current + 1;
-      });
+          return current + 1;
+        }
+      );
     }
 
-    if (event.key === "ArrowLeft") {
+    if (
+      event.key === "ArrowLeft"
+    ) {
       event.preventDefault();
 
-      setCurrentIndex((current) => {
-        if (current <= 0) {
-          return words.length - 1;
-        }
+      setCurrentIndex(
+        (current) => {
+          if (current <= 0) {
+            return (
+              words.length - 1
+            );
+          }
 
-        return current - 1;
-      });
+          return current - 1;
+        }
+      );
     }
   };
 
+  /*
+   * =========================================================
+   * RENDER
+   * =========================================================
+   */
+
   return (
-    <section
-      ref={heroRef}
-      className="hero"
-    >
+    <section className="hero">
+
+      {/* BACKGROUND IMAGE */}
+
       {data.image && (
         <img
           src={data.image}
@@ -206,55 +385,115 @@ export default function Hero({ data }: HeroProps) {
         />
       )}
 
+      {/* NAVY FADE */}
+
       <div className="hero-overlay" />
+
+      {/* CONTENT */}
 
       <div className="hero-content">
 
+        {/* TITLE */}
+
         {data.title && (
           <h1 className="hero-title">
-            {data.title}
+            {data.title
+              .split("|")
+              .map(
+                (
+                  line,
+                  index,
+                  lines
+                ) => (
+                  <span key={index}>
+                    {line.trim()}
+
+                    {index <
+                      lines.length -
+                        1 && <br />}
+                  </span>
+                )
+              )}
           </h1>
         )}
 
-        <div
-          ref={rollerRef}
-          className="hero-roller"
-          tabIndex={0}
-          role="button"
-          aria-label="Change hero word"
-          onKeyDown={handleKeyDown}
-        >
+        {/* ROLLER */}
+
+        {words.length > 0 && (
           <div
-            className="hero-roller-track"
-            style={{
-              transform: `translateX(-${
-                currentIndex * 100
-              }%)`,
-              transition: isTransitioning
-                ? "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)"
-                : "none",
-            }}
+            ref={rollerRef}
+            className="hero-roller"
+            tabIndex={0}
+            role="region"
+            aria-label="Hero words"
+            onKeyDown={
+              handleKeyDown
+            }
           >
-            {carouselWords.map((word, index) => (
-              <div
-                className="hero-roller-word"
-                key={`${word}-${index}`}
-              >
-                {word}
-              </div>
-            ))}
+            <div
+              className="hero-roller-track"
+              style={{
+                transform:
+                  `translateX(-${
+                    currentIndex *
+                    100
+                  }%)`,
+
+                transition:
+                  isTransitioning
+                    ? "transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)"
+                    : "none",
+              }}
+            >
+              {carouselWords.map(
+                (
+                  word,
+                  index
+                ) => (
+                  <div
+                    className="hero-roller-word"
+                    key={`${word}-${index}`}
+                  >
+                    {word}
+                  </div>
+                )
+              )}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* DESCRIPTION */}
 
         {data.description && (
           <p className="hero-description">
-            {data.description}
+            {data.description
+              .split("|")
+              .map(
+                (
+                  line,
+                  index,
+                  lines
+                ) => (
+                  <span key={index}>
+                    {line.trim()}
+
+                    {index <
+                      lines.length -
+                        1 && <br />}
+                  </span>
+                )
+              )}
           </p>
         )}
 
+        {/* BUTTON */}
+
         {data.button_text && (
           <a
-            href={data.button_url || "#"}
+            href={
+              data.button_url ||
+              "#"
+            }
             className="hero-button"
           >
             {data.button_text}
