@@ -6,8 +6,8 @@ export default async function Reviews() {
   return (
     <section className="reviews-section" id="reviews">
       <div className="reviews-header">
-        <h2>Reviews</h2>
-        <p>What our students say about us.</p>
+        <h2>Αξιολογήσεις</h2>
+        <p>Η εμπειρία των μαθητών μας.</p>
       </div>
 
       <div className="reviews-grid">

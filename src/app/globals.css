@@ -141,7 +141,6 @@ section {
   white-space: nowrap;
 }
 
-
 /* =========================================================
    NAVBAR LOGO IMAGE
    ========================================================= */
@@ -162,7 +161,6 @@ section {
   width: 150px;
   height: 75px;
 }
-
 
 /* =========================================================
    LESSONS DROPDOWN
@@ -196,7 +194,6 @@ section {
 .navbar-lessons-button:hover {
   opacity: 0.75;
 }
-
 
 /* =========================================================
    DROPDOWN
@@ -248,7 +245,6 @@ section {
   z-index: 1100;
 }
 
-
 /* =========================================================
    SHOW DROPDOWN
    ========================================================= */
@@ -264,7 +260,6 @@ section {
     translateX(-50%)
     translateY(0);
 }
-
 
 /* =========================================================
    LESSON LINKS
@@ -321,18 +316,6 @@ section {
    MOBILE
    ========================================================= */
 
-@media (max-width: 700px) {
-  .lessons-dropdown {
-    width: 260px;
-    grid-template-columns: 1fr;
-    max-height: 260px;
-  }
-
-  .lessons-dropdown a {
-    font-size: 0.9rem !important;
-  }
-}
-
 /* =========================================================
    AUTH NAV
    ========================================================= */
@@ -376,61 +359,9 @@ section {
   opacity: 0.7;
 }
 
-
 /* =========================================================
    NAVBAR MOBILE
    ========================================================= */
-
-@media (max-width: 768px) {
-  .navbar {
-    width: 100%;
-    min-height: 70px;
-
-    padding: 0 20px;
-
-    gap: 16px;
-  }
-
-  .navbar-shell.navbar-scrolled .navbar {
-    min-height: 64px;
-  }
-
-  .navbar-links {
-    gap: 14px;
-  }
-
-  .navbar-links a,
-  .navbar-login,
-  .navbar-lessons-button,
-  .navbar-username,
-  .navbar-logout {
-    font-size: 0.85rem;
-  }
-
-  .navbar-logo {
-    font-size: 1.1rem;
-  }
-
-  .navbar-logo-image {
-    width: 140px;
-    height: 50px;
-  }
-
-  .navbar-shell.navbar-scrolled .navbar-logo-image {
-    width: 130px;
-    height: 46px;
-  }
-
-  .navbar-auth {
-    gap: 10px;
-  }
-
-  .lessons-dropdown {
-    top: calc(100% + 12px);
-    min-width: 135px;
-  }
-}
-
 
 /* =========================================================
    LESSONS PAGE
@@ -470,6 +401,7 @@ section {
   font-weight: 500;
   line-height: 1.15;
   color: #d6ad68;
+  
 }
 
 .lessons-header p {
@@ -477,6 +409,7 @@ section {
   color: #d6ad68;
   font-size: 1.05rem;
   line-height: 1.7;
+  font-family: "Cinzel", serif;
 }
 
 /* Grid */
@@ -497,7 +430,7 @@ section {
   overflow: hidden;
 
   color: #172b42;
-  text-decoration: none;
+  font-family: "Cinzel", serif;
 
   background: #d6ad68;
   border: 1px solid rgba(20, 40, 60, 0.12);
@@ -705,71 +638,7 @@ section {
 
 /* Tablet */
 
-@media (max-width: 1000px) {
-  .lessons-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-
-  .lesson-card-title-group h2 {
-    font-size: 1.25rem;
-  }
-}
-
 /* Mobile */
-
-@media (max-width: 600px) {
-  .lessons-page {
-    width: min(100% - 30px, 480px);
-    padding: 120px 0 70px;
-  }
-
-  .lessons-header {
-    margin-bottom: 35px;
-  }
-
-  .lessons-header h1 {
-    font-size: clamp(2rem, 9vw, 2.7rem);
-  }
-
-  .lessons-header p {
-    font-size: 0.95rem;
-  }
-
-  .lessons-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
-
-  .lesson-card-image-wrapper {
-    aspect-ratio: 1.6 / 1;
-  }
-
-  .lesson-card-content {
-    padding: 20px;
-  }
-
-  .lesson-card-heading {
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  .lesson-card-icon {
-    flex-basis: 52px;
-    width: 52px;
-    height: 52px;
-    font-size: 1.35rem;
-  }
-
-  .lesson-card-title-group h2 {
-    font-size: 1.3rem;
-  }
-
-  .lesson-card-description {
-    font-size: 0.95rem;
-  }
-}
-
 
 /* =========================================================
    LESSON SINGLE PAGE
@@ -886,7 +755,6 @@ section {
   overflow: hidden;
 }
 
-
 /* =========================================================
    HERO
    ========================================================= */
@@ -974,7 +842,6 @@ section {
   background: #d6ad68;
 }
 
-
 /* =========================================================
    DETAILS
    ========================================================= */
@@ -1057,7 +924,6 @@ section {
   line-height: 1.5;
 }
 
-
 /* =========================================================
    GLOBAL LESSON CONTAINER
    ========================================================= */
@@ -1066,7 +932,6 @@ section {
   width: min(1100px, calc(100% - 40px));
   margin: 0 auto;
 }
-
 
 /* =========================================================
    SECTION HEADING
@@ -1109,7 +974,6 @@ section {
 
   background: #d6ad68;
 }
-
 
 /* =========================================================
    SYLLABUS
@@ -1182,7 +1046,6 @@ section {
   font-weight: 700;
 }
 
-
 /* =========================================================
    MAIN CONTENT
    ========================================================= */
@@ -1247,186 +1110,17 @@ section {
   margin-bottom: 10px;
 }
 
-
 /* =========================================================
    TABLET
    ========================================================= */
-
-@media (max-width: 992px) {
-
-  .lesson-hero {
-    height: 60vh;
-    min-height: 500px;
-  }
-
-  .lesson-hero-content {
-    padding: 0 40px;
-  }
-
-  .lesson-details {
-    margin-top: -55px;
-  }
-
-  .lesson-details-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .lesson-detail-card {
-    border-bottom:
-      1px solid rgba(214, 173, 104, 0.22);
-  }
-
-  .lesson-detail-card:nth-child(2) {
-    border-right: 0;
-  }
-
-  .lesson-detail-card:nth-last-child(-n + 2) {
-    border-bottom: 0;
-  }
-
-  .lesson-syllabus-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
-@media (max-width: 600px) {
-
-  .lesson-hero {
-    height: 70vh;
-    min-height: 520px;
-
-    align-items: flex-end;
-  }
-
-  .lesson-hero-overlay {
-    background:
-      linear-gradient(
-        0deg,
-        rgba(8, 26, 43, 0.98) 0%,
-        rgba(8, 26, 43, 0.75) 55%,
-        rgba(8, 26, 43, 0.3) 100%
-      );
-  }
-
-  .lesson-hero-content {
-    padding:
-      0 25px 115px;
-  }
-
-  .lesson-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-  }
-
-  .lesson-hero-content h1 {
-    font-size: clamp(2.7rem, 14vw, 4.2rem);
-
-    letter-spacing: -1px;
-  }
-
-  .lesson-details {
-    width: calc(100% - 30px);
-
-    margin-top: -65px;
-  }
-
-  .lesson-details-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .lesson-detail-card {
-    min-height: 175px;
-
-    padding: 25px 15px;
-  }
-
-  .lesson-detail-icon {
-    font-size: 1.6rem;
-
-    margin-bottom: 12px;
-  }
-
-  .lesson-detail-label {
-    font-size: 0.62rem;
-
-    letter-spacing: 1.4px;
-  }
-
-  .lesson-detail-card strong {
-    font-size: 0.9rem;
-  }
-
-  .lesson-syllabus {
-    padding: 95px 0 80px;
-  }
-
-  .lesson-section-heading {
-    margin-bottom: 40px;
-  }
-
-  .lesson-section-heading h2 {
-    font-size: 2.15rem;
-  }
-
-  .lesson-syllabus-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lesson-syllabus-item {
-    min-height: 75px;
-
-    padding: 18px 20px;
-  }
-
-  .lesson-main-content {
-    padding: 85px 0 95px;
-  }
-
-  .lesson-content {
-    font-size: 1rem;
-
-    line-height: 1.8;
-  }
-
-}
-
-
 /* =========================================================
    VERY SMALL MOBILE
    ========================================================= */
-
-@media (max-width: 420px) {
-
-  .lesson-details-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .lesson-detail-card {
-    min-height: 145px;
-
-    border-right: 0;
-
-    border-bottom:
-      1px solid rgba(214, 173, 104, 0.22);
-  }
-
-  .lesson-detail-card:nth-last-child(-n + 2) {
-    border-bottom:
-      1px solid rgba(214, 173, 104, 0.22);
-  }
-
-  .lesson-detail-card:last-child {
-    border-bottom: 0;
-  }
-
-}
-
 
 /* =========================================================
    HERO
@@ -1446,7 +1140,6 @@ section {
   background: #081a2b;
 }
 
-
 /* =========================================================
    HERO IMAGE
    ========================================================= */
@@ -1463,7 +1156,6 @@ section {
 
   z-index: 0;
 }
-
 
 /* =========================================================
    HERO FADE / OVERLAY
@@ -1487,7 +1179,6 @@ section {
     );
 }
 
-
 /* =========================================================
    HERO CONTENT
    ========================================================= */
@@ -1506,7 +1197,6 @@ section {
   text-align: left;
   color: #fff;
 }
-
 
 /* =========================================================
    STATIC TITLE
@@ -1530,7 +1220,6 @@ section {
   text-shadow:
     0 4px 20px rgba(0, 0, 0, 0.25);
 }
-
 
 /* =========================================================
    ROLLER
@@ -1561,7 +1250,6 @@ section {
   outline-offset: 6px;
 }
 
-
 /* =========================================================
    ROLLER TRACK
    ========================================================= */
@@ -1578,7 +1266,6 @@ section {
 
   will-change: transform;
 }
-
 
 /* =========================================================
    ROLLER WORD
@@ -1612,7 +1299,6 @@ section {
     0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
-
 /* =========================================================
    HERO DESCRIPTION
    ========================================================= */
@@ -1627,7 +1313,6 @@ section {
 
   color: rgba(255, 255, 255, 0.82);
 }
-
 
 /* =========================================================
    HERO BUTTON
@@ -1689,114 +1374,13 @@ section {
   transform: translateX(6px);
 }
 
-
 /* =========================================================
    HERO MOBILE
    ========================================================= */
 
-@media (max-width: 900px) {
-
-  .hero {
-    min-height: 700px;
-  }
-
-  .hero-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(7, 24, 40, 0.94) 0%,
-        rgba(7, 24, 40, 0.82) 55%,
-        rgba(7, 24, 40, 0.48) 100%
-      );
-  }
-
-  .hero-content {
-    width: calc(100% - 50px);
-  }
-
-  .hero-title {
-    max-width: 550px;
-
-    font-size: clamp(40px, 8vw, 60px);
-  }
-}
-
-
-@media (max-width: 600px) {
-
-  .hero {
-    min-height: 680px;
-  }
-
-  .hero-image {
-    object-position: 60% center;
-  }
-
-  .hero-overlay {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(7, 24, 40, 0.92),
-        rgba(7, 24, 40, 0.68)
-      );
-  }
-
-  .hero-content {
-    width: calc(100% - 40px);
-  }
-
-  .hero-title {
-    font-size: 38px;
-  }
-
-  .hero-roller {
-    height: 50px;
-  }
-
-  .hero-roller-word {
-    font-size: 28px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-  }
-}
-
 /* =========================================================
    HERO MOBILE
    ========================================================= */
-
-@media (max-width: 700px) {
-
-  .hero {
-    min-height: 620px;
-  }
-
-  .hero-title {
-    font-size: clamp(34px, 10vw, 48px);
-  }
-
-  .hero-roller {
-    width: min(450px, 100%);
-    height: 48px;
-
-    margin-top: 10px;
-  }
-
-  .hero-roller-word {
-    font-size: clamp(24px, 7vw, 32px);
-  }
-
-  .hero-description {
-    font-size: 16px;
-    margin-top: 22px;
-  }
-
-  .hero-button {
-    margin-top: 22px;
-  }
-}
-
 
 /* =========================================================
    REVIEWS
@@ -1808,7 +1392,6 @@ section {
   background: #f3eee5;
   overflow: hidden;
 }
-
 
 /* Decorative background text */
 
@@ -1832,7 +1415,6 @@ section {
   pointer-events: none;
 }
 
-
 /* =========================================================
    HEADER
    ========================================================= */
@@ -1847,7 +1429,6 @@ section {
 
   text-align: center;
 }
-
 
 /* Small gold line above title */
 
@@ -1888,7 +1469,6 @@ section {
   line-height: 1.7;
 }
 
-
 /* =========================================================
    GRID
    ========================================================= */
@@ -1907,7 +1487,6 @@ section {
 
   gap: 25px;
 }
-
 
 /* =========================================================
    REVIEW CARD
@@ -1932,7 +1511,6 @@ section {
     box-shadow 0.35s ease,
     border-color 0.35s ease;
 }
-
 
 /* Gold line at top */
 
@@ -1965,7 +1543,6 @@ section {
   box-shadow:
     0 25px 55px rgba(8, 26, 43, 0.13);
 }
-
 
 /* =========================================================
    IMAGE
@@ -2011,7 +1588,6 @@ section {
   transform: scale(1.06);
 }
 
-
 /* =========================================================
    CONTENT
    ========================================================= */
@@ -2021,7 +1597,6 @@ section {
 
   padding: 35px 32px 38px;
 }
-
 
 /* Big decorative quotation mark */
 
@@ -2042,7 +1617,6 @@ section {
   pointer-events: none;
 }
 
-
 /* =========================================================
    NAME
    ========================================================= */
@@ -2061,7 +1635,6 @@ section {
   line-height: 1.3;
 }
 
-
 /* =========================================================
    RATING
    ========================================================= */
@@ -2078,7 +1651,6 @@ section {
 
   letter-spacing: 3px;
 }
-
 
 /* =========================================================
    REVIEW TEXT
@@ -2098,105 +1670,17 @@ section {
   margin: 0;
 }
 
-
 /* =========================================================
    TABLET
    ========================================================= */
-
-@media (max-width: 1000px) {
-
-  .reviews-section {
-    padding:
-      100px 5%;
-  }
-
-  .reviews-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-}
-
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
-@media (max-width: 650px) {
-
-  .reviews-section {
-    padding:
-      80px 18px;
-  }
-
-  .reviews-section::before {
-    top: 35px;
-
-    font-size: 80px;
-
-    letter-spacing: -4px;
-  }
-
-  .reviews-header {
-    margin-bottom: 45px;
-  }
-
-  .reviews-header h2 {
-    font-size: 2.7rem;
-
-    letter-spacing: -1px;
-  }
-
-  .reviews-header p {
-    font-size: 15px;
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-
-    gap: 22px;
-  }
-
-  .review-image-wrapper {
-    height: 210px;
-  }
-
-  .review-card-content {
-    padding:
-      30px 25px 34px;
-  }
-
-}
-
-
 /* =========================================================
    REVIEWS MOBILE
    ========================================================= */
-
-@media (max-width: 900px) {
-  .reviews-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .reviews-section {
-    padding: 70px 20px;
-  }
-
-  .reviews-header h2 {
-    font-size: 34px;
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .review-card-content {
-    padding: 22px;
-  }
-}
-
 
 /* =========================================================
    FOOTER
@@ -2209,7 +1693,6 @@ section {
   color: #081a2b;
   overflow: hidden;
 }
-
 
 /* =========================================================
    FOOTER INNER
@@ -2230,7 +1713,6 @@ section {
   gap: 60px;
   align-items: start;
 }
-
 
 /* =========================================================
    FOOTER BRAND
@@ -2274,7 +1756,6 @@ section {
   line-height: 1.7;
 }
 
-
 /* =========================================================
    FOOTER COLUMNS
    ========================================================= */
@@ -2297,7 +1778,6 @@ section {
 
   letter-spacing: 0.08em;
 }
-
 
 /* =========================================================
    FOOTER NAVIGATION
@@ -2333,7 +1813,6 @@ section {
   transform: translateX(3px);
 }
 
-
 /* =========================================================
    FOOTER CONTACT
    ========================================================= */
@@ -2344,7 +1823,6 @@ section {
 
   gap: 13px;
 }
-
 
 /* =========================================================
    FOOTER CTA
@@ -2386,7 +1864,6 @@ section {
 
   letter-spacing: -0.04em;
 }
-
 
 /* =========================================================
    FOOTER BUTTON
@@ -2444,7 +1921,6 @@ section {
   transform: translateX(4px);
 }
 
-
 /* =========================================================
    FOOTER BOTTOM
    ========================================================= */
@@ -2493,76 +1969,13 @@ section {
   color: #081a2b;
 }
 
-
 /* =========================================================
    FOOTER TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
-  .site-footer__inner {
-    grid-template-columns:
-      1fr
-      1fr;
-
-    gap: 50px;
-  }
-
-  .site-footer__brand {
-    max-width: 100%;
-  }
-
-  .site-footer__cta {
-    padding-left: 0;
-
-    padding-top: 30px;
-
-    border-left: 0;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-  }
-}
-
-
 /* =========================================================
    FOOTER MOBILE
    ========================================================= */
-
-@media (max-width: 600px) {
-  .site-footer__inner {
-    width: min(100% - 36px, 1200px);
-
-    padding: 65px 0 55px;
-
-    grid-template-columns: 1fr;
-
-    gap: 40px;
-  }
-
-  .site-footer__logo {
-    font-size: 28px;
-  }
-
-  .site-footer__cta h3 {
-    font-size: 32px;
-  }
-
-  .site-footer__bottom {
-    width: min(100% - 36px, 1200px);
-
-    padding: 22px 0 25px;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 15px;
-  }
-
-  .site-footer__legal {
-    gap: 18px;
-  }
-}
-
 
 /* =========================================================
    OUR PLACE PAGE
@@ -2573,7 +1986,6 @@ section {
   padding: 100px 6vw 100px;
   background: #d6ad68;
 }
-
 
 /* =========================================================
    OUR PLACE HEADER
@@ -2587,6 +1999,7 @@ section {
 }
 
 .our-place-header h1 {
+  font-family: "Cinzel", serif;
   margin: 0 0 14px;
 
   font-size: clamp(34px, 4vw, 52px);
@@ -2596,6 +2009,7 @@ section {
 }
 
 .our-place-header p {
+  font-family: "Cinzel", serif;
   max-width: 700px;
   margin: 0 auto;
 
@@ -2606,7 +2020,6 @@ section {
   color:#081a2b;
 }
 
-
 /* =========================================================
    GALLERY
    ========================================================= */
@@ -2616,7 +2029,6 @@ section {
   max-width: 700px;
   margin: 0 auto;
 }
-
 
 /* =========================================================
    MAIN IMAGE
@@ -2706,7 +2118,6 @@ section {
     scale(1.08);
 }
 
-
 /* =========================================================
    IMAGE CONTENT
    ========================================================= */
@@ -2755,7 +2166,6 @@ section {
   color:#081a2b;
 }
 
-
 /* =========================================================
    THUMBNAILS ROW
    ========================================================= */
@@ -2775,7 +2185,6 @@ section {
 
   scrollbar-width: thin;
 }
-
 
 /* =========================================================
    THUMBNAIL
@@ -2807,7 +2216,6 @@ section {
     transform 0.25s ease;
 }
 
-
 /* =========================================================
    THUMBNAIL HOVER
    ========================================================= */
@@ -2817,7 +2225,6 @@ section {
   transform: translateY(-2px);
 }
 
-
 /* =========================================================
    ACTIVE THUMBNAIL
    ========================================================= */
@@ -2826,7 +2233,6 @@ section {
   opacity: 1;
   border-color: #111;
 }
-
 
 /* =========================================================
    THUMBNAIL IMAGE
@@ -2841,116 +2247,59 @@ section {
   object-fit: cover;
 }
 
+/* =========================================
+   OUR PLACE - REVERSED FOOTER
+   ========================================= */
+
+.footer-our-place .site-footer {
+  background: #081a2b;
+  color: #d6ad68;
+}
+
+.footer-our-place .site-footer__logo,
+.footer-our-place .site-footer__heading,
+.footer-our-place .site-footer__cta h3 {
+  color: #d6ad68;
+}
+
+.footer-our-place .site-footer__tagline,
+.footer-our-place .site-footer__eyebrow,
+.footer-our-place .site-footer__bottom p {
+  color: rgba(214, 173, 104, 0.7);
+}
+
+.footer-our-place .site-footer__nav a,
+.footer-our-place .site-footer__contact a,
+.footer-our-place .site-footer__legal a {
+  color: #d6ad68;
+}
+
+.footer-our-place .site-footer__button {
+  color: #081a2b;
+  background: #d6ad68;
+  border-color: #d6ad68;
+}
+
+.footer-our-place .site-footer__button:hover {
+  background: transparent;
+  color: #d6ad68;
+}
+
+.footer-our-place .site-footer__bottom {
+  border-top-color: rgba(214, 173, 104, 0.25);
+}
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
-@media (max-width: 700px) {
-
-  .our-place-page {
-    padding: 125px 5vw 70px;
-  }
-
-  .our-place-header {
-    margin-bottom: 40px;
-  }
-
-  .our-place-header h1 {
-    font-size: clamp(36px, 11vw, 52px);
-  }
-
-  .our-place-header p {
-    font-size: 16px;
-  }
-
-  .our-place-gallery-main {
-    aspect-ratio: 4 / 3;
-    border-radius: 14px;
-  }
-
-  .our-place-gallery-content {
-    padding-top: 20px;
-  }
-
-  .our-place-gallery-content h2 {
-    font-size: 25px;
-  }
-
-  .our-place-gallery-content p {
-    font-size: 16px;
-  }
-
-  .our-place-gallery-thumbnail {
-    flex: 0 0 100px;
-
-    width: 100px;
-    height: 70px;
-
-    border-radius: 8px;
-  }
-}
-
-
 /* =========================================================
    OUR PLACE TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
-  .our-place-page {
-    padding: 100px 5vw 80px;
-  }
-
-  .our-place-gallery {
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-  }
-}
-
-
 /* =========================================================
    OUR PLACE MOBILE
    ========================================================= */
-
-@media (max-width: 600px) {
-  .our-place-page {
-    padding: 80px 20px 60px;
-  }
-
-  .our-place-header {
-    margin-bottom: 50px;
-  }
-
-  .our-place-header h1 {
-    font-size: 44px;
-  }
-
-  .our-place-header p {
-    font-size: 16px;
-  }
-
-  .our-place-gallery {
-    gap: 45px;
-  }
-
-  .our-place-gallery-image {
-    border-radius: 14px;
-  }
-
-  .our-place-gallery-content {
-    padding-top: 18px;
-  }
-
-  .our-place-gallery-content h2 {
-    font-size: 21px;
-  }
-
-  .our-place-gallery-content p {
-    font-size: 15px;
-  }
-}
-
 
 /* =========================================================
    ABOUT
@@ -2977,7 +2326,6 @@ section {
  
   background: #d6ad68;
 }
-
 
 /* =========================================================
    ABOUT CONTENT
@@ -3017,7 +2365,6 @@ section {
   margin-bottom: 0;
 }
 
-
 /* =========================================================
    ABOUT IMAGE
    ========================================================= */
@@ -3047,57 +2394,13 @@ section {
   transform: scale(1.02);
 }
 
-
 /* =========================================================
    ABOUT TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
-  .about {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-
-    padding: 100px 30px;
-  }
-
-  .about-content {
-    max-width: 700px;
-  }
-
-  .about-image {
-    height: 500px;
-  }
-}
-
-
 /* =========================================================
    ABOUT MOBILE
    ========================================================= */
-
-@media (max-width: 600px) {
-  .about {
-    padding: 80px 20px;
-
-    gap: 40px;
-  }
-
-  .about-content h2 {
-    margin-bottom: 24px;
-  }
-
-  .about-content > div {
-    font-size: 16px;
-
-    line-height: 1.7;
-  }
-
-  .about-image {
-    height: 400px;
-
-    border-radius: 18px;
-  }
-}
 
 /* =========================================================
    LOGIN PAGE
@@ -3108,7 +2411,6 @@ section {
   min-height: 100vh;
   background: #081a2b;
 }
-
 
 /* =========================================================
    LOGIN SECTION
@@ -3138,7 +2440,6 @@ section {
       #0b2136 100%
     );
 }
-
 
 /* =========================================================
    DECORATIONS
@@ -3170,7 +2471,6 @@ section {
   left: -100px;
 }
 
-
 /* =========================================================
    CONTAINER
    ========================================================= */
@@ -3193,7 +2493,6 @@ section {
 
   align-items: center;
 }
-
 
 /* =========================================================
    INTRO
@@ -3252,7 +2551,6 @@ section {
   line-height: 1.8;
 }
 
-
 /* =========================================================
    LOGIN CARD
    ========================================================= */
@@ -3307,7 +2605,6 @@ section {
 
   line-height: 1.6;
 }
-
 
 /* =========================================================
    FORM
@@ -3380,7 +2677,6 @@ section {
   cursor: not-allowed;
 }
 
-
 /* =========================================================
    ERROR
    ========================================================= */
@@ -3398,7 +2694,6 @@ section {
 
   line-height: 1.5;
 }
-
 
 /* =========================================================
    BUTTON
@@ -3450,7 +2745,6 @@ section {
   cursor: wait;
 }
 
-
 /* =========================================================
    CARD FOOTER
    ========================================================= */
@@ -3486,91 +2780,13 @@ section {
   line-height: 1.5;
 }
 
-
 /* =========================================================
    TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
-
-  .login-section {
-    padding:
-      140px 30px
-      90px;
-  }
-
-  .login-container {
-    grid-template-columns: 1fr;
-
-    gap: 60px;
-
-    max-width: 600px;
-  }
-
-  .login-intro {
-    text-align: center;
-
-    margin: 0 auto;
-  }
-
-  .login-title-line {
-    margin:
-      28px auto;
-  }
-
-  .login-intro p {
-    margin:
-      0 auto;
-  }
-
-}
-
-
 /* =========================================================
    MOBILE
    ========================================================= */
-
-@media (max-width: 600px) {
-
-  .login-section {
-    padding:
-      120px 18px
-      70px;
-  }
-
-  .login-container {
-    gap: 45px;
-  }
-
-  .login-intro h1 {
-    font-size: 3.3rem;
-
-    letter-spacing: -2px;
-  }
-
-  .login-intro p {
-    font-size: 0.95rem;
-  }
-
-  .login-card {
-    padding:
-      38px 24px
-      30px;
-  }
-
-  .login-card-heading h2 {
-    font-size: 1.8rem;
-  }
-
-  .login-field input {
-    height: 52px;
-  }
-
-  .login-submit {
-    height: 54px;
-  }
-
-}
 
 /* =========================================================
    STUDENT DASHBOARD
@@ -3581,7 +2797,6 @@ section {
   background: #f3eee5;
   color: #081a2b;
 }
-
 
 /* =========================================================
    HERO
@@ -3648,7 +2863,6 @@ section {
   gap: 50px;
 }
 
-
 /* =========================================================
    WELCOME
    ========================================================= */
@@ -3694,7 +2908,6 @@ section {
 
   line-height: 1.8;
 }
-
 
 /* =========================================================
    LOGOUT
@@ -3753,7 +2966,6 @@ section {
   transform: translateX(4px);
 }
 
-
 /* =========================================================
    NOTES SECTION
    ========================================================= */
@@ -3771,7 +2983,6 @@ section {
 
   margin: 0 auto;
 }
-
 
 /* =========================================================
    SECTION HEADING
@@ -3816,7 +3027,6 @@ section {
   background: #d6ad68;
 }
 
-
 /* =========================================================
    NOTES GRID
    ========================================================= */
@@ -3829,7 +3039,6 @@ section {
 
   gap: 24px;
 }
-
 
 /* =========================================================
    NOTE CARD
@@ -3892,7 +3101,6 @@ section {
   height: 100%;
 }
 
-
 /* =========================================================
    NOTE TOP
    ========================================================= */
@@ -3922,7 +3130,6 @@ section {
   letter-spacing: -1px;
 }
 
-
 /* =========================================================
    NOTE TITLE
    ========================================================= */
@@ -3937,7 +3144,6 @@ section {
 
   line-height: 1.3;
 }
-
 
 /* =========================================================
    NOTE CONTENT
@@ -3971,7 +3177,6 @@ section {
   text-decoration: underline;
 }
 
-
 /* =========================================================
    NOTE FOOTER
    ========================================================= */
@@ -3994,7 +3199,6 @@ section {
 
   text-transform: uppercase;
 }
-
 
 /* =========================================================
    EMPTY STATE
@@ -4054,7 +3258,6 @@ section {
   line-height: 1.7;
 }
 
-
 /* =========================================================
    ERROR
    ========================================================= */
@@ -4084,7 +3287,6 @@ section {
 
   font-size: 0.9rem;
 }
-
 
 /* =========================================================
    LOADING
@@ -4139,100 +3341,13 @@ section {
   }
 }
 
-
 /* =========================================================
    TABLET
    ========================================================= */
 
-@media (max-width: 950px) {
-
-  .dashboard-hero {
-    padding:
-      160px 30px 90px;
-  }
-
-  .dashboard-hero-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .dashboard-notes {
-    padding:
-      90px 30px 110px;
-  }
-
-  .dashboard-notes-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-}
-
-
 /* =========================================================
    MOBILE
    ========================================================= */
-
-@media (max-width: 650px) {
-
-  .dashboard-hero {
-    padding:
-      140px 20px 75px;
-  }
-
-  .dashboard-hero::before {
-    font-size: 100px;
-
-    bottom: -10px;
-  }
-
-  .dashboard-welcome h1 {
-    font-size: 3rem;
-
-    letter-spacing: -2px;
-  }
-
-  .dashboard-welcome p {
-    margin-top: 22px;
-
-    font-size: 0.93rem;
-  }
-
-  .dashboard-logout {
-    width: 100%;
-
-    justify-content: space-between;
-  }
-
-  .dashboard-notes {
-    padding:
-      75px 18px 90px;
-  }
-
-  .dashboard-section-heading {
-    margin-bottom: 40px;
-  }
-
-  .dashboard-section-heading h2 {
-    font-size: 2.5rem;
-  }
-
-  .dashboard-notes-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-note-card {
-    min-height: auto;
-
-    padding: 27px 24px;
-  }
-
-  .dashboard-empty {
-    padding:
-      55px 25px;
-  }
-
-}
 
 /* =========================================================
    SCROLL TO TOP
@@ -4281,7 +3396,6 @@ section {
     border-color 0.25s ease;
 }
 
-
 /* Visible */
 
 .scroll-to-top-visible {
@@ -4291,7 +3405,6 @@ section {
   transform:
     translateY(0);
 }
-
 
 /* Arrow */
 
@@ -4306,7 +3419,6 @@ section {
   transition:
     transform 0.25s ease;
 }
-
 
 /* Hover */
 
@@ -4325,7 +3437,6 @@ section {
     translateY(-2px);
 }
 
-
 /* Active */
 
 .scroll-to-top:active {
@@ -4333,23 +3444,3903 @@ section {
     translateY(-1px);
 }
 
-
 /* =========================================================
    MOBILE
    ========================================================= */
 
+/* =========================================================
+   LARGE / ULTRA-WIDE SCREENS
+   NOTE:
+   Tablet and mobile responsive rules were intentionally
+   removed for now. They will be rebuilt separately.
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+  .navbar {
+    max-width: 1720px;
+    margin: 0 auto;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .hero {
+    min-height: min(900px, 90vh);
+  }
+
+  .hero-content {
+    width: min(1600px, calc(100% - 120px));
+  }
+
+  .hero-title {
+    max-width: 760px;
+    font-size: clamp(70px, 4.3vw, 88px);
+  }
+
+  .hero-roller {
+    width: 680px;
+    height: 75px;
+  }
+
+  .hero-roller-word {
+    font-size: 54px;
+  }
+
+  .hero-description {
+    max-width: 620px;
+    font-size: 19px;
+  }
+
+  .about {
+    max-width: 1600px;
+    padding: 160px 80px;
+    gap: 120px;
+  }
+
+  .about-content {
+    max-width: 680px;
+  }
+
+  .about-image {
+    height: 400px;
+  }
+
+  .reviews-grid {
+    width: min(1450px, 100%);
+  }
+
+  .lessons-page {
+    padding-left: max(60px, calc((100% - 1600px) / 2));
+    padding-right: max(60px, calc((100% - 1600px) / 2));
+  }
+
+  .lesson-hero-content {
+    max-width: 1600px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .lesson-details {
+    width: min(1450px, calc(100% - 120px));
+  }
+
+  .our-place-gallery {
+    max-width: 900px;
+  }
+
+  .site-footer__inner,
+  .site-footer__bottom {
+    width: min(1450px, calc(100% - 120px));
+  }
+
+  .dashboard-hero-inner,
+  .dashboard-container {
+    width: min(1450px, 100%);
+  }
+}
+
+@media (min-width: 2200px) {
+
+  .navbar {
+    max-width: 1900px;
+  }
+
+  .hero-content {
+    width: min(1800px, calc(100% - 160px));
+  }
+
+  .about {
+    max-width: 1800px;
+  }
+
+  .reviews-grid {
+    width: min(1600px, 100%);
+  }
+
+  .site-footer__inner,
+  .site-footer__bottom {
+    width: min(1600px, calc(100% - 160px));
+  }
+}
+
+/* =========================================================
+   NAVBAR RESPONSIVE
+   ========================================================= */
+
+/* Hamburger hidden on desktop */
+
+.navbar-toggle {
+  display: none;
+}
+
+
+/* Wrapper behaves like the old desktop navbar */
+
+.navbar-mobile-content {
+  display: contents;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .navbar {
+    min-height: 90px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+
+  .navbar-logo-image {
+    width: 145px;
+    height: 76px;
+  }
+
+  .navbar-shell.navbar-scrolled .navbar-logo-image {
+    width: 135px;
+    height: 68px;
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+
+  .navbar-links a,
+  .navbar-login,
+  .navbar-username,
+  .navbar-logout,
+  .navbar-lessons-button {
+    font-size: 1.2rem !important;
+  }
+
+  .navbar-auth {
+    gap: 12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .navbar {
+    position: relative;
+
+    min-height: 78px;
+
+    padding:
+      0 22px;
+
+    z-index: 2;
+  }
+
+
+  /* -----------------------------------------
+     Header background
+     ----------------------------------------- */
+
+  .site-header {
+    background:
+      rgba(8, 26, 43, 0.96);
+
+    backdrop-filter:
+      blur(18px);
+
+    -webkit-backdrop-filter:
+      blur(18px);
+  }
+
+
+  /* -----------------------------------------
+     Logo
+     ----------------------------------------- */
+
+  .navbar-logo {
+    position: relative;
+    z-index: 10;
+  }
+
+  .navbar-logo-image,
+  .navbar-shell.navbar-scrolled
+  .navbar-logo-image {
+    width: 125px;
+    height: 62px;
+
+    object-fit: fill;
+  }
+
+
+  /* -----------------------------------------
+     Hamburger
+     ----------------------------------------- */
+
+  .navbar-toggle {
+    position: relative;
+    z-index: 10;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .navbar-toggle span {
+    display: block;
+
+    width: 26px;
+    height: 2px;
+
+    background: #d6ad68;
+
+    border-radius: 20px;
+
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+
+  /* Hamburger -> X */
+
+  .navbar-menu-open
+  .navbar-toggle span:nth-child(1) {
+    transform:
+      translateY(8px)
+      rotate(45deg);
+  }
+
+  .navbar-menu-open
+  .navbar-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-menu-open
+  .navbar-toggle span:nth-child(3) {
+    transform:
+      translateY(-8px)
+      rotate(-45deg);
+  }
+
+
+  /* -----------------------------------------
+     Mobile menu container
+     ----------------------------------------- */
+
+  .navbar-mobile-content {
+    position: fixed;
+
+    top: 78px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100dvh - 78px);
+
+    padding:
+      45px 28px
+      35px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    background:
+      rgba(8, 26, 43, 0.98);
+
+    backdrop-filter:
+      blur(22px);
+
+    -webkit-backdrop-filter:
+      blur(22px);
+
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+      translateY(-15px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+  }
+
+
+  /* Menu open */
+
+  .navbar-menu-open
+  .navbar-mobile-content {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+      translateY(0);
+
+    pointer-events: auto;
+  }
+
+
+  /* -----------------------------------------
+     Navigation links
+     ----------------------------------------- */
+
+  .navbar-links {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0;
+  }
+
+  .navbar-links > a,
+  .navbar-lessons {
+    width: 100%;
+
+    border-bottom:
+      1px solid
+      rgba(214, 173, 104, 0.18);
+  }
+
+  .navbar-links > a {
+    padding:
+      17px 0;
+  }
+
+  .navbar-links a,
+  .navbar-lessons-button {
+    font-size:
+      1.65rem !important;
+  }
+
+
+  /* -----------------------------------------
+     Lessons
+     ----------------------------------------- */
+
+  .navbar-lessons-button {
+    width: 100%;
+
+    padding:
+      17px 0;
+
+    justify-content:
+      space-between;
+  }
+
+  .lessons-arrow {
+    font-size: 10px;
+  }
+
+
+  /* Dropdown becomes normal content */
+
+  .lessons-dropdown {
+    position: static;
+
+    width: 100%;
+    max-height: none;
+
+    padding:
+      0 0 15px;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 6px 16px;
+
+    transform: none;
+
+    background: transparent;
+
+    border: 0;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+
+    overflow: visible;
+  }
+
+  .navbar-lessons:hover
+  .lessons-dropdown {
+    transform: none;
+  }
+
+  .lessons-dropdown a {
+    padding:
+      7px 0;
+
+    color:
+      rgba(214, 173, 104, 0.72)
+      !important;
+
+    background: transparent;
+
+    font-family:
+      "Caveat",
+      cursive;
+
+    font-size:
+      1.05rem !important;
+  }
+
+  .lessons-dropdown a:hover {
+    color:
+      #d6ad68 !important;
+
+    background:
+      transparent;
+  }
+
+
+  /* -----------------------------------------
+     Authentication
+     ----------------------------------------- */
+
+  .navbar-mobile-auth {
+    width: 100%;
+
+    margin-top: auto;
+    padding-top: 30px;
+  }
+
+  .navbar-auth {
+    width: 100%;
+
+    display: flex;
+
+    justify-content:
+      flex-start;
+
+    gap: 22px;
+  }
+
+  .navbar-login,
+  .navbar-username,
+  .navbar-logout {
+    font-size:
+      1.4rem !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    min-height: 72px;
+
+    padding:
+      0 18px;
+  }
+
+  .navbar-logo-image,
+  .navbar-shell.navbar-scrolled
+  .navbar-logo-image {
+    width: 112px;
+    height: 56px;
+  }
+
+  .navbar-mobile-content {
+    top: 72px;
+
+    height:
+      calc(100dvh - 72px);
+
+    padding:
+      30px 22px;
+  }
+
+  .navbar-links a,
+  .navbar-lessons-button {
+    font-size:
+      1.45rem !important;
+  }
+
+  .lessons-dropdown {
+    grid-template-columns: 1fr;
+  }
+
+  .lessons-dropdown a {
+    font-size:
+      1rem !important;
+  }
+}
+
+/* =========================================================
+   HERO RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   821px - 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero {
+    min-height: 720px;
+  }
+
+  .hero-content {
+    width: calc(100% - 70px);
+    max-width: 1000px;
+  }
+
+  .hero-title {
+    max-width: 620px;
+
+    font-size: clamp(
+      48px,
+      6vw,
+      64px
+    );
+  }
+
+  .hero-roller {
+    width: min(560px, 100%);
+    height: 60px;
+  }
+
+  .hero-roller-word {
+    font-size: clamp(
+      34px,
+      4vw,
+      44px
+    );
+  }
+
+  .hero-description {
+    max-width: 520px;
+
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .hero-button {
+    margin-top: 26px;
+
+    padding: 13px 27px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 820px
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .hero {
+    min-height: 100svh;
+
+    padding-top: 78px;
+
+    align-items: center;
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+     ----------------------------------------- */
+
+  .hero-image {
+    object-position: 62% center;
+  }
+
+
+  /* -----------------------------------------
+     DARK OVERLAY
+
+     Mobile needs more contrast because text
+     covers a larger percentage of the image.
+     ----------------------------------------- */
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 24, 40, 0.96) 0%,
+        rgba(7, 24, 40, 0.88) 42%,
+        rgba(7, 24, 40, 0.60) 72%,
+        rgba(7, 24, 40, 0.35) 100%
+      );
+  }
+
+
+  /* -----------------------------------------
+     CONTENT
+     ----------------------------------------- */
+
+  .hero-content {
+    width: calc(100% - 44px);
+
+    margin:
+      0 auto;
+
+    padding:
+      30px 0;
+
+    align-items:
+      flex-start;
+
+    text-align:
+      left;
+  }
+
+
+  /* -----------------------------------------
+     TITLE
+     ----------------------------------------- */
+
+  .hero-title {
+    width: 100%;
+    max-width: 560px;
+
+    font-size: clamp(
+      40px,
+      8.5vw,
+      58px
+    );
+
+    line-height: 1.05;
+
+    letter-spacing:
+      -0.025em;
+  }
+
+
+  /* -----------------------------------------
+     ROLLER
+     ----------------------------------------- */
+
+  .hero-roller {
+    width: 100%;
+    max-width: 520px;
+
+    height: 58px;
+
+    margin-top: 10px;
+  }
+
+  .hero-roller-word {
+    font-size: clamp(
+      30px,
+      6vw,
+      40px
+    );
+
+    white-space: normal;
+
+    line-height: 1.1;
+  }
+
+
+  /* -----------------------------------------
+     DESCRIPTION
+     ----------------------------------------- */
+
+  .hero-description {
+    width: 100%;
+    max-width: 520px;
+
+    margin-top: 20px;
+
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+
+  /* -----------------------------------------
+     BUTTON
+     ----------------------------------------- */
+
+  .hero-button {
+    margin-top: 24px;
+
+    padding:
+      13px 26px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+   ========================================================= */
+
 @media (max-width: 600px) {
 
-  .scroll-to-top {
+  .hero {
+    min-height: 100svh;
+
+    padding-top: 72px;
+
+    align-items: center;
+  }
+
+
+  /* Image moves slightly right so the subject
+     has more chance of remaining visible */
+
+  .hero-image {
+    object-position:
+      65% center;
+  }
+
+
+  /* Stronger mobile gradient */
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(7, 24, 40, 0.97) 0%,
+        rgba(7, 24, 40, 0.90) 48%,
+        rgba(7, 24, 40, 0.60) 100%
+      );
+  }
+
+
+  .hero-content {
+    width:
+      calc(100% - 36px);
+
+    padding:
+      25px 0;
+  }
+
+
+  /* -----------------------------------------
+     TITLE
+     ----------------------------------------- */
+
+  .hero-title {
+    max-width: 100%;
+
+    font-size: clamp(
+      34px,
+      10vw,
+      46px
+    );
+
+    line-height: 1.08;
+
+    letter-spacing:
+      -1px;
+  }
+
+
+  /* -----------------------------------------
+     ROLLER
+     ----------------------------------------- */
+
+  .hero-roller {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 8px;
+  }
+
+  .hero-roller-word {
+    font-size: clamp(
+      25px,
+      7vw,
+      32px
+    );
+
+    line-height: 1.1;
+  }
+
+
+  /* -----------------------------------------
+     DESCRIPTION
+     ----------------------------------------- */
+
+  .hero-description {
+    max-width: 100%;
+
+    margin-top: 18px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+
+  /* -----------------------------------------
+     BUTTON
+     ----------------------------------------- */
+
+  .hero-button {
+    gap: 11px;
+
+    margin-top: 22px;
+
+    padding:
+      12px 22px;
+
+    font-size: 14px;
+  }
+
+  .hero-button-arrow {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .hero-content {
+    width:
+      calc(100% - 30px);
+  }
+
+  .hero-title {
+    font-size:
+      clamp(
+        31px,
+        10vw,
+        39px
+      );
+  }
+
+  .hero-roller {
+    height: 48px;
+  }
+
+  .hero-roller-word {
+    font-size:
+      clamp(
+        23px,
+        7vw,
+        28px
+      );
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-button {
+    padding:
+      11px 20px;
+  }
+}
+
+
+/* =========================================================
+   SHORT MOBILE SCREENS
+   e.g. landscape / small-height devices
+   ========================================================= */
+
+@media (
+  max-width: 820px
+)
+and (
+  max-height: 650px
+) {
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .hero-content {
+    padding:
+      25px 0;
+  }
+
+  .hero-title {
+    font-size:
+      clamp(
+        32px,
+        8vw,
+        44px
+      );
+  }
+
+  .hero-roller {
+    height: 48px;
+  }
+
+  .hero-description {
+    margin-top: 14px;
+
+    line-height: 1.5;
+  }
+
+  .hero-button {
+    margin-top: 18px;
+  }
+}
+
+/* =========================================================
+   ABOUT RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .about {
+    width: calc(100% - 60px);
+
+    padding:
+      110px 0;
+
+    gap: 60px;
+  }
+
+  .about-content {
+    max-width: 520px;
+  }
+
+  .about-image {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+  }
+
+  .about h2 {
+    font-size:
+      clamp(
+        2.5rem,
+        5vw,
+        4rem
+      );
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .about {
+    width:
+      calc(100% - 48px);
+
+    padding:
+      95px 0;
+
+    gap: 42px;
+  }
+
+  .about-content {
+    max-width: none;
+  }
+
+  .about-image {
+    aspect-ratio:
+      4 / 3;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 700px
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .about {
+    width: 100%;
+
+    padding:
+      75px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 42px;
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+     ----------------------------------------- */
+
+  .about-image-wrapper {
+    width: 100%;
+  }
+
+  .about-image {
+    width: 100%;
+
+    aspect-ratio:
+      16 / 10;
+
+    height: auto;
+
+    object-fit: cover;
+  }
+
+
+  /* -----------------------------------------
+     CONTENT
+     ----------------------------------------- */
+
+  .about-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .about h2 {
+    font-size:
+      clamp(
+        2.3rem,
+        10vw,
+        3.2rem
+      );
+
+    line-height: 1.08;
+  }
+
+  .about p {
+    font-size: 16px;
+
+    line-height: 1.75;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   <= 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .about {
+    padding:
+      65px 18px;
+
+    gap: 34px;
+  }
+
+  .about h2 {
+    font-size:
+      clamp(
+        2.1rem,
+        10vw,
+        2.8rem
+      );
+  }
+
+  .about p {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+  .about-image {
+    aspect-ratio:
+      4 / 3;
+  }
+}
+
+/* =========================================================
+   REVIEWS RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .reviews-section {
+    padding:
+      100px 40px;
+  }
+
+  .reviews-header {
+    max-width: 680px;
+
+    margin-bottom: 55px;
+  }
+
+  .reviews-header h2 {
+    font-size:
+      clamp(
+        2.8rem,
+        5vw,
+        3.8rem
+      );
+  }
+
+  .reviews-grid {
+    width: min(900px, 100%);
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+  }
+
+  .review-image-wrapper {
+    height: 220px;
+  }
+
+  .review-card-content {
+    padding:
+      30px 28px 34px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 820px
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .reviews-section {
+    padding:
+      90px 28px;
+  }
+
+  .reviews-section::before {
+    top: 25px;
+
+    font-size:
+      clamp(
+        80px,
+        16vw,
+        130px
+      );
+
+    letter-spacing: -5px;
+  }
+
+  .reviews-header {
+    max-width: 600px;
+
+    margin-bottom: 48px;
+  }
+
+  .reviews-header h2 {
+    font-size:
+      clamp(
+        2.5rem,
+        7vw,
+        3.4rem
+      );
+
+    letter-spacing: -1.5px;
+  }
+
+  .reviews-header p {
+    font-size: 16px;
+  }
+
+  .reviews-grid {
+    gap: 20px;
+  }
+
+  .review-image-wrapper {
+    height: 200px;
+  }
+
+  .review-card-content {
+    padding:
+      28px 24px 32px;
+  }
+
+  .review-card-content h3 {
+    font-size: 19px;
+  }
+
+  .review-text {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .reviews-section {
+    padding:
+      75px 18px;
+  }
+
+
+  /* Background REVIEWS text */
+
+  .reviews-section::before {
+    top: 35px;
+
+    font-size:
+      clamp(
+        60px,
+        20vw,
+        90px
+      );
+
+    letter-spacing: -3px;
+  }
+
+
+  /* -----------------------------------------
+     HEADER
+     ----------------------------------------- */
+
+  .reviews-header {
+    margin-bottom: 40px;
+  }
+
+  .reviews-header::before {
+    width: 38px;
+
+    margin-bottom: 18px;
+  }
+
+  .reviews-header h2 {
+    margin-bottom: 15px;
+
+    font-size:
+      clamp(
+        2.2rem,
+        10vw,
+        2.8rem
+      );
+
+    line-height: 1.05;
+
+    letter-spacing: -1px;
+  }
+
+  .reviews-header p {
+    max-width: 420px;
+
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+
+  /* -----------------------------------------
+     GRID
+     ----------------------------------------- */
+
+  .reviews-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+
+  /* -----------------------------------------
+     CARD
+     ----------------------------------------- */
+
+  .review-card {
+    width: 100%;
+  }
+
+  .review-card:hover {
+    transform: translateY(-5px);
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+     ----------------------------------------- */
+
+  .review-image-wrapper {
+    height: auto;
+
+    aspect-ratio:
+      16 / 9;
+  }
+
+
+  /* -----------------------------------------
+     CONTENT
+     ----------------------------------------- */
+
+  .review-card-content {
+    padding:
+      26px 22px 30px;
+  }
+
+  .review-card-content::before {
+    top: 8px;
     right: 18px;
-    bottom: 18px;
 
-    width: 46px;
-    height: 46px;
+    font-size: 70px;
   }
 
-  .scroll-to-top span {
-    font-size: 21px;
+  .review-card-content h3 {
+    font-size: 19px;
   }
 
+  .review-rating {
+    margin-bottom: 18px;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+  }
+
+  .review-text {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .reviews-section {
+    padding:
+      65px 15px;
+  }
+
+  .reviews-section::before {
+    font-size: 58px;
+  }
+
+  .reviews-header {
+    margin-bottom: 34px;
+  }
+
+  .reviews-header h2 {
+    font-size: 2.15rem;
+  }
+
+  .reviews-header p {
+    font-size: 14px;
+  }
+
+  .reviews-grid {
+    gap: 18px;
+  }
+
+  .review-card-content {
+    padding:
+      23px 19px 27px;
+  }
+
+  .review-card-content h3 {
+    font-size: 18px;
+  }
+
+  .review-text {
+    font-size: 13.5px;
+  }
+}
+
+/* =========================================================
+   LESSONS PAGE RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .lessons-page {
+    padding:
+      120px 35px
+      90px;
+  }
+
+  .lessons-header {
+    max-width: 700px;
+
+    margin-bottom: 48px;
+  }
+
+  .lessons-header h1 {
+    font-size:
+      clamp(
+        2.4rem,
+        5vw,
+        3rem
+      );
+  }
+
+  .lessons-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+  }
+
+  .lesson-card-heading {
+    gap: 12px;
+  }
+
+  .lesson-card-icon {
+    flex-basis: 54px;
+
+    width: 54px;
+    height: 54px;
+
+    font-size: 1.4rem;
+  }
+
+  .lesson-card-title-group h2 {
+    font-size: 1.25rem;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 820px
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .lessons-page {
+    padding:
+      115px 25px
+      80px;
+  }
+
+  .lessons-header {
+    max-width: 600px;
+
+    margin-bottom: 42px;
+  }
+
+  .lessons-header h1 {
+    font-size:
+      clamp(
+        2.2rem,
+        7vw,
+        2.8rem
+      );
+  }
+
+  .lessons-header p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .lessons-grid {
+    gap: 18px;
+  }
+
+  .lesson-card-content {
+    padding:
+      20px 18px
+      22px;
+  }
+
+  .lesson-card-heading {
+    min-height: 60px;
+
+    margin-bottom: 16px;
+  }
+
+  .lesson-card-icon {
+    flex-basis: 50px;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 1.3rem;
+  }
+
+  .lesson-card-title-group h2 {
+    font-size: 1.15rem;
+  }
+
+  .lesson-card-description {
+    font-size: 0.93rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .lessons-page {
+    width: 100%;
+
+    padding:
+      105px 18px
+      70px;
+  }
+
+
+  /* -----------------------------------------
+     HEADER
+     ----------------------------------------- */
+
+  .lessons-header {
+    width: 100%;
+
+    margin:
+      0 auto 38px;
+  }
+
+  .lessons-eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 0.7rem;
+
+    letter-spacing:
+      0.18em;
+  }
+
+  .lessons-header h1 {
+    margin-bottom: 14px;
+
+    font-size:
+      clamp(
+        2rem,
+        10vw,
+        2.6rem
+      );
+
+    line-height: 1.15;
+  }
+
+  .lessons-header p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+
+  /* -----------------------------------------
+     GRID
+     ----------------------------------------- */
+
+  .lessons-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+
+  /* -----------------------------------------
+     CARD
+     ----------------------------------------- */
+
+  .lesson-card {
+    width: 100%;
+  }
+
+  .lesson-card:hover {
+    transform:
+      translateY(-3px);
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+     ----------------------------------------- */
+
+  .lesson-card-image-wrapper {
+    aspect-ratio:
+      16 / 10;
+  }
+
+
+  /* -----------------------------------------
+     CONTENT
+     ----------------------------------------- */
+
+  .lesson-card-content {
+    padding:
+      20px 18px
+      22px;
+  }
+
+  .lesson-card-heading {
+    min-height: auto;
+
+    gap: 13px;
+
+    margin-bottom: 16px;
+  }
+
+  .lesson-card-icon {
+    flex:
+      0 0 48px;
+
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.25rem;
+  }
+
+  .lesson-card-title-group h2 {
+    margin-bottom: 5px;
+
+    font-size: 1.2rem;
+
+    line-height: 1.25;
+  }
+
+  .lesson-card-subtitle {
+    font-size: 0.78rem;
+  }
+
+  .lesson-card-description {
+    font-size: 0.92rem;
+
+    line-height: 1.65;
+  }
+
+  .lesson-card-link {
+    padding-top: 20px;
+
+    font-size: 0.85rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .lessons-page {
+    padding:
+      100px 15px
+      60px;
+  }
+
+  .lessons-header {
+    margin-bottom: 32px;
+  }
+
+  .lessons-header h1 {
+    font-size: 2rem;
+  }
+
+  .lessons-header p {
+    font-size: 0.88rem;
+  }
+
+  .lessons-grid {
+    gap: 18px;
+  }
+
+  .lesson-card-content {
+    padding:
+      18px 16px
+      20px;
+  }
+
+  .lesson-card-icon {
+    flex-basis: 44px;
+
+    width: 44px;
+    height: 44px;
+
+    font-size: 1.15rem;
+  }
+
+  .lesson-card-title-group h2 {
+    font-size: 1.1rem;
+  }
+
+  .lesson-card-description {
+    font-size: 0.88rem;
+  }
+}
+
+/* =========================================================
+   SINGLE LESSON RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .lesson-hero {
+    height: 62vh;
+    min-height: 520px;
+  }
+
+  .lesson-hero-content {
+    padding:
+      0 45px;
+  }
+
+  .lesson-hero-content h1 {
+    max-width: 800px;
+
+    font-size:
+      clamp(
+        3rem,
+        7vw,
+        5rem
+      );
+  }
+
+
+  /* DETAILS */
+
+  .lesson-details {
+    width:
+      calc(100% - 60px);
+
+    margin-top: -60px;
+  }
+
+  .lesson-details-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .lesson-detail-card {
+    min-height: 190px;
+
+    padding:
+      32px 24px;
+
+    border-bottom:
+      1px solid
+      rgba(214, 173, 104, 0.22);
+  }
+
+  .lesson-detail-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .lesson-detail-card:nth-child(3),
+  .lesson-detail-card:nth-child(4) {
+    border-bottom: 0;
+  }
+
+  .lesson-detail-card:nth-child(4) {
+    border-right: 0;
+  }
+
+
+  /* CONTAINER */
+
+  .lesson-container {
+    width:
+      calc(100% - 60px);
+
+    max-width: 1000px;
+  }
+
+
+  /* SYLLABUS */
+
+  .lesson-syllabus {
+    padding:
+      115px 0 95px;
+  }
+
+  .lesson-syllabus-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 16px;
+  }
+
+
+  /* CONTENT */
+
+  .lesson-main-content {
+    padding:
+      95px 0 110px;
+  }
+
+  .lesson-content {
+    max-width: 800px;
+
+    font-size: 1.05rem;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 820px
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  /* HERO */
+
+  .lesson-hero {
+    height: 60vh;
+    min-height: 500px;
+  }
+
+  .lesson-hero-content {
+    padding:
+      40px 30px 0;
+  }
+
+  .lesson-eyebrow {
+    font-size: 0.75rem;
+
+    letter-spacing: 3px;
+  }
+
+  .lesson-hero-content h1 {
+    font-size:
+      clamp(
+        2.8rem,
+        9vw,
+        4.5rem
+      );
+
+    line-height: 1;
+  }
+
+  .lesson-title-line {
+    width: 65px;
+
+    margin-top: 22px;
+  }
+
+
+  /* DETAILS */
+
+  .lesson-details {
+    width:
+      calc(100% - 40px);
+
+    margin-top: -50px;
+  }
+
+  .lesson-detail-card {
+    min-height: 175px;
+
+    padding:
+      28px 20px;
+  }
+
+  .lesson-detail-icon {
+    height: 42px;
+
+    margin-bottom: 14px;
+
+    font-size: 1.7rem;
+  }
+
+  .lesson-detail-label {
+    font-size: 0.67rem;
+
+    letter-spacing: 1.6px;
+  }
+
+  .lesson-detail-card strong {
+    font-size: 1rem;
+  }
+
+
+  /* CONTAINER */
+
+  .lesson-container {
+    width:
+      calc(100% - 40px);
+  }
+
+
+  /* SECTION HEADING */
+
+  .lesson-section-heading {
+    margin-bottom: 45px;
+  }
+
+  .lesson-section-heading h2 {
+    font-size:
+      clamp(
+        2rem,
+        7vw,
+        2.8rem
+      );
+  }
+
+
+  /* SYLLABUS */
+
+  .lesson-syllabus {
+    padding:
+      100px 0 85px;
+  }
+
+  .lesson-syllabus-item {
+    min-height: 82px;
+
+    padding:
+      19px 20px;
+
+    gap: 14px;
+
+    font-size: 0.95rem;
+  }
+
+  .lesson-check {
+    flex-basis: 32px;
+
+    width: 32px;
+    height: 32px;
+  }
+
+
+  /* CONTENT */
+
+  .lesson-main-content {
+    padding:
+      90px 0 100px;
+  }
+
+  .lesson-content {
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* =========================================
+     HERO
+     ========================================= */
+
+  .lesson-hero {
+    height: 72svh;
+
+    min-height: 520px;
+
+    align-items:
+      flex-end;
+  }
+
+
+  /* Mobile vertical gradient */
+
+  .lesson-hero-overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(8, 26, 43, 0.98) 0%,
+        rgba(8, 26, 43, 0.82) 45%,
+        rgba(8, 26, 43, 0.40) 75%,
+        rgba(8, 26, 43, 0.20) 100%
+      );
+  }
+
+
+  .lesson-hero-content {
+    padding:
+      0 22px
+      105px;
+
+    text-align: left;
+  }
+
+  .lesson-eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2.5px;
+  }
+
+  .lesson-hero-content h1 {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.6rem,
+        13vw,
+        4rem
+      );
+
+    line-height: 0.98;
+
+    letter-spacing: -1px;
+  }
+
+  .lesson-title-line {
+    width: 55px;
+    height: 2px;
+
+    margin-top: 20px;
+  }
+
+
+  /* =========================================
+     DETAILS
+     ========================================= */
+
+  .lesson-details {
+    width:
+      calc(100% - 30px);
+
+    margin-top: -60px;
+  }
+
+  .lesson-details-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .lesson-detail-card {
+    min-width: 0;
+    min-height: 165px;
+
+    padding:
+      23px 12px;
+  }
+
+
+  /* Right column */
+
+  .lesson-detail-card:nth-child(even) {
+    border-right: 0;
+  }
+
+
+  /* First row */
+
+  .lesson-detail-card:nth-child(1),
+  .lesson-detail-card:nth-child(2) {
+    border-bottom:
+      1px solid
+      rgba(214, 173, 104, 0.22);
+  }
+
+
+  /* Second row */
+
+  .lesson-detail-card:nth-child(3),
+  .lesson-detail-card:nth-child(4) {
+    border-bottom: 0;
+  }
+
+
+  .lesson-detail-icon {
+    height: 38px;
+
+    margin-bottom: 11px;
+
+    font-size: 1.5rem;
+  }
+
+  .lesson-detail-label {
+    margin-bottom: 7px;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 1px;
+  }
+
+  .lesson-detail-card strong {
+    font-size: 0.84rem;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* =========================================
+     GENERAL CONTAINER
+     ========================================= */
+
+  .lesson-container {
+    width:
+      calc(100% - 34px);
+  }
+
+
+  /* =========================================
+     SECTION TITLES
+     ========================================= */
+
+  .lesson-section-heading {
+    margin-bottom: 35px;
+  }
+
+  .lesson-section-heading > span {
+    margin-bottom: 9px;
+
+    font-size: 0.67rem;
+
+    letter-spacing: 2px;
+  }
+
+  .lesson-section-heading h2 {
+    font-size:
+      clamp(
+        1.9rem,
+        9vw,
+        2.4rem
+      );
+
+    line-height: 1.1;
+  }
+
+  .lesson-heading-line {
+    width: 45px;
+
+    margin-top: 17px;
+  }
+
+
+  /* =========================================
+     SYLLABUS
+     ========================================= */
+
+  .lesson-syllabus {
+    padding:
+      90px 0 75px;
+  }
+
+  .lesson-syllabus-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .lesson-syllabus-item {
+    min-height: 72px;
+
+    padding:
+      16px 17px;
+
+    gap: 13px;
+
+    font-size: 0.9rem;
+  }
+
+  .lesson-check {
+    flex:
+      0 0 30px;
+
+    width: 30px;
+    height: 30px;
+
+    font-size: 0.78rem;
+  }
+
+
+  /* =========================================
+     MAIN CONTENT
+     ========================================= */
+
+  .lesson-main-content {
+    padding:
+      75px 0 85px;
+  }
+
+  .lesson-content {
+    width: 100%;
+
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+  }
+
+  .lesson-content p {
+    margin-bottom: 20px;
+  }
+
+  .lesson-content h2,
+  .lesson-content h3,
+  .lesson-content h4 {
+    margin-top: 35px;
+
+    margin-bottom: 14px;
+
+    line-height: 1.25;
+  }
+
+  .lesson-content ul,
+  .lesson-content ol {
+    padding-left: 20px;
+  }
+
+  .lesson-content img {
+    margin:
+      25px auto;
+
+    border-radius: 7px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  /* HERO */
+
+  .lesson-hero {
+    min-height: 500px;
+  }
+
+  .lesson-hero-content {
+    padding:
+      0 18px
+      90px;
+  }
+
+  .lesson-hero-content h1 {
+    font-size:
+      clamp(
+        2.3rem,
+        13vw,
+        3.3rem
+      );
+  }
+
+
+  /* =========================================
+     DETAILS -> ONE COLUMN
+     ========================================= */
+
+  .lesson-details {
+    width:
+      calc(100% - 24px);
+
+    margin-top: -50px;
+  }
+
+  .lesson-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-detail-card {
+    min-height: 125px;
+
+    padding:
+      20px 15px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(214, 173, 104, 0.22);
+  }
+
+  .lesson-detail-card:nth-child(3) {
+    border-bottom:
+      1px solid
+      rgba(214, 173, 104, 0.22);
+  }
+
+  .lesson-detail-card:last-child {
+    border-bottom: 0;
+  }
+
+  .lesson-detail-icon {
+    height: auto;
+
+    margin-bottom: 8px;
+
+    font-size: 1.4rem;
+  }
+
+  .lesson-detail-label {
+    margin-bottom: 5px;
+  }
+
+  .lesson-detail-card strong {
+    font-size: 0.88rem;
+  }
+
+
+  /* CONTENT */
+
+  .lesson-container {
+    width:
+      calc(100% - 30px);
+  }
+
+  .lesson-syllabus {
+    padding:
+      75px 0 65px;
+  }
+
+  .lesson-main-content {
+    padding:
+      65px 0 75px;
+  }
+}
+
+/* =========================================================
+   OUR PLACE RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .our-place-page {
+    padding-top: 90px;
+  }
+
+  .our-place-container {
+    width: calc(100% - 60px);
+    max-width: 1000px;
+  }
+
+  .our-place-header {
+    max-width: 700px;
+    margin-bottom: 50px;
+  }
+
+  .our-place-header h1 {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+  }
+
+  .our-place-header p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .our-place-gallery {
+    width: 100%;
+    max-width: 850px;
+  }
+
+  .our-place-main-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 820px
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .our-place-page {
+    padding-top: 78px;
+  }
+
+  .our-place-container {
+    width: calc(100% - 40px);
+  }
+
+  .our-place-header {
+    margin-bottom: 40px;
+  }
+
+  .our-place-header h1 {
+    font-size: clamp(2.5rem, 8vw, 3.7rem);
+    line-height: 1.05;
+  }
+
+  .our-place-header p {
+    font-size: 0.95rem;
+  }
+
+  .our-place-gallery {
+    max-width: 720px;
+  }
+
+  .our-place-main-image {
+    aspect-ratio: 4 / 3;
+  }
+
+
+  /* -----------------------------------------
+     ARROWS
+     ----------------------------------------- */
+
+  .our-place-arrow {
+    width: 48px;
+    height: 48px;
+
+    font-size: 20px;
+  }
+
+  .our-place-arrow-prev {
+    left: 16px;
+  }
+
+  .our-place-arrow-next {
+    right: 16px;
+  }
+
+
+  /* -----------------------------------------
+     THUMBNAILS
+     ----------------------------------------- */
+
+  .our-place-thumbnails {
+    gap: 10px;
+
+    margin-top: 14px;
+  }
+
+  .our-place-thumbnail {
+    flex: 0 0 90px;
+
+    width: 90px;
+    height: 65px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .our-place-page {
+    padding-top: 72px;
+  }
+
+  .our-place-container {
+    width: 100%;
+  }
+
+
+  /* =========================================
+     HEADER
+     ========================================= */
+
+  .our-place-header {
+    width: 100%;
+
+    padding:
+      55px 18px
+      30px;
+
+    margin: 0;
+
+    text-align: center;
+  }
+
+  .our-place-header h1 {
+    margin-bottom: 14px;
+
+    font-size: clamp(
+      2.2rem,
+      11vw,
+      3rem
+    );
+
+    line-height: 1.05;
+  }
+
+  .our-place-header p {
+    max-width: 430px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+
+  /* =========================================
+     GALLERY
+     ========================================= */
+
+  .our-place-gallery {
+    width: 100%;
+    max-width: none;
+  }
+
+  .our-place-main {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .our-place-main-image {
+    width: 100%;
+
+    height: auto;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    border-radius: 0;
+  }
+
+
+  /* =========================================
+     ARROWS
+     ========================================= */
+
+  .our-place-arrow {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+  }
+
+  .our-place-arrow-prev {
+    left: 12px;
+  }
+
+  .our-place-arrow-next {
+    right: 12px;
+  }
+
+
+  /* =========================================
+     THUMBNAILS
+     ========================================= */
+
+  .our-place-thumbnails {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding:
+      0 18px 10px;
+
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x proximity;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .our-place-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+
+  .our-place-thumbnail {
+    flex:
+      0 0 78px;
+
+    width: 78px;
+    height: 58px;
+
+    scroll-snap-align: start;
+  }
+
+  .our-place-thumbnail img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .our-place-header {
+    padding:
+      45px 15px
+      25px;
+  }
+
+  .our-place-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .our-place-header p {
+    font-size: 0.88rem;
+  }
+
+  .our-place-main-image {
+    aspect-ratio: 1 / 1;
+  }
+
+  .our-place-arrow {
+    width: 38px;
+    height: 38px;
+
+    font-size: 16px;
+  }
+
+  .our-place-arrow-prev {
+    left: 9px;
+  }
+
+  .our-place-arrow-next {
+    right: 9px;
+  }
+
+  .our-place-thumbnails {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .our-place-thumbnail {
+    flex-basis: 70px;
+
+    width: 70px;
+    height: 52px;
+  }
+}
+
+/* =========================================================
+   FOOTER RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .site-footer__inner {
+    width: calc(100% - 60px);
+
+    grid-template-columns:
+      1.4fr 1fr 1fr;
+
+    gap: 45px 35px;
+
+    padding:
+      75px 0 65px;
+  }
+
+  /* CTA goes full width */
+
+  .site-footer__cta {
+    grid-column: 1 / -1;
+
+    margin-top: 10px;
+
+    padding-top: 35px;
+
+    border-top:
+      1px solid
+      rgba(8, 26, 43, 0.18);
+  }
+
+  .footer-our-place
+  .site-footer__cta {
+    border-top-color:
+      rgba(214, 173, 104, 0.22);
+  }
+
+  .site-footer__cta h3 {
+    max-width: 600px;
+
+    font-size:
+      clamp(
+        2rem,
+        4vw,
+        2.8rem
+      );
+  }
+
+  .site-footer__bottom {
+    width:
+      calc(100% - 60px);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 820px
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .site-footer__inner {
+    width:
+      calc(100% - 48px);
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      45px 35px;
+
+    padding:
+      65px 0 55px;
+  }
+
+
+  /* Brand full width */
+
+  .site-footer__brand {
+    grid-column:
+      1 / -1;
+
+    max-width: 500px;
+  }
+
+  .site-footer__logo {
+    font-size:
+      clamp(
+        2rem,
+        6vw,
+        2.8rem
+      );
+  }
+
+  .site-footer__tagline {
+    max-width: 430px;
+  }
+
+
+  /* CTA full width */
+
+  .site-footer__cta {
+    grid-column:
+      1 / -1;
+
+    padding-top: 32px;
+  }
+
+
+  /* Bottom */
+
+  .site-footer__bottom {
+    width:
+      calc(100% - 48px);
+
+    gap: 25px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .site-footer__inner {
+    width: 100%;
+
+    padding:
+      60px 20px
+      45px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 38px;
+  }
+
+
+  /* =========================================
+     BRAND
+     ========================================= */
+
+  .site-footer__brand {
+    width: 100%;
+  }
+
+  .site-footer__logo {
+    font-size:
+      clamp(
+        2rem,
+        10vw,
+        2.7rem
+      );
+  }
+
+  .site-footer__tagline {
+    max-width: 340px;
+
+    margin-top: 12px;
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+
+  /* =========================================
+     COLUMNS
+     ========================================= */
+
+  .site-footer__column {
+    width: 100%;
+  }
+
+  .site-footer__heading {
+    margin-bottom: 17px;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 2px;
+  }
+
+
+  /* Navigation */
+
+  .site-footer__nav {
+    gap: 10px;
+  }
+
+  .site-footer__nav a {
+    width: fit-content;
+
+    font-size: 0.95rem;
+  }
+
+
+  /* Contact */
+
+  .site-footer__contact {
+    gap: 10px;
+  }
+
+  .site-footer__contact a {
+    width: fit-content;
+
+    font-size: 0.95rem;
+  }
+
+
+  /* =========================================
+     CTA
+     ========================================= */
+
+  .site-footer__cta {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding-top: 35px;
+
+    border-top:
+      1px solid
+      rgba(8, 26, 43, 0.18);
+  }
+
+  .footer-our-place
+  .site-footer__cta {
+    border-top-color:
+      rgba(214, 173, 104, 0.22);
+  }
+
+  .site-footer__eyebrow {
+    font-size: 0.68rem;
+
+    letter-spacing: 2px;
+  }
+
+  .site-footer__cta h3 {
+    max-width: 340px;
+
+    margin:
+      10px 0 22px;
+
+    font-size:
+      clamp(
+        1.9rem,
+        9vw,
+        2.5rem
+      );
+
+    line-height: 1.1;
+  }
+
+  .site-footer__button {
+    min-height: 48px;
+
+    padding:
+      12px 21px;
+
+    font-size: 0.88rem;
+  }
+
+
+  /* =========================================
+     BOTTOM
+     ========================================= */
+
+  .site-footer__bottom {
+    width: 100%;
+
+    padding:
+      25px 20px
+      30px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+  .site-footer__bottom p {
+    margin: 0;
+
+    font-size: 0.75rem;
+  }
+
+  .site-footer__legal {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap:
+      8px 18px;
+  }
+
+  .site-footer__legal a {
+    font-size: 0.75rem;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .site-footer__inner {
+    padding:
+      52px 16px
+      40px;
+
+    gap: 34px;
+  }
+
+  .site-footer__logo {
+    font-size: 2rem;
+  }
+
+  .site-footer__tagline {
+    font-size: 0.85rem;
+  }
+
+  .site-footer__cta {
+    padding-top: 30px;
+  }
+
+  .site-footer__cta h3 {
+    font-size: 1.9rem;
+  }
+
+  .site-footer__bottom {
+    padding:
+      22px 16px
+      26px;
+  }
+}
+
+/* =========================================================
+   LOGIN RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .login-page {
+    padding:
+      130px 40px
+      90px;
+  }
+
+  .login-container {
+    width: 100%;
+    max-width: 950px;
+
+    gap: 60px;
+  }
+
+  .login-intro {
+    max-width: 440px;
+  }
+
+  .login-intro h1 {
+    font-size:
+      clamp(
+        2.8rem,
+        5vw,
+        4.2rem
+      );
+
+    line-height: 1.05;
+  }
+
+  .login-card {
+    padding:
+      38px 34px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 820px
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  .login-page {
+    min-height: auto;
+
+    padding:
+      120px 28px
+      80px;
+  }
+
+  .login-container {
+    max-width: 620px;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .login-intro {
+    max-width: 560px;
+  }
+
+  .login-intro h1 {
+    font-size:
+      clamp(
+        2.7rem,
+        8vw,
+        3.8rem
+      );
+  }
+
+  .login-intro p {
+    max-width: 520px;
+
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .login-card {
+    width: 100%;
+
+    padding:
+      38px 34px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .login-page {
+    padding:
+      105px 18px
+      65px;
+  }
+
+  .login-container {
+    width: 100%;
+
+    gap: 32px;
+  }
+
+
+  /* INTRO */
+
+  .login-intro {
+    width: 100%;
+  }
+
+  .login-eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 2px;
+  }
+
+  .login-intro h1 {
+    margin-bottom: 18px;
+
+    font-size:
+      clamp(
+        2.35rem,
+        11vw,
+        3.1rem
+      );
+
+    line-height: 1.03;
+
+    letter-spacing: -1px;
+  }
+
+  .login-intro p {
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+  }
+
+
+  /* CARD */
+
+  .login-card {
+    padding:
+      30px 22px;
+
+    border-radius: 12px;
+  }
+
+  .login-card h2 {
+    font-size:
+      clamp(
+        1.7rem,
+        8vw,
+        2.1rem
+      );
+  }
+
+
+  /* FORM */
+
+  .login-form {
+    gap: 18px;
+  }
+
+  .login-form label {
+    font-size: 0.75rem;
+  }
+
+  .login-form input {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+      12px 14px;
+
+    font-size: 16px;
+  }
+
+  .login-form button {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+      13px 18px;
+
+    font-size: 0.9rem;
+  }
+
+  .login-error {
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .login-page {
+    padding:
+      95px 15px
+      55px;
+  }
+
+  .login-container {
+    gap: 28px;
+  }
+
+  .login-intro h1 {
+    font-size: 2.25rem;
+  }
+
+  .login-intro p {
+    font-size: 0.88rem;
+  }
+
+  .login-card {
+    padding:
+      26px 18px;
+  }
+}
+
+/* =========================================================
+   STUDENT DASHBOARD RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   <= 1100px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .dashboard-hero {
+    padding:
+      145px 40px
+      90px;
+  }
+
+  .dashboard-hero-inner {
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .dashboard-welcome h1 {
+    font-size:
+      clamp(
+        2.8rem,
+        5vw,
+        4.2rem
+      );
+  }
+
+  .dashboard-notes {
+    padding:
+      90px 40px
+      110px;
+  }
+
+  .dashboard-container {
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  .dashboard-notes-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   <= 820px
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  /* HERO */
+
+  .dashboard-hero {
+    padding:
+      125px 28px
+      75px;
+  }
+
+  .dashboard-hero-inner {
+    gap: 35px;
+  }
+
+  .dashboard-welcome h1 {
+    font-size:
+      clamp(
+        2.5rem,
+        8vw,
+        3.5rem
+      );
+
+    line-height: 1.05;
+  }
+
+  .dashboard-eyebrow {
+    font-size: 0.7rem;
+
+    letter-spacing: 2px;
+  }
+
+  .dashboard-logout {
+    min-height: 46px;
+
+    padding:
+      11px 20px;
+  }
+
+
+  /* NOTES */
+
+  .dashboard-notes {
+    padding:
+      80px 28px
+      95px;
+  }
+
+  .dashboard-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .dashboard-section-heading h2 {
+    font-size:
+      clamp(
+        2rem,
+        6vw,
+        2.7rem
+      );
+  }
+
+  .dashboard-notes-grid {
+    gap: 18px;
+  }
+
+  .dashboard-note-card {
+    padding:
+      26px 22px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   <= 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* =========================================
+     HERO
+     ========================================= */
+
+  .dashboard-hero {
+    padding:
+      110px 18px
+      60px;
+  }
+
+  .dashboard-hero-inner {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .dashboard-welcome {
+    width: 100%;
+  }
+
+  .dashboard-eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 0.64rem;
+
+    letter-spacing: 1.8px;
+  }
+
+  .dashboard-welcome h1 {
+    max-width: 100%;
+
+    font-size:
+      clamp(
+        2.2rem,
+        10vw,
+        2.9rem
+      );
+
+    line-height: 1.05;
+
+    letter-spacing: -1px;
+  }
+
+
+  /* LOGOUT */
+
+  .dashboard-logout {
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+      12px 18px;
+  }
+
+
+  /* =========================================
+     NOTES
+     ========================================= */
+
+  .dashboard-notes {
+    padding:
+      65px 18px
+      80px;
+  }
+
+  .dashboard-container {
+    width: 100%;
+  }
+
+  .dashboard-section-heading {
+    margin-bottom: 32px;
+  }
+
+  .dashboard-section-heading h2 {
+    font-size:
+      clamp(
+        1.9rem,
+        9vw,
+        2.4rem
+      );
+
+    line-height: 1.1;
+  }
+
+  .dashboard-heading-line {
+    width: 45px;
+
+    margin-top: 15px;
+  }
+
+
+  /* NOTES GRID */
+
+  .dashboard-notes-grid {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+
+  /* NOTE CARD */
+
+  .dashboard-note-card {
+    width: 100%;
+
+    padding:
+      23px 19px;
+  }
+
+  .dashboard-note-top {
+    gap: 14px;
+
+    margin-bottom: 18px;
+  }
+
+  .dashboard-note-number {
+    flex:
+      0 0 38px;
+
+    width: 38px;
+    height: 38px;
+
+    font-size: 0.8rem;
+  }
+
+  .dashboard-note-content {
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+  }
+
+  .dashboard-note-footer {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    font-size: 0.72rem;
+  }
+
+
+  /* =========================================
+     EMPTY / ERROR / LOADING
+     ========================================= */
+
+  .dashboard-empty {
+    padding:
+      45px 20px;
+  }
+
+  .dashboard-empty-icon {
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 18px;
+  }
+
+  .dashboard-empty h3 {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-empty p {
+    font-size: 0.9rem;
+  }
+
+  .dashboard-error {
+    padding:
+      18px;
+
+    font-size: 0.88rem;
+  }
+
+  .dashboard-loading {
+    min-height: 250px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   <= 390px
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .dashboard-hero {
+    padding:
+      100px 15px
+      50px;
+  }
+
+  .dashboard-welcome h1 {
+    font-size: 2.15rem;
+  }
+
+  .dashboard-notes {
+    padding:
+      58px 15px
+      70px;
+  }
+
+  .dashboard-note-card {
+    padding:
+      20px 16px;
+  }
+
+  .dashboard-note-number {
+    flex-basis: 35px;
+
+    width: 35px;
+    height: 35px;
+  }
+
+  .dashboard-note-content {
+    font-size: 0.88rem;
+  }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE FIXES
+   ========================================================= */
+
+
+/* =========================================================
+   MOBILE NAVBAR - CLOSED MENU MUST NOT RECEIVE CLICKS
+   ========================================================= */
+
+@media (max-width: 820px) {
+  .navbar-mobile-content {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .navbar-mobile-content * {
+    pointer-events: none;
+  }
+
+  .navbar-menu-open .navbar-mobile-content {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .navbar-menu-open .navbar-mobile-content * {
+    pointer-events: auto;
+  }
+
+  .navbar-menu-open .lessons-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+
+/* =========================================================
+   ABOUT - FINAL BASE COLORS
+   ========================================================= */
+
+.about {
+  width: 100%;
+  max-width: none;
+  background-color: #d6ad68;
+  color: #081a2b;
+}
+
+.about-content h2,
+.about-content h3 {
+  color: #081a2b;
+}
+
+.about-content > div,
+.about-content p {
+  color: rgba(8, 26, 43, 0.78);
+}
+
+
+/* =========================================================
+   ABOUT - TABLET / SMALL LAPTOP
+   IMAGE FIRST - CONTENT SECOND
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px 50px;
+  }
+
+  .about-image {
+    order: 1;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-content {
+    order: 2;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about-content h2 {
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+  }
+
+  .about-content > div,
+  .about-content p {
+    max-width: 700px;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* =========================================================
+   ABOUT - TABLET
+   ========================================================= */
+
+@media (max-width: 820px) {
+  .about {
+    gap: 40px;
+    padding: 80px 28px;
+  }
+
+  .about-image {
+    max-width: 700px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .about-content h2 {
+    font-size: clamp(2.2rem, 7vw, 3rem);
+  }
+
+  .about-content > div,
+  .about-content p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* =========================================================
+   ABOUT - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .about {
+    gap: 32px;
+    padding: 65px 18px;
+  }
+
+  .about-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-content h2 {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+    line-height: 1.1;
+  }
+
+  .about-content > div,
+  .about-content p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   ABOUT - VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .about {
+    gap: 28px;
+    padding: 55px 15px;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-content > div,
+  .about-content p {
+    font-size: 0.88rem;
+  }
 }

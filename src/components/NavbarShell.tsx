@@ -1,6 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+} from "react";
+
 import {
   usePathname,
   useRouter,
@@ -20,6 +24,11 @@ export default function NavbarShell({
   const [
     showScrollTop,
     setShowScrollTop,
+  ] = useState(false);
+
+  const [
+    mobileMenuOpen,
+    setMobileMenuOpen,
   ] = useState(false);
 
   const isHome = pathname === "/";
@@ -51,6 +60,30 @@ export default function NavbarShell({
       );
     };
   }, []);
+
+  /* =========================================
+     CLOSE MOBILE MENU AFTER NAVIGATION
+     ========================================= */
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
+  /* =========================================
+     LOCK BODY WHEN MENU IS OPEN
+     ========================================= */
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   /* =========================================
      OUR PLACE - FORCE TOP
@@ -110,7 +143,7 @@ export default function NavbarShell({
   }
 
   /* =========================================
-     NAVBAR LINKS
+     NAVBAR CLICK HANDLER
      ========================================= */
 
   function handleClick(
@@ -118,6 +151,27 @@ export default function NavbarShell({
   ) {
     const target =
       event.target as HTMLElement;
+
+    /* =====================================
+       HAMBURGER
+       ===================================== */
+
+    const toggle =
+      target.closest(".navbar-toggle");
+
+    if (toggle) {
+      event.preventDefault();
+
+      setMobileMenuOpen(
+        (current) => !current
+      );
+
+      return;
+    }
+
+    /* =====================================
+       LINKS
+       ===================================== */
 
     const link = target.closest("a");
 
@@ -128,14 +182,16 @@ export default function NavbarShell({
     const href =
       link.getAttribute("href");
 
+    /* Close mobile menu */
+
+    setMobileMenuOpen(false);
+
     /* =====================================
-       LOGO / ΑΡΧΙΚΗ
+       LOGO / HOME
        ===================================== */
 
     if (href === "/") {
-      /*
-       * Είμαστε ήδη στην αρχική
-       */
+
       if (isHome) {
         event.preventDefault();
 
@@ -144,9 +200,6 @@ export default function NavbarShell({
         return;
       }
 
-      /*
-       * Είμαστε σε άλλη σελίδα
-       */
       event.preventDefault();
 
       router.push("/");
@@ -155,37 +208,29 @@ export default function NavbarShell({
     }
 
     /* =====================================
-       ΣΧΕΤΙΚΑ ΜΕ ΕΜΑΣ
+       ABOUT
        ===================================== */
 
     if (href === "/#about") {
       event.preventDefault();
 
-      /*
-       * Είμαστε ήδη στην αρχική
-       */
       if (isHome) {
         scrollToAbout();
 
         return;
       }
 
-      /*
-       * Είμαστε σε άλλη σελίδα
-       */
       router.push("/#about");
 
       return;
     }
 
     /* =====================================
-       ΕΓΚΑΤΑΣΤΑΣΕΙΣ
+       OUR PLACE
        ===================================== */
 
     if (href === "/our-place") {
-      /*
-       * Είμαστε ήδη στις εγκαταστάσεις
-       */
+
       if (pathname === "/our-place") {
         event.preventDefault();
 
@@ -194,11 +239,6 @@ export default function NavbarShell({
         return;
       }
 
-      /*
-       * Ερχόμαστε από άλλη σελίδα.
-       * Σημειώνουμε ότι μόλις ανοίξει
-       * το /our-place πρέπει να πάει top.
-       */
       sessionStorage.setItem(
         "scroll_our_place_top",
         "true"
@@ -208,24 +248,28 @@ export default function NavbarShell({
     }
   }
 
-  /* =========================================
-     RENDER
-     ========================================= */
-
   return (
     <>
       <div
-        className={`navbar-shell ${
-          scrolled || !isHome
-            ? "navbar-scrolled"
-            : ""
-        }`}
+        className={`
+          navbar-shell
+          ${
+            scrolled || !isHome
+              ? "navbar-scrolled"
+              : ""
+          }
+          ${
+            mobileMenuOpen
+              ? "navbar-menu-open"
+              : ""
+          }
+        `}
         onClick={handleClick}
       >
         {children}
       </div>
 
-      {/* SCROLL TO TOP BUTTON */}
+      {/* SCROLL TO TOP */}
 
       <button
         type="button"
