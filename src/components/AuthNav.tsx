@@ -69,7 +69,7 @@ export default function AuthNav() {
         className="navbar-logout"
         onClick={handleLogout}
       >
-        Logout
+        Έξοδος
       </button>
     </div>
   );

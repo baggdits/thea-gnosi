@@ -15,22 +15,44 @@ type NotesResponse = {
   notes: Note[];
 };
 
+type StoredUser = {
+  username?: string;
+  displayName?: string;
+  email?: string;
+};
+
 export default function DashboardPage() {
   const router = useRouter();
 
   const [notes, setNotes] = useState<Note[]>([]);
+  const [user, setUser] = useState<StoredUser | null>(null);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    async function loadNotes() {
+    async function loadDashboard() {
       const token = localStorage.getItem(
         "thea_gnosi_token"
       );
 
+      const storedUser = localStorage.getItem(
+        "thea_gnosi_user"
+      );
+
       if (!token) {
-        router.push("/login");
+        router.replace("/login");
         return;
+      }
+
+      if (storedUser) {
+        try {
+          setUser(JSON.parse(storedUser));
+        } catch {
+          console.error(
+            "Could not parse stored user."
+          );
+        }
       }
 
       try {
@@ -57,20 +79,13 @@ export default function DashboardPage() {
         );
 
         console.log(
-          "MY NOTES CONTENT TYPE:",
-          response.headers.get(
-            "content-type"
-          )
-        );
-
-        console.log(
           "MY NOTES RESPONSE:",
           responseText
         );
 
         if (!responseText) {
           throw new Error(
-            `My Notes API returned an empty response. HTTP status: ${response.status}`
+            "Δεν ήταν δυνατή η φόρτωση των σημειώσεων."
           );
         }
 
@@ -79,24 +94,39 @@ export default function DashboardPage() {
           | { message?: string };
 
         try {
-          data = JSON.parse(
-            responseText
-          );
+          data = JSON.parse(responseText);
         } catch {
           throw new Error(
-            `My Notes API returned invalid JSON: ${responseText.substring(
-              0,
-              300
-            )}`
+            "Η απάντηση του server δεν ήταν έγκυρη."
           );
+        }
+
+        /*
+         * Αν το token έχει λήξει ή δεν είναι έγκυρο,
+         * κάνουμε logout.
+         */
+        if (
+          response.status === 401 ||
+          response.status === 403
+        ) {
+          localStorage.removeItem(
+            "thea_gnosi_token"
+          );
+
+          localStorage.removeItem(
+            "thea_gnosi_user"
+          );
+
+          router.replace("/login");
+
+          return;
         }
 
         if (!response.ok) {
           throw new Error(
-            "message" in data &&
-            data.message
+            "message" in data && data.message
               ? data.message
-              : "Failed to load notes."
+              : "Δεν ήταν δυνατή η φόρτωση των σημειώσεων."
           );
         }
 
@@ -105,7 +135,7 @@ export default function DashboardPage() {
           !Array.isArray(data.notes)
         ) {
           throw new Error(
-            "Invalid notes response."
+            "Μη έγκυρη απάντηση σημειώσεων."
           );
         }
 
@@ -119,14 +149,14 @@ export default function DashboardPage() {
         setError(
           error instanceof Error
             ? error.message
-            : "Something went wrong."
+            : "Παρουσιάστηκε κάποιο πρόβλημα."
         );
       } finally {
         setLoading(false);
       }
     }
 
-    loadNotes();
+    loadDashboard();
   }, [router]);
 
   function handleLogout() {
@@ -138,75 +168,205 @@ export default function DashboardPage() {
       "thea_gnosi_user"
     );
 
-    router.push("/login");
+    router.replace("/login");
   }
+
+  /*
+   * Loading
+   */
 
   if (loading) {
     return (
-      <main>
-        <h1>Student Dashboard</h1>
+      <main className="student-dashboard">
+        <section className="dashboard-loading">
+          <div className="dashboard-loader" />
 
-        <p>Loading...</p>
+          <p>
+            Φόρτωση προσωπικού χώρου...
+          </p>
+        </section>
       </main>
     );
   }
 
   return (
-    <main>
-      <h1>Student Dashboard</h1>
+    <main className="student-dashboard">
 
-      <button
-        type="button"
-        onClick={handleLogout}
-      >
-        Logout
-      </button>
+      {/* ==============================
+          HERO
+          ============================== */}
 
-      {error && (
-        <p
-          role="alert"
-          style={{
-            color: "red",
-            marginTop: "20px",
-          }}
-        >
-          {error}
-        </p>
-      )}
+      <section className="dashboard-hero">
 
-      <section>
-        <h2>My Notes</h2>
+        <div className="dashboard-hero-decoration" />
 
-        {!error &&
-          notes.length === 0 && (
+        <div className="dashboard-hero-inner">
+
+          <div className="dashboard-welcome">
+
+            <span className="dashboard-eyebrow">
+              ΠΡΟΣΩΠΙΚΟΣ ΧΩΡΟΣ
+            </span>
+
+            <h1>
+              Καλώς ήρθες
+              {user?.displayName
+                ? `, ${user.displayName}`
+                : ""}
+              .
+            </h1>
+
             <p>
-              You don't have any notes yet.
+              Εδώ μπορείς να βρεις τις
+              σημειώσεις και το εκπαιδευτικό
+              υλικό που έχει ετοιμαστεί για
+              εσένα.
             </p>
-          )}
 
-        {!error &&
-          notes.length > 0 && (
-            <div>
-              {notes.map((note) => (
-                <article key={note.id}>
-                  <h3>{note.title}</h3>
+          </div>
 
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: note.content,
-                    }}
-                  />
+          <button
+            type="button"
+            className="dashboard-logout"
+            onClick={handleLogout}
+          >
+            Αποσύνδεση
+            <span>→</span>
+          </button>
 
-                  <small>
-                    {new Date(
-                      note.date
-                    ).toLocaleDateString()}
-                  </small>
-                </article>
-              ))}
+        </div>
+
+      </section>
+
+
+      {/* ==============================
+          NOTES
+          ============================== */}
+
+      <section className="dashboard-notes">
+
+        <div className="dashboard-container">
+
+          <div className="dashboard-section-heading">
+
+            <span>
+              ΕΚΠΑΙΔΕΥΤΙΚΟ ΥΛΙΚΟ
+            </span>
+
+            <h2>
+              Οι σημειώσεις μου
+            </h2>
+
+            <div className="dashboard-heading-line" />
+
+          </div>
+
+
+          {/* ERROR */}
+
+          {error && (
+            <div
+              className="dashboard-error"
+              role="alert"
+            >
+              <strong>
+                Παρουσιάστηκε κάποιο πρόβλημα
+              </strong>
+
+              <p>{error}</p>
             </div>
           )}
+
+
+          {/* NO NOTES */}
+
+          {!error &&
+            notes.length === 0 && (
+              <div className="dashboard-empty">
+
+                <span className="dashboard-empty-icon">
+                  ◇
+                </span>
+
+                <h3>
+                  Δεν υπάρχουν σημειώσεις ακόμη
+                </h3>
+
+                <p>
+                  Μόλις προστεθεί νέο
+                  εκπαιδευτικό υλικό, θα
+                  εμφανιστεί εδώ.
+                </p>
+
+              </div>
+            )}
+
+
+          {/* NOTES GRID */}
+
+          {!error &&
+            notes.length > 0 && (
+              <div className="dashboard-notes-grid">
+
+                {notes.map((note) => (
+                  <article
+                    className="dashboard-note-card"
+                    key={note.id}
+                  >
+
+                    <div className="dashboard-note-top">
+
+                      <span>
+                        ΣΗΜΕΙΩΣΗ
+                      </span>
+
+                      <span className="dashboard-note-number">
+                        {String(note.id).padStart(
+                          2,
+                          "0"
+                        )}
+                      </span>
+
+                    </div>
+
+                    <h3>
+                      {note.title}
+                    </h3>
+
+                    <div
+                      className="dashboard-note-content"
+                      dangerouslySetInnerHTML={{
+                        __html: note.content,
+                      }}
+                    />
+
+                    <div className="dashboard-note-footer">
+
+                      <span>
+                        {new Date(
+                          note.date
+                        ).toLocaleDateString(
+                          "el-GR",
+                          {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric",
+                          }
+                        )}
+                      </span>
+
+                    </div>
+
+                  </article>
+                ))}
+
+              </div>
+            )}
+
+        </div>
+
       </section>
+
     </main>
   );
 }

@@ -24,7 +24,8 @@ export default function OurPlaceGallery({
 }: OurPlaceGalleryProps) {
   const gallery = data.gallery || [];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] =
+    useState(0);
 
   if (gallery.length === 0) {
     return (
@@ -36,19 +37,65 @@ export default function OurPlaceGallery({
 
   const currentItem = gallery[currentIndex];
 
+  const previousImage = () => {
+    setCurrentIndex((current) =>
+      current === 0
+        ? gallery.length - 1
+        : current - 1
+    );
+  };
+
+  const nextImage = () => {
+    setCurrentIndex((current) =>
+      current === gallery.length - 1
+        ? 0
+        : current + 1
+    );
+  };
+
   return (
     <section className="our-place-gallery">
 
       {/* MAIN IMAGE */}
+
       <div className="our-place-gallery-main">
+
         <img
           key={currentItem.image}
           src={currentItem.image}
           alt={currentItem.title || data.title}
         />
+
+        {/* LEFT ARROW */}
+
+        {gallery.length > 1 && (
+          <button
+            type="button"
+            className="gallery-arrow gallery-arrow-left"
+            onClick={previousImage}
+            aria-label="Προηγούμενη εικόνα"
+          >
+            ‹
+          </button>
+        )}
+
+        {/* RIGHT ARROW */}
+
+        {gallery.length > 1 && (
+          <button
+            type="button"
+            className="gallery-arrow gallery-arrow-right"
+            onClick={nextImage}
+            aria-label="Επόμενη εικόνα"
+          >
+            ›
+          </button>
+        )}
+
       </div>
 
       {/* TITLE + DESCRIPTION */}
+
       <div className="our-place-gallery-content">
 
         {currentItem.title && (
@@ -62,6 +109,7 @@ export default function OurPlaceGallery({
       </div>
 
       {/* THUMBNAILS */}
+
       <div className="our-place-gallery-thumbnails">
 
         {gallery.map((item, index) => (
@@ -73,9 +121,12 @@ export default function OurPlaceGallery({
                 ? "active"
                 : ""
             }`}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() =>
+              setCurrentIndex(index)
+            }
             aria-label={`Προβολή ${
-              item.title || `εικόνας ${index + 1}`
+              item.title ||
+              `εικόνας ${index + 1}`
             }`}
           >
             <img

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AboutLink from "@/components/AboutLink";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,42 +10,47 @@ export default function Footer() {
       <div className="site-footer__inner">
 
         {/* BRAND */}
+
         <div className="site-footer__brand">
 
-          <Link href="/" className="site-footer__logo">
-            Thea Gnosi
+          <Link
+            href="/"
+            className="site-footer__logo"
+          >
+            ΘΕΑ ΓΝΩΣΗ
           </Link>
 
           <p className="site-footer__tagline">
-            Learn. Grow. Discover your potential.
+            Μάθε, Μεγάλωσε, Ανακάλυψε τις δυνατότητές σου.
           </p>
 
         </div>
 
 
         {/* EXPLORE */}
+
         <div className="site-footer__column">
 
           <h3 className="site-footer__heading">
-            Explore
+            Εξερεύνησε
           </h3>
 
           <nav className="site-footer__nav">
 
             <Link href="/lessons">
-              Lessons
+              Μαθήματα
             </Link>
 
-            <Link href="/#about">
-              About Us
-            </Link>
+            <AboutLink>
+              Σχετικά με εμάς
+            </AboutLink>
 
-            <Link href="/#our-place">
-              Our Place
+            <Link href="/our-place">
+              Εγκαταστάσεις
             </Link>
 
             <Link href="/reviews">
-              Reviews
+              Αξιολογήσεις
             </Link>
 
           </nav>
@@ -53,10 +59,11 @@ export default function Footer() {
 
 
         {/* CONTACT */}
+
         <div className="site-footer__column">
 
           <h3 className="site-footer__heading">
-            Get in touch
+            Επικοινωνία
           </h3>
 
           <div className="site-footer__contact">
@@ -75,25 +82,24 @@ export default function Footer() {
 
 
         {/* CTA */}
+
         <div className="site-footer__cta">
 
           <span className="site-footer__eyebrow">
-            Ready to learn?
+            Έτοιμος να μάθεις;
           </span>
 
           <h3>
-            Discover your potential.
+            Δες τις δυνατότητές σου.
           </h3>
 
-          <Link
-            href="/#about"
-            className="site-footer__button"
-          >
-            Learn More
+          <AboutLink className="site-footer__button">
+            Μάθε περισσότερα
+
             <span aria-hidden="true">
               →
             </span>
-          </Link>
+          </AboutLink>
 
         </div>
 
@@ -101,6 +107,7 @@ export default function Footer() {
 
 
       {/* BOTTOM */}
+
       <div className="site-footer__bottom">
 
         <p>

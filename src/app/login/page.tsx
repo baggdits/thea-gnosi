@@ -73,18 +73,35 @@ export default function LoginPage() {
         );
       }
 
+      /* ==============================
+         ΛΑΘΟΣ LOGIN
+         ============================== */
+
       if (!response.ok) {
-        throw new Error(
-          data.message ||
-            "Login failed."
+        setError(
+          response.status === 401 ||
+            response.status === 403
+            ? "Λάθος username ή κωδικός πρόσβασης."
+            : data.message ||
+                "Η σύνδεση απέτυχε."
         );
+
+        return;
       }
+
+      /* ==============================
+         ΕΛΕΓΧΟΣ TOKEN
+         ============================== */
 
       if (!data.token) {
         throw new Error(
-          "Login succeeded but no token was returned."
+          "Η σύνδεση ολοκληρώθηκε αλλά δεν επιστράφηκε token."
         );
       }
+
+      /* ==============================
+         ΑΠΟΘΗΚΕΥΣΗ LOGIN
+         ============================== */
 
       localStorage.setItem(
         "thea_gnosi_token",
@@ -108,7 +125,12 @@ export default function LoginPage() {
         })
       );
 
-      router.push("/dashboard");
+      /* ==============================
+         DASHBOARD
+         ============================== */
+
+      router.replace("/dashboard");
+      router.refresh();
     } catch (error) {
       console.error(
         "Login error:",
@@ -118,7 +140,7 @@ export default function LoginPage() {
       setError(
         error instanceof Error
           ? error.message
-          : "Login failed."
+          : "Η σύνδεση απέτυχε."
       );
     } finally {
       setLoading(false);
@@ -126,70 +148,186 @@ export default function LoginPage() {
   }
 
   return (
-    <main>
-      <h1>Student Login</h1>
+    <main className="login-page">
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">
-            Username
-          </label>
+      <section className="login-section">
 
-          <input
-            id="username"
-            name="username"
-            type="text"
-            value={username}
-            onChange={(event) =>
-              setUsername(event.target.value)
-            }
-            autoComplete="username"
-            required
-            disabled={loading}
-          />
+        {/* Decorative circles */}
+
+        <div className="login-decoration login-decoration-one" />
+
+        <div className="login-decoration login-decoration-two" />
+
+
+        <div className="login-container">
+
+          {/* ==========================
+              LEFT SIDE
+              ========================== */}
+
+          <div className="login-intro">
+
+            <span className="login-eyebrow">
+              ΘΕΑ ΓΝΩΣΗ
+            </span>
+
+            <h1>
+              Καλώς ήρθες
+              <br />
+              ξανά.
+            </h1>
+
+            <span className="login-title-line" />
+
+            <p>
+              Συνδέσου στον προσωπικό σου χώρο
+              για να έχεις πρόσβαση στο
+              εκπαιδευτικό σου υλικό και τις
+              σημειώσεις σου.
+            </p>
+
+          </div>
+
+
+          {/* ==========================
+              LOGIN CARD
+              ========================== */}
+
+          <div className="login-card">
+
+            <div className="login-card-heading">
+
+              <span>
+                ΠΡΟΣΩΠΙΚΟΣ ΧΩΡΟΣ
+              </span>
+
+              <h2>
+                Σύνδεση μαθητή
+              </h2>
+
+              <p>
+                Συμπλήρωσε τα στοιχεία του
+                λογαριασμού σου.
+              </p>
+
+            </div>
+
+
+            {/* ==========================
+                FORM
+                ========================== */}
+
+            <form
+              className="login-form"
+              onSubmit={handleSubmit}
+            >
+
+              {/* USERNAME */}
+
+              <div className="login-field">
+
+                <label htmlFor="username">
+                  Username
+                </label>
+
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  value={username}
+                  onChange={(event) =>
+                    setUsername(
+                      event.target.value
+                    )
+                  }
+                  autoComplete="username"
+                  placeholder="Το username σου"
+                  required
+                  disabled={loading}
+                />
+
+              </div>
+
+
+              {/* PASSWORD */}
+
+              <div className="login-field">
+
+                <label htmlFor="password">
+                  Κωδικός πρόσβασης
+                </label>
+
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  value={password}
+                  onChange={(event) =>
+                    setPassword(
+                      event.target.value
+                    )
+                  }
+                  autoComplete="current-password"
+                  placeholder="••••••••"
+                  required
+                  disabled={loading}
+                />
+
+              </div>
+
+
+              {/* ERROR */}
+
+              {error && (
+                <div
+                  className="login-error"
+                  role="alert"
+                >
+                  {error}
+                </div>
+              )}
+
+
+              {/* LOGIN BUTTON */}
+
+              <button
+                className="login-submit"
+                type="submit"
+                disabled={loading}
+              >
+
+                {loading
+                  ? "Σύνδεση..."
+                  : "Σύνδεση"}
+
+              </button>
+
+            </form>
+
+
+            {/* ==========================
+                BOTTOM INFO
+                ========================== */}
+
+            <div className="login-card-footer">
+
+              <span className="login-lock">
+                ◇
+              </span>
+
+              <p>
+                Η πρόσβαση παρέχεται μόνο
+                σε εγγεγραμμένους μαθητές.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div>
-          <label htmlFor="password">
-            Password
-          </label>
+      </section>
 
-          <input
-            id="password"
-            name="password"
-            type="password"
-            value={password}
-            onChange={(event) =>
-              setPassword(event.target.value)
-            }
-            autoComplete="current-password"
-            required
-            disabled={loading}
-          />
-        </div>
-
-        {error && (
-          <p
-            role="alert"
-            style={{
-              color: "red",
-              marginTop: "15px",
-              whiteSpace: "pre-wrap",
-            }}
-          >
-            {error}
-          </p>
-        )}
-
-        <button
-          type="submit"
-          disabled={loading}
-        >
-          {loading
-            ? "Logging in..."
-            : "Login"}
-        </button>
-      </form>
     </main>
   );
 }

@@ -489,16 +489,17 @@ export default function Hero({
         {/* BUTTON */}
 
         {data.button_text && (
-          <a
-            href={
-              data.button_url ||
-              "#"
-            }
-            className="hero-button"
-          >
-            {data.button_text}
-          </a>
-        )}
+  <a
+    href={data.button_url || "#"}
+    className="hero-button"
+  >
+    {data.button_text}
+
+    <span className="hero-button-arrow">
+      →
+    </span>
+  </a>
+)}
 
       </div>
     </section>

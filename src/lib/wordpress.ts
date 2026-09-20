@@ -1,8 +1,51 @@
 const WORDPRESS_URL = process.env.WORDPRESS_URL;
 
-/**
- * Homepage
- */
+
+/* =========================================================
+   TYPES
+   ========================================================= */
+
+export type LessonDetails = {
+  classes: string;
+  duration: string;
+  type: string;
+  preparation: string;
+  syllabus: string[];
+};
+
+export type Lesson = {
+  id: number;
+  slug: string;
+
+  title: {
+    rendered: string;
+  };
+
+  content: {
+    rendered: string;
+  };
+
+  excerpt: {
+    rendered: string;
+  };
+
+  featured_media: number;
+
+  lesson_details: LessonDetails;
+
+  _embedded?: {
+    "wp:featuredmedia"?: Array<{
+      source_url: string;
+      alt_text?: string;
+    }>;
+  };
+};
+
+
+/* =========================================================
+   HOMEPAGE
+   ========================================================= */
+
 export async function getHomePage() {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/home`,
@@ -23,9 +66,10 @@ export async function getHomePage() {
 }
 
 
-/**
- * Reviews
- */
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+
 export async function getReviews() {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/reviews`,
@@ -46,10 +90,13 @@ export async function getReviews() {
 }
 
 
-/**
- * Lessons
- */
-export async function getLessons() {
+/* =========================================================
+   LESSONS
+   ========================================================= */
+
+export async function getLessons(): Promise<
+  Lesson[]
+> {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/wp/v2/lessons?per_page=100&_embed`,
     {
@@ -69,9 +116,10 @@ export async function getLessons() {
 }
 
 
-/**
- * Site Settings
- */
+/* =========================================================
+   SITE SETTINGS
+   ========================================================= */
+
 export async function getSiteSettings() {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/settings`,
@@ -92,12 +140,13 @@ export async function getSiteSettings() {
 }
 
 
-/**
- * Single Lesson
- */
+/* =========================================================
+   SINGLE LESSON
+   ========================================================= */
+
 export async function getLessonBySlug(
   slug: string
-) {
+): Promise<Lesson | null> {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/wp/v2/lessons?slug=${encodeURIComponent(
       slug
@@ -115,7 +164,8 @@ export async function getLessonBySlug(
     );
   }
 
-  const lessons = await response.json();
+  const lessons: Lesson[] =
+    await response.json();
 
   return lessons.length > 0
     ? lessons[0]
@@ -123,12 +173,13 @@ export async function getLessonBySlug(
 }
 
 
-/**
- * Our Place
- */
+/* =========================================================
+   OUR PLACE
+   ========================================================= */
+
 export async function getOurPlace() {
   const response = await fetch(
-    `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/our-place`,
+    `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/home`,
     {
       next: {
         revalidate: 60,
@@ -142,13 +193,17 @@ export async function getOurPlace() {
     );
   }
 
-  return response.json();
+  const data = await response.json();
+
+  return data.our_place;
 }
 
 
+/* =========================================================
+   MY NOTES
+   ========================================================= */
+
 /**
- * My Notes
- *
  * Requires a valid WordPress JWT.
  */
 export async function getMyNotes(
