@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import {
   useEffect,
   useMemo,
@@ -42,14 +44,6 @@ export default function Hero({
    * =========================================================
    * WORDPRESS ROLLER WORDS
    * =========================================================
-   *
-   * Υποστηρίζει:
-   *
-   * Γνώση|Έμπνευση|Δημιουργία
-   *
-   * Γνώση, Έμπνευση, Δημιουργία
-   *
-   * ή μία λέξη ανά γραμμή.
    */
 
   const words = useMemo(() => {
@@ -73,18 +67,11 @@ export default function Hero({
       .filter(Boolean);
 
     return result;
-    
   }, [data.roller_words]);
 
   /*
-   * Διπλασιάζουμε τις λέξεις ώστε:
-   *
-   * Γνώση
-   * Έμπνευση
-   * Δημιουργία
-   * Γνώση
-   * Έμπνευση
-   * Δημιουργία
+   * Διπλασιάζουμε τις λέξεις
+   * για seamless carousel.
    */
 
   const carouselWords = useMemo(
@@ -99,22 +86,24 @@ export default function Hero({
    */
 
   useEffect(() => {
-  let secondFrame = 0;
+    let secondFrame = 0;
 
-  const firstFrame = requestAnimationFrame(() => {
-    setIsTransitioning(false);
-    setCurrentIndex(0);
+    const firstFrame =
+      requestAnimationFrame(() => {
+        setIsTransitioning(false);
+        setCurrentIndex(0);
 
-    secondFrame = requestAnimationFrame(() => {
-      setIsTransitioning(true);
-    });
-  });
+        secondFrame =
+          requestAnimationFrame(() => {
+            setIsTransitioning(true);
+          });
+      });
 
-  return () => {
-    cancelAnimationFrame(firstFrame);
-    cancelAnimationFrame(secondFrame);
-  };
-}, [words]);
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+    };
+  }, [words]);
 
   /*
    * =========================================================
@@ -150,27 +139,9 @@ export default function Hero({
     }
 
     const timer = setTimeout(() => {
-      /*
-       * Βρισκόμαστε στο duplicated
-       * πρώτο slide.
-       *
-       * Αφαιρούμε προσωρινά
-       * το transition.
-       */
-
       setIsTransitioning(false);
 
-      /*
-       * Επιστρέφουμε στο πραγματικό
-       * πρώτο slide.
-       */
-
       setCurrentIndex(0);
-
-      /*
-       * Ξαναενεργοποιούμε animation
-       * αφού ολοκληρωθεί το reset.
-       */
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -240,11 +211,6 @@ export default function Hero({
         (difference > 0
           ? -movement
           : movement);
-
-      /*
-       * Δεν αφήνουμε το drag
-       * να φύγει εκτός carousel.
-       */
 
       if (nextIndex < 0) {
         nextIndex = 0;
@@ -371,6 +337,44 @@ export default function Hero({
 
   /*
    * =========================================================
+   * HERO BUTTON URL
+   * =========================================================
+   *
+   * Local:
+   * /lessons
+   *
+   * GitHub Pages:
+   * /thea-gnosi/lessons/
+   */
+
+  const isGitHubPages =
+    process.env
+      .NEXT_PUBLIC_GITHUB_PAGES ===
+    "true";
+
+  const rawButtonUrl =
+    data.button_url || "/";
+
+  let buttonUrl = rawButtonUrl;
+
+  if (
+    isGitHubPages &&
+    rawButtonUrl.startsWith("/")
+  ) {
+    buttonUrl =
+      `/thea-gnosi${rawButtonUrl}`;
+
+    if (
+      buttonUrl !==
+        "/thea-gnosi/" &&
+      !buttonUrl.endsWith("/")
+    ) {
+      buttonUrl += "/";
+    }
+  }
+
+  /*
+   * =========================================================
    * RENDER
    * =========================================================
    */
@@ -492,17 +496,17 @@ export default function Hero({
         {/* BUTTON */}
 
         {data.button_text && (
-  <a
-    href={data.button_url || "#"}
-    className="hero-button"
-  >
-    {data.button_text}
+          <Link
+            href={buttonUrl}
+            className="hero-button"
+          >
+            {data.button_text}
 
-    <span className="hero-button-arrow">
-      →
-    </span>
-  </a>
-)}
+            <span className="hero-button-arrow">
+              →
+            </span>
+          </Link>
+        )}
 
       </div>
     </section>
