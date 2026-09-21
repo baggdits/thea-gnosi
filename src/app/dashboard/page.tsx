@@ -21,11 +21,43 @@ type StoredUser = {
   email?: string;
 };
 
+const isGitHubPages =
+  process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
+
+/* =============================================
+   DEMO NOTES - ΜΟΝΟ ΓΙΑ GITHUB PAGES
+   ============================================= */
+
+const demoNotes: Note[] = [
+  {
+    id: 1,
+    title: "Εισαγωγή στα Δίκτυα",
+    content:
+      "<p>Βασικές έννοιες δικτύων υπολογιστών, LAN, WAN και τρόποι επικοινωνίας μεταξύ συσκευών.</p>",
+    date: "2026-09-15",
+  },
+  {
+    id: 2,
+    title: "Ασκήσεις Προγραμματισμού",
+    content:
+      "<p>Επαναληπτικές ασκήσεις προγραμματισμού με έμφαση στις δομές επιλογής και επανάληψης.</p>",
+    date: "2026-09-18",
+  },
+  {
+    id: 3,
+    title: "Υλικό Επανάληψης",
+    content:
+      "<p>Συνοπτικό εκπαιδευτικό υλικό για την προετοιμασία και την επανάληψη της διδακτέας ύλης.</p>",
+    date: "2026-09-20",
+  },
+];
+
 export default function DashboardPage() {
   const router = useRouter();
 
   const [notes, setNotes] = useState<Note[]>([]);
-  const [user, setUser] = useState<StoredUser | null>(null);
+  const [user, setUser] =
+    useState<StoredUser | null>(null);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -40,10 +72,18 @@ export default function DashboardPage() {
         "thea_gnosi_user"
       );
 
+      /* =============================================
+         ΔΕΝ ΥΠΑΡΧΕΙ LOGIN
+         ============================================= */
+
       if (!token) {
         router.replace("/login");
         return;
       }
+
+      /* =============================================
+         USER DATA
+         ============================================= */
 
       if (storedUser) {
         try {
@@ -54,6 +94,22 @@ export default function DashboardPage() {
           );
         }
       }
+
+      /* =============================================
+         GITHUB PAGES DEMO
+         Δεν γίνεται request στο /api/my-notes
+         ============================================= */
+
+      if (isGitHubPages) {
+        setNotes(demoNotes);
+        setLoading(false);
+
+        return;
+      }
+
+      /* =============================================
+         ΚΑΝΟΝΙΚΟ LOCAL DASHBOARD
+         ============================================= */
 
       try {
         const response = await fetch(
@@ -101,10 +157,10 @@ export default function DashboardPage() {
           );
         }
 
-        /*
-         * Αν το token έχει λήξει ή δεν είναι έγκυρο,
-         * κάνουμε logout.
-         */
+        /* =============================================
+           TOKEN EXPIRED / INVALID
+           ============================================= */
+
         if (
           response.status === 401 ||
           response.status === 403
@@ -159,6 +215,10 @@ export default function DashboardPage() {
     loadDashboard();
   }, [router]);
 
+  /* =============================================
+     LOGOUT
+     ============================================= */
+
   function handleLogout() {
     localStorage.removeItem(
       "thea_gnosi_token"
@@ -171,19 +231,21 @@ export default function DashboardPage() {
     router.replace("/login");
   }
 
-  /*
-   * Loading
-   */
+  /* =============================================
+     LOADING
+     ============================================= */
 
   if (loading) {
     return (
       <main className="student-dashboard">
         <section className="dashboard-loading">
+
           <div className="dashboard-loader" />
 
           <p>
             Φόρτωση προσωπικού χώρου...
           </p>
+
         </section>
       </main>
     );
@@ -205,7 +267,9 @@ export default function DashboardPage() {
           <div className="dashboard-welcome">
 
             <span className="dashboard-eyebrow">
-              ΠΡΟΣΩΠΙΚΟΣ ΧΩΡΟΣ
+              {isGitHubPages
+                ? "DEMO ΠΡΟΣΩΠΙΚΟΥ ΧΩΡΟΥ"
+                : "ΠΡΟΣΩΠΙΚΟΣ ΧΩΡΟΣ"}
             </span>
 
             <h1>
@@ -260,6 +324,25 @@ export default function DashboardPage() {
             <div className="dashboard-heading-line" />
 
           </div>
+
+
+          {/* DEMO INFO */}
+
+          {isGitHubPages && (
+            <div className="dashboard-demo-notice">
+              <strong>
+                Portfolio Demo
+              </strong>
+
+              <p>
+                Το περιεχόμενο αυτής της σελίδας
+                είναι ενδεικτικό. Στην κανονική
+                εφαρμογή οι σημειώσεις φορτώνονται
+                από τον προσωπικό λογαριασμό του
+                μαθητή.
+              </p>
+            </div>
+          )}
 
 
           {/* ERROR */}

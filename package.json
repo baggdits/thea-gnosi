@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "node scripts/build-pages.mjs",
+    "snapshot:pages": "node scripts/create-pages-snapshot.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest",
     "test:run": "vitest run"
+    
   },
   "dependencies": {
     "next": "16.3.0",

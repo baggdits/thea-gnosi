@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
+
 const WORDPRESS_URL =
   process.env.WORDPRESS_URL;
 

@@ -14,6 +14,9 @@ type LoginResponse = {
 export default function LoginPage() {
   const router = useRouter();
 
+  const isGitHubPages =
+    process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,6 +32,36 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
+      /* =============================================
+         GITHUB PAGES DEMO LOGIN
+         Δεν στέλνουμε username/password πουθενά.
+         ============================================= */
+
+      if (isGitHubPages) {
+        localStorage.setItem(
+          "thea_gnosi_token",
+          "demo-token"
+        );
+
+        localStorage.setItem(
+          "thea_gnosi_user",
+          JSON.stringify({
+            username: username.trim() || "demo",
+            displayName: "Demo Μαθητής",
+            email: "demo@theagnosi.gr",
+          })
+        );
+
+        router.replace("/dashboard");
+        router.refresh();
+
+        return;
+      }
+
+      /* =============================================
+         ΚΑΝΟΝΙΚΟ LOCAL LOGIN
+         ============================================= */
+
       const response = await fetch("/api/login", {
         method: "POST",
 
@@ -73,9 +106,9 @@ export default function LoginPage() {
         );
       }
 
-      /* ==============================
+      /* =============================================
          ΛΑΘΟΣ LOGIN
-         ============================== */
+         ============================================= */
 
       if (!response.ok) {
         setError(
@@ -89,9 +122,9 @@ export default function LoginPage() {
         return;
       }
 
-      /* ==============================
+      /* =============================================
          ΕΛΕΓΧΟΣ TOKEN
-         ============================== */
+         ============================================= */
 
       if (!data.token) {
         throw new Error(
@@ -99,9 +132,9 @@ export default function LoginPage() {
         );
       }
 
-      /* ==============================
+      /* =============================================
          ΑΠΟΘΗΚΕΥΣΗ LOGIN
-         ============================== */
+         ============================================= */
 
       localStorage.setItem(
         "thea_gnosi_token",
@@ -125,9 +158,9 @@ export default function LoginPage() {
         })
       );
 
-      /* ==============================
+      /* =============================================
          DASHBOARD
-         ============================== */
+         ============================================= */
 
       router.replace("/dashboard");
       router.refresh();
@@ -205,10 +238,18 @@ export default function LoginPage() {
                 Σύνδεση μαθητή
               </h2>
 
-              <p>
-                Συμπλήρωσε τα στοιχεία του
-                λογαριασμού σου.
-              </p>
+              {isGitHubPages ? (
+                <p>
+                  Demo έκδοση για την παρουσίαση
+                  του project. Χρησιμοποίησε
+                  οποιαδήποτε στοιχεία για είσοδο.
+                </p>
+              ) : (
+                <p>
+                  Συμπλήρωσε τα στοιχεία του
+                  λογαριασμού σου.
+                </p>
+              )}
 
             </div>
 
@@ -241,7 +282,11 @@ export default function LoginPage() {
                     )
                   }
                   autoComplete="username"
-                  placeholder="Το username σου"
+                  placeholder={
+                    isGitHubPages
+                      ? "demo"
+                      : "Το username σου"
+                  }
                   required
                   disabled={loading}
                 />
@@ -298,7 +343,9 @@ export default function LoginPage() {
 
                 {loading
                   ? "Σύνδεση..."
-                  : "Σύνδεση"}
+                  : isGitHubPages
+                    ? "Είσοδος στο Demo"
+                    : "Σύνδεση"}
 
               </button>
 
@@ -316,8 +363,9 @@ export default function LoginPage() {
               </span>
 
               <p>
-                Η πρόσβαση παρέχεται μόνο
-                σε εγγεγραμμένους μαθητές.
+                {isGitHubPages
+                  ? "Portfolio demo — δεν πραγματοποιείται πραγματικό authentication."
+                  : "Η πρόσβαση παρέχεται μόνο σε εγγεγραμμένους μαθητές."}
               </p>
 
             </div>

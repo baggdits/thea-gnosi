@@ -1,0 +1,1211 @@
+{
+  "home": {
+    "hero": {
+      "title": "Η γνώση | ξεκινά από εσένα",
+      "roller_words": [
+        "Έμπνευση|Δημιουργία|Εξέλιξη"
+      ],
+      "description": "Σύγχρονα μαθήματα, προσωπική καθοδήγηση | και ένα καλύτερο αύριο.",
+      "button_text": "Τα μαθήματα μας",
+      "button_url": "/lessons",
+      "image": "/demo-media/hero-thea.png"
+    },
+    "about": {
+      "title": "Σχετικά με εμάς",
+      "content": "Στο Θέα Γνώση Lab πιστεύουμε ότι η μάθηση δεν είναι απλώς η αποστήθιση γνώσεων, αλλά μια διαδικασία κατανόησης, δημιουργίας και εξέλιξης.\r\n\r\nΔημιουργήσαμε έναν σύγχρονο χώρο εκπαίδευσης όπου τα Φιλολογικά μαθήματα, η Πληροφορική και η καθημερινή Μελέτη συναντιούνται με έναν κοινό στόχο: κάθε μαθητής να αποκτήσει γερές βάσεις, αυτοπεποίθηση και έναν τρόπο σκέψης που θα τον συνοδεύει και πέρα από την τάξη.\r\n\r\nΜε προσωπική καθοδήγηση, σύγχρονες μεθόδους διδασκαλίας και πραγματικό ενδιαφέρον για τις ανάγκες κάθε μαθητή, θέλουμε η γνώση να γίνεται πιο κατανοητή, πιο δημιουργική και πιο ουσιαστική.\r\n\r\nΓιατί για εμάς, κάθε μάθημα είναι ένα βήμα πιο κοντά στο μέλλον.",
+      "image": "/demo-media/the-gnosi.png"
+    },
+    "our_place": {
+      "title": "Ο χώρος μας",
+      "description": "Εξερευνήστε τις εγκαταστάσεις μας.",
+      "gallery": [
+        {
+          "id": 1,
+          "image": "/demo-media/thea-aithousa-2.png",
+          "title": "Reception",
+          "description": "Σας υποδεχόμαστε με χαμόγελο! Η γραμματεία μας είναι πάντα δίπλα σας για την καλύτερη εξυπηρέτηση και ενημέρωση."
+        },
+        {
+          "id": 2,
+          "image": "/demo-media/thea-gnosi-3.png",
+          "title": "Αίθουσα αναμονής",
+          "description": "Ένας χώρος που σας κάνει να αισθάνεστε άνετα όσο περιμένετε."
+        },
+        {
+          "id": 3,
+          "image": "/demo-media/thea-gnosi-4.png",
+          "title": "Χώρος μελέτης",
+          "description": "Ένας μοντέρνος και λειτουργικός χώρος, ιδανικός για την ομαδική μελέτη και την δημιουργική εργασία."
+        },
+        {
+          "id": 4,
+          "image": "/demo-media/thea-aithousa-1.png",
+          "title": "Αίθουσα διδασκαλίας 1",
+          "description": "Ένας χώρος ειδικά διαμορφωμένος για ποιοτική μάθηση και δημιουργική σκέψη."
+        },
+        {
+          "id": 5,
+          "image": "/demo-media/thea-gnosi-6.png",
+          "title": "Αίθουσα διδασκαλίας 2",
+          "description": "Μία φωτεινή αίθουσα που ενθαρρύνει τη συμετοχή, τη συνεργασία και την ενεργή μάθηση"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "site_name": "Thea Gnosi",
+    "tagline": "",
+    "logo": "/demo-media/logo-theaa.png"
+  },
+  "reviews": [
+    {
+      "id": 40,
+      "name": "Ελένη",
+      "content": "\n<p class=\"wp-block-paragraph\">Καταπληκτικός χώρος!</p>\n",
+      "rating": 5,
+      "image": ""
+    },
+    {
+      "id": 39,
+      "name": "Νίκος",
+      "content": "\n<p class=\"wp-block-paragraph\">Φιλικό περιβάλλον!</p>\n",
+      "rating": 5,
+      "image": ""
+    },
+    {
+      "id": 12,
+      "name": "Μαρία",
+      "content": "\n<p class=\"wp-block-paragraph\">Εξαιρετικοί καθηγητές!</p>\n",
+      "rating": 5,
+      "image": ""
+    }
+  ],
+  "lessons": [
+    {
+      "id": 35,
+      "date": "2026-09-18T15:21:11",
+      "date_gmt": "2026-09-18T15:21:11",
+      "guid": {
+        "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=35"
+      },
+      "modified": "2026-09-20T10:45:38",
+      "modified_gmt": "2026-09-20T10:45:38",
+      "slug": "%ce%b4%ce%b9%ce%ba%cf%84%cf%85%ce%b1",
+      "status": "publish",
+      "type": "lesson",
+      "link": "http://thea-gnosi.local/lessons/%ce%b4%ce%b9%ce%ba%cf%84%cf%85%ce%b1/",
+      "title": {
+        "rendered": "ΔΙΚΤΥΑ"
+      },
+      "content": {
+        "rendered": "\n<p class=\"wp-block-paragraph\">Εξερευνούμε πως λειτουργούν τα δίκτυα, απο το τοπικό δίκτυο μέχρι το internet, μαθαίνουμε πρωτόκολλα, συσκευές και ασφάλεια και κατανοούμε τον κόσμο της επικοινωνίας.</p>\n",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "<p>Εξερευνούμε πως λειτουργούν τα δίκτυα, απο το τοπικό δίκτυο μέχρι το internet, μαθαίνουμε πρωτόκολλα, συσκευές και ασφάλεια και κατανοούμε τον κόσμο της επικοινωνίας.</p>\n",
+        "protected": false
+      },
+      "featured_media": 27,
+      "template": "",
+      "class_list": [
+        "post-35",
+        "lesson",
+        "type-lesson",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry"
+      ],
+      "lesson_details": {
+        "classes": "Γ' λυκείου",
+        "duration": "60 λεπτά",
+        "type": "Ολιγομελή τμήματα",
+        "preparation": "Παννελαδικές εξετάσεις",
+        "syllabus": [
+          "LAN WAN",
+          "ETHERNET",
+          "CLOUD"
+        ]
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons/35",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons"
+          }
+        ],
+        "about": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/types/lesson"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media/27"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media?parent=35"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      },
+      "_embedded": {
+        "wp:featuredmedia": [
+          {
+            "id": 27,
+            "date": "2026-09-18T15:10:15",
+            "slug": "diktua",
+            "type": "attachment",
+            "link": "http://thea-gnosi.local/diktua/",
+            "title": {
+              "rendered": "diktua"
+            },
+            "author": 1,
+            "featured_media": 0,
+            "caption": {
+              "rendered": ""
+            },
+            "alt_text": "",
+            "media_type": "image",
+            "mime_type": "image/gif",
+            "media_details": {
+              "width": 546,
+              "height": 422,
+              "file": "2026/09/diktua.gif",
+              "filesize": 15926,
+              "sizes": {
+                "medium": {
+                  "file": "diktua-300x232.gif",
+                  "width": 300,
+                  "height": 232,
+                  "filesize": 8561,
+                  "mime_type": "image/gif",
+                  "source_url": "/demo-media/diktua-300x232.gif"
+                },
+                "thumbnail": {
+                  "file": "diktua-150x150.gif",
+                  "width": 150,
+                  "height": 150,
+                  "filesize": 4846,
+                  "mime_type": "image/gif",
+                  "source_url": "/demo-media/diktua-150x150.gif"
+                },
+                "full": {
+                  "file": "diktua.gif",
+                  "width": 546,
+                  "height": 422,
+                  "mime_type": "image/gif",
+                  "source_url": "/demo-media/diktua.gif"
+                }
+              },
+              "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": [],
+                "alt": ""
+              }
+            },
+            "source_url": "/demo-media/diktua.gif",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media/27",
+                  "targetHints": {
+                    "allow": [
+                      "GET"
+                    ]
+                  }
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/types/attachment"
+                }
+              ],
+              "author": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/users/1"
+                }
+              ],
+              "replies": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/comments?post=27"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "date": "2026-09-18T15:19:18",
+      "date_gmt": "2026-09-18T15:19:18",
+      "guid": {
+        "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=34"
+      },
+      "modified": "2026-09-20T10:42:30",
+      "modified_gmt": "2026-09-20T10:42:30",
+      "slug": "%cf%80%cf%81%ce%bf%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1%cf%84%ce%b9%cf%83%ce%bc%ce%bf%cf%83",
+      "status": "publish",
+      "type": "lesson",
+      "link": "http://thea-gnosi.local/lessons/%cf%80%cf%81%ce%bf%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1%cf%84%ce%b9%cf%83%ce%bc%ce%bf%cf%83/",
+      "title": {
+        "rendered": "ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ"
+      },
+      "content": {
+        "rendered": "\n<p class=\"wp-block-paragraph\">Μαθαίνουμε τις βασικές αρχές του προγραμματισμού,  φτιάχνουμε τα πρώτα μας προγράμματα και χτίζουμε βήμα-βήμα τις δεξιότητες μας στον κόσμο του κώδικα.</p>\n",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "<p>Μαθαίνουμε τις βασικές αρχές του προγραμματισμού, φτιάχνουμε τα πρώτα μας προγράμματα και χτίζουμε βήμα-βήμα τις δεξιότητες μας στον κόσμο του κώδικα.</p>\n",
+        "protected": false
+      },
+      "featured_media": 30,
+      "template": "",
+      "class_list": [
+        "post-34",
+        "lesson",
+        "type-lesson",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry"
+      ],
+      "lesson_details": {
+        "classes": "Α' Λυκείου",
+        "duration": "60 λεπτά",
+        "type": "Ολιγομελή τμήματα",
+        "preparation": "Κατανόηση κώδικα",
+        "syllabus": [
+          "Αλγόριθμοι",
+          "Ψευδογώσσα",
+          "Κώδικες"
+        ]
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons/34",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons"
+          }
+        ],
+        "about": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/types/lesson"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media/30"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media?parent=34"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      },
+      "_embedded": {
+        "wp:featuredmedia": [
+          {
+            "id": 30,
+            "date": "2026-09-18T15:11:02",
+            "slug": "programmatismos",
+            "type": "attachment",
+            "link": "http://thea-gnosi.local/programmatismos/",
+            "title": {
+              "rendered": "programmatismos"
+            },
+            "author": 1,
+            "featured_media": 0,
+            "caption": {
+              "rendered": ""
+            },
+            "alt_text": "",
+            "media_type": "image",
+            "mime_type": "image/jpeg",
+            "media_details": {
+              "width": 738,
+              "height": 393,
+              "file": "2026/09/programmatismos.jpg",
+              "filesize": 37250,
+              "sizes": {
+                "medium": {
+                  "file": "programmatismos-300x160.jpg",
+                  "width": 300,
+                  "height": 160,
+                  "filesize": 10080,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/programmatismos-300x160.jpg"
+                },
+                "thumbnail": {
+                  "file": "programmatismos-150x150.jpg",
+                  "width": 150,
+                  "height": 150,
+                  "filesize": 6727,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/programmatismos-150x150.jpg"
+                },
+                "full": {
+                  "file": "programmatismos.jpg",
+                  "width": 738,
+                  "height": 393,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/programmatismos.jpg"
+                }
+              },
+              "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": [],
+                "alt": ""
+              }
+            },
+            "source_url": "/demo-media/programmatismos.jpg",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media/30",
+                  "targetHints": {
+                    "allow": [
+                      "GET"
+                    ]
+                  }
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/types/attachment"
+                }
+              ],
+              "author": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/users/1"
+                }
+              ],
+              "replies": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/comments?post=30"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "date": "2026-09-18T15:17:20",
+      "date_gmt": "2026-09-18T15:17:20",
+      "guid": {
+        "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=33"
+      },
+      "modified": "2026-09-20T10:43:16",
+      "modified_gmt": "2026-09-20T10:43:16",
+      "slug": "%ce%b9%cf%83%cf%84%ce%bf%cf%81%ce%b9%ce%b1",
+      "status": "publish",
+      "type": "lesson",
+      "link": "http://thea-gnosi.local/lessons/%ce%b9%cf%83%cf%84%ce%bf%cf%81%ce%b9%ce%b1/",
+      "title": {
+        "rendered": "ΙΣΤΟΡΙΑ"
+      },
+      "content": {
+        "rendered": "\n<p class=\"wp-block-paragraph\">Γνωρίζουμε τους μεγάλους πολιτισμούς, τα σημαντικά γεγονότα και τις προσωπικότητες που διαμόρφωσαν τον κόσμο. Η ιστορία μας βοηθά να κατανοήσουμε καλύτερα το σήμερα.</p>\n",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "<p>Γνωρίζουμε τους μεγάλους πολιτισμούς, τα σημαντικά γεγονότα και τις προσωπικότητες που διαμόρφωσαν τον κόσμο. Η ιστορία μας βοηθά να κατανοήσουμε καλύτερα το σήμερα.</p>\n",
+        "protected": false
+      },
+      "featured_media": 28,
+      "template": "",
+      "class_list": [
+        "post-33",
+        "lesson",
+        "type-lesson",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry"
+      ],
+      "lesson_details": {
+        "classes": "Α' Λυκείου",
+        "duration": "40 λεπτά",
+        "type": "Ολιγομελή τμήματα",
+        "preparation": "Εξερεύνηση Ιστορικών γεγονότων",
+        "syllabus": [
+          "Ιστορία"
+        ]
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons/33",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons"
+          }
+        ],
+        "about": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/types/lesson"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media/28"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media?parent=33"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      },
+      "_embedded": {
+        "wp:featuredmedia": [
+          {
+            "id": 28,
+            "date": "2026-09-18T15:10:16",
+            "slug": "istoria",
+            "type": "attachment",
+            "link": "http://thea-gnosi.local/istoria/",
+            "title": {
+              "rendered": "istoria"
+            },
+            "author": 1,
+            "featured_media": 0,
+            "caption": {
+              "rendered": ""
+            },
+            "alt_text": "",
+            "media_type": "image",
+            "mime_type": "image/jpeg",
+            "media_details": {
+              "width": 632,
+              "height": 316,
+              "file": "2026/09/istoria.jpg",
+              "filesize": 20475,
+              "sizes": {
+                "medium": {
+                  "file": "istoria-300x150.jpg",
+                  "width": 300,
+                  "height": 150,
+                  "filesize": 7851,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/istoria-300x150.jpg"
+                },
+                "thumbnail": {
+                  "file": "istoria-150x150.jpg",
+                  "width": 150,
+                  "height": 150,
+                  "filesize": 4502,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/istoria-150x150.jpg"
+                },
+                "full": {
+                  "file": "istoria.jpg",
+                  "width": 632,
+                  "height": 316,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/istoria.jpg"
+                }
+              },
+              "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": [],
+                "alt": ""
+              }
+            },
+            "source_url": "/demo-media/istoria.jpg",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media/28",
+                  "targetHints": {
+                    "allow": [
+                      "GET"
+                    ]
+                  }
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/types/attachment"
+                }
+              ],
+              "author": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/users/1"
+                }
+              ],
+              "replies": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/comments?post=28"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "date": "2026-09-18T15:15:44",
+      "date_gmt": "2026-09-18T15:15:44",
+      "guid": {
+        "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=32"
+      },
+      "modified": "2026-09-20T10:43:56",
+      "modified_gmt": "2026-09-20T10:43:56",
+      "slug": "%ce%bb%ce%b1%cf%84%ce%b9%ce%bd%ce%b9%ce%ba%ce%b1",
+      "status": "publish",
+      "type": "lesson",
+      "link": "http://thea-gnosi.local/lessons/%ce%bb%ce%b1%cf%84%ce%b9%ce%bd%ce%b9%ce%ba%ce%b1/",
+      "title": {
+        "rendered": "ΛΑΤΙΝΙΚΑ"
+      },
+      "content": {
+        "rendered": "\n<p class=\"wp-block-paragraph\">Γνωρίζουμε τη γλώσσα της ρώμης, μαθαίνουμε γραμματική και συντακτικό και ανακαλύπτουμε τη σύνδεση της με τα ελληνικά και τη σύγχρονη γλώσσα.</p>\n",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "<p>Γνωρίζουμε τη γλώσσα της ρώμης, μαθαίνουμε γραμματική και συντακτικό και ανακαλύπτουμε τη σύνδεση της με τα ελληνικά και τη σύγχρονη γλώσσα.</p>\n",
+        "protected": false
+      },
+      "featured_media": 25,
+      "template": "",
+      "class_list": [
+        "post-32",
+        "lesson",
+        "type-lesson",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry"
+      ],
+      "lesson_details": {
+        "classes": "Α' Λυκείου",
+        "duration": "70 λεπτά",
+        "type": "Ολιγομελή τμήματα",
+        "preparation": "Γραμματική",
+        "syllabus": [
+          "Γραμματική"
+        ]
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons/32",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons"
+          }
+        ],
+        "about": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/types/lesson"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media/25"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media?parent=32"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      },
+      "_embedded": {
+        "wp:featuredmedia": [
+          {
+            "id": 25,
+            "date": "2026-09-18T15:10:14",
+            "slug": "latinika",
+            "type": "attachment",
+            "link": "http://thea-gnosi.local/latinika/",
+            "title": {
+              "rendered": "latinika"
+            },
+            "author": 1,
+            "featured_media": 0,
+            "caption": {
+              "rendered": ""
+            },
+            "alt_text": "",
+            "media_type": "image",
+            "mime_type": "image/jpeg",
+            "media_details": {
+              "width": 400,
+              "height": 400,
+              "file": "2026/09/latinika.jpg",
+              "filesize": 24626,
+              "sizes": {
+                "medium": {
+                  "file": "latinika-300x300.jpg",
+                  "width": 300,
+                  "height": 300,
+                  "filesize": 19212,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/latinika-300x300.jpg"
+                },
+                "thumbnail": {
+                  "file": "latinika-150x150.jpg",
+                  "width": 150,
+                  "height": 150,
+                  "filesize": 6734,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/latinika-150x150.jpg"
+                },
+                "full": {
+                  "file": "latinika.jpg",
+                  "width": 400,
+                  "height": 400,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/latinika.jpg"
+                }
+              },
+              "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": [],
+                "alt": ""
+              }
+            },
+            "source_url": "/demo-media/latinika.jpg",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media/25",
+                  "targetHints": {
+                    "allow": [
+                      "GET"
+                    ]
+                  }
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/types/attachment"
+                }
+              ],
+              "author": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/users/1"
+                }
+              ],
+              "replies": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/comments?post=25"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "date": "2026-09-18T15:13:25",
+      "date_gmt": "2026-09-18T15:13:25",
+      "guid": {
+        "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=31"
+      },
+      "modified": "2026-09-20T10:44:30",
+      "modified_gmt": "2026-09-20T10:44:30",
+      "slug": "%ce%b5%ce%ba%cf%86%cf%81%ce%b1%cf%83%ce%b7-%ce%b5%ce%ba%ce%b8%ce%b5%cf%83%ce%b7",
+      "status": "publish",
+      "type": "lesson",
+      "link": "http://thea-gnosi.local/lessons/%ce%b5%ce%ba%cf%86%cf%81%ce%b1%cf%83%ce%b7-%ce%b5%ce%ba%ce%b8%ce%b5%cf%83%ce%b7/",
+      "title": {
+        "rendered": "ΕΚΦΡΑΣΗ-ΕΚΘΕΣΗ"
+      },
+      "content": {
+        "rendered": "\n<p class=\"wp-block-paragraph\">Μαθαίνουμε να οργανώνουμε τις σκέψεις μας, να δομούμε σωστά τα κείμενα μας και να εκφραζόμαστε με σαφήνεια, ύφος και επιχειρήματα.</p>\n",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "<p>Μαθαίνουμε να οργανώνουμε τις σκέψεις μας, να δομούμε σωστά τα κείμενα μας και να εκφραζόμαστε με σαφήνεια, ύφος και επιχειρήματα.</p>\n",
+        "protected": false
+      },
+      "featured_media": 26,
+      "template": "",
+      "class_list": [
+        "post-31",
+        "lesson",
+        "type-lesson",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry"
+      ],
+      "lesson_details": {
+        "classes": "Γ' Λυκείου",
+        "duration": "90 λεπτά",
+        "type": "Ολιγομελή τμήματα",
+        "preparation": "Πανελλαδικές εξετάσεις",
+        "syllabus": [
+          "Έκθεση"
+        ]
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons/31",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons"
+          }
+        ],
+        "about": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/types/lesson"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media/26"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media?parent=31"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      },
+      "_embedded": {
+        "wp:featuredmedia": [
+          {
+            "id": 26,
+            "date": "2026-09-18T15:10:15",
+            "slug": "ekthesi",
+            "type": "attachment",
+            "link": "http://thea-gnosi.local/ekthesi/",
+            "title": {
+              "rendered": "ekthesi"
+            },
+            "author": 1,
+            "featured_media": 0,
+            "caption": {
+              "rendered": ""
+            },
+            "alt_text": "",
+            "media_type": "image",
+            "mime_type": "image/jpeg",
+            "media_details": {
+              "width": 750,
+              "height": 750,
+              "file": "2026/09/ekthesi.jpg",
+              "filesize": 48831,
+              "sizes": {
+                "medium": {
+                  "file": "ekthesi-300x300.jpg",
+                  "width": 300,
+                  "height": 300,
+                  "filesize": 10589,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/ekthesi-300x300.jpg"
+                },
+                "thumbnail": {
+                  "file": "ekthesi-150x150.jpg",
+                  "width": 150,
+                  "height": 150,
+                  "filesize": 3748,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/ekthesi-150x150.jpg"
+                },
+                "full": {
+                  "file": "ekthesi.jpg",
+                  "width": 750,
+                  "height": 750,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/ekthesi.jpg"
+                }
+              },
+              "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": [],
+                "alt": ""
+              }
+            },
+            "source_url": "/demo-media/ekthesi.jpg",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media/26",
+                  "targetHints": {
+                    "allow": [
+                      "GET"
+                    ]
+                  }
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/types/attachment"
+                }
+              ],
+              "author": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/users/1"
+                }
+              ],
+              "replies": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/comments?post=26"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "date": "2026-08-11T16:52:48",
+      "date_gmt": "2026-08-11T16:52:48",
+      "guid": {
+        "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=9"
+      },
+      "modified": "2026-09-20T10:45:26",
+      "modified_gmt": "2026-09-20T10:45:26",
+      "slug": "ancient-greek",
+      "status": "publish",
+      "type": "lesson",
+      "link": "http://thea-gnosi.local/lessons/ancient-greek/",
+      "title": {
+        "rendered": "ΑΡΧΑΙΑ ΕΛΛΗΝΙΚΑ"
+      },
+      "content": {
+        "rendered": "\n<p class=\"wp-block-paragraph\">Ταξιδεύουμε στον κόσμο των αρχαίων Ελλήνων μέσα απο κείμενα, γραμματική και λεξιλόγιο. Ανακαλύπτουμε τη γλώσσα που γέννησε τη σκέψη και τον πολιτισμό μας.</p>\n",
+        "protected": false
+      },
+      "excerpt": {
+        "rendered": "<p>Ταξιδεύουμε στον κόσμο των αρχαίων Ελλήνων μέσα απο κείμενα, γραμματική και λεξιλόγιο. Ανακαλύπτουμε τη γλώσσα που γέννησε τη σκέψη και τον πολιτισμό μας.</p>\n",
+        "protected": false
+      },
+      "featured_media": 24,
+      "template": "",
+      "class_list": [
+        "post-9",
+        "lesson",
+        "type-lesson",
+        "status-publish",
+        "has-post-thumbnail",
+        "hentry"
+      ],
+      "lesson_details": {
+        "classes": "Γ' Λυκείου",
+        "duration": "120 λεπτά",
+        "type": "Ολιγομελή τμήματα",
+        "preparation": "Πανελλαδικές εξετάσεις",
+        "syllabus": [
+          "Γνωστό Άγνωστο"
+        ]
+      },
+      "_links": {
+        "self": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons/9",
+            "targetHints": {
+              "allow": [
+                "GET"
+              ]
+            }
+          }
+        ],
+        "collection": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/lessons"
+          }
+        ],
+        "about": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/types/lesson"
+          }
+        ],
+        "wp:featuredmedia": [
+          {
+            "embeddable": true,
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media/24"
+          }
+        ],
+        "wp:attachment": [
+          {
+            "href": "http://thea-gnosi.local/wp-json/wp/v2/media?parent=9"
+          }
+        ],
+        "curies": [
+          {
+            "name": "wp",
+            "href": "https://api.w.org/{rel}",
+            "templated": true
+          }
+        ]
+      },
+      "_embedded": {
+        "wp:featuredmedia": [
+          {
+            "id": 24,
+            "date": "2026-09-18T15:10:14",
+            "slug": "arxaia",
+            "type": "attachment",
+            "link": "http://thea-gnosi.local/arxaia/",
+            "title": {
+              "rendered": "arxaia"
+            },
+            "author": 1,
+            "featured_media": 0,
+            "caption": {
+              "rendered": ""
+            },
+            "alt_text": "",
+            "media_type": "image",
+            "mime_type": "image/jpeg",
+            "media_details": {
+              "width": 673,
+              "height": 456,
+              "file": "2026/09/arxaia.jpg",
+              "filesize": 36206,
+              "sizes": {
+                "medium": {
+                  "file": "arxaia-300x203.jpg",
+                  "width": 300,
+                  "height": 203,
+                  "filesize": 17122,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/arxaia-300x203.jpg"
+                },
+                "thumbnail": {
+                  "file": "arxaia-150x150.jpg",
+                  "width": 150,
+                  "height": 150,
+                  "filesize": 7522,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/arxaia-150x150.jpg"
+                },
+                "full": {
+                  "file": "arxaia.jpg",
+                  "width": 673,
+                  "height": 456,
+                  "mime_type": "image/jpeg",
+                  "source_url": "/demo-media/arxaia.jpg"
+                }
+              },
+              "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": [],
+                "alt": ""
+              }
+            },
+            "source_url": "/demo-media/arxaia.jpg",
+            "_links": {
+              "self": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media/24",
+                  "targetHints": {
+                    "allow": [
+                      "GET"
+                    ]
+                  }
+                }
+              ],
+              "collection": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/media"
+                }
+              ],
+              "about": [
+                {
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/types/attachment"
+                }
+              ],
+              "author": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/users/1"
+                }
+              ],
+              "replies": [
+                {
+                  "embeddable": true,
+                  "href": "http://thea-gnosi.local/wp-json/wp/v2/comments?post=24"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { getLessonBySlug } from "@/lib/wordpress";
+import { getLessonBySlug, getLessons } from "@/lib/wordpress";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
@@ -8,6 +8,18 @@ type LessonPageProps = {
     slug: string;
   }>;
 };
+
+/*
+ * Για static export / GitHub Pages.
+ * Δημιουργεί εκ των προτέρων μία σελίδα για κάθε μάθημα.
+ */
+export async function generateStaticParams() {
+  const lessons = await getLessons();
+
+  return lessons.map((lesson) => ({
+    slug: lesson.slug,
+  }));
+}
 
 export default async function LessonPage({
   params,

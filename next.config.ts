@@ -1,5 +1,22 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {};
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+
+const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_GITHUB_PAGES: isGitHubPages ? "true" : "false",
+  },
+
+  ...(isGitHubPages && {
+    output: "export",
+    basePath: "/thea-gnosi",
+    assetPrefix: "/thea-gnosi/",
+    trailingSlash: true,
+
+    images: {
+      unoptimized: true,
+    },
+  }),
+};
 
 export default nextConfig;
