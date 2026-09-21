@@ -70,8 +70,9 @@ export default function Hero({
   }, [data.roller_words]);
 
   /*
-   * Διπλασιάζουμε τις λέξεις
-   * για seamless carousel.
+   * =========================================================
+   * DUPLICATED WORDS FOR SEAMLESS LOOP
+   * =========================================================
    */
 
   const carouselWords = useMemo(
@@ -337,44 +338,6 @@ export default function Hero({
 
   /*
    * =========================================================
-   * HERO BUTTON URL
-   * =========================================================
-   *
-   * Local:
-   * /lessons
-   *
-   * GitHub Pages:
-   * /thea-gnosi/lessons/
-   */
-
-  const isGitHubPages =
-    process.env
-      .NEXT_PUBLIC_GITHUB_PAGES ===
-    "true";
-
-  const rawButtonUrl =
-    data.button_url || "/";
-
-  let buttonUrl = rawButtonUrl;
-
-  if (
-    isGitHubPages &&
-    rawButtonUrl.startsWith("/")
-  ) {
-    buttonUrl =
-      `/thea-gnosi${rawButtonUrl}`;
-
-    if (
-      buttonUrl !==
-        "/thea-gnosi/" &&
-      !buttonUrl.endsWith("/")
-    ) {
-      buttonUrl += "/";
-    }
-  }
-
-  /*
-   * =========================================================
    * RENDER
    * =========================================================
    */
@@ -497,7 +460,7 @@ export default function Hero({
 
         {data.button_text && (
           <Link
-            href={buttonUrl}
+            href={data.button_url || "/"}
             className="hero-button"
           >
             {data.button_text}

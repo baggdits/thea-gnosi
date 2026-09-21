@@ -3,13 +3,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getLessons } from "@/lib/wordpress";
 
-const isGitHubPages =
-  process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
-
-const BASE_PATH = isGitHubPages
-  ? "/thea-gnosi"
-  : "";
-
 export default async function LessonsPage() {
   const lessons = await getLessons();
 
@@ -32,13 +25,10 @@ export default async function LessonsPage() {
               lesson._embedded?.["wp:featuredmedia"]?.[0]
                 ?.source_url;
 
-            const lessonUrl =
-              `${BASE_PATH}/lessons/${lesson.slug}/`;
-
             return (
               <Link
                 key={lesson.id}
-                href={lessonUrl}
+                href={`/lessons/${lesson.slug}/`}
                 className="lesson-card"
               >
                 {image && (
