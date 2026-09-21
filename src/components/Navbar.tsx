@@ -65,21 +65,15 @@ export default async function Navbar() {
 
               <div className="navbar-lessons">
 
-                <a
-                  href="/lessons"
-                  className="navbar-lessons-button"
-                >
-                  Μαθήματα
-
-                  <span className="lessons-arrow">
-                    ▼
-                  </span>
-                </a>
+                <Link href="/lessons" className="navbar-lessons-button">
+  Μαθήματα
+  <span className="lessons-arrow">▼</span>
+</Link>
 
                 <div className="lessons-dropdown">
 
                   {lessons.length > 0 ? (
-                    lessons.map((lesson: any) => (
+                    lessons.map((lesson) => (
                       <Link
                         key={lesson.id}
                         href={`/lessons/${lesson.slug}`}

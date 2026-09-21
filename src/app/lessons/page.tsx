@@ -22,7 +22,7 @@ export default async function LessonsPage() {
 
         <section className="lessons-grid">
 
-          {lessons.map((lesson: any) => {
+          {lessons.map((lesson) => {
             const image =
               lesson._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 

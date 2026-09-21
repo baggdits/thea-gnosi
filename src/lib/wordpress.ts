@@ -41,6 +41,14 @@ export type Lesson = {
   };
 };
 
+export type Review = {
+  id: number;
+  name: string;
+  content: string;
+  rating: number;
+  image?: string;
+};
+
 
 /* =========================================================
    HOMEPAGE
@@ -70,7 +78,7 @@ export async function getHomePage() {
    REVIEWS
    ========================================================= */
 
-export async function getReviews() {
+export async function getReviews(): Promise<Review[]> {
   const response = await fetch(
     `${WORDPRESS_URL}/wp-json/thea-gnosi/v1/reviews`,
     {

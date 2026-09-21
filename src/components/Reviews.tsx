@@ -11,9 +11,8 @@ export default async function Reviews() {
       </div>
 
       <div className="reviews-grid">
-        {reviews.map((review: any) => (
+        {reviews.map((review) => (
           <article key={review.id} className="review-card">
-
             {review.image && (
               <div className="review-image-wrapper">
                 <img
@@ -42,7 +41,6 @@ export default async function Reviews() {
                 }}
               />
             </div>
-
           </article>
         ))}
       </div>

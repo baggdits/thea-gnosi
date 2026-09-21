@@ -99,19 +99,22 @@ export default function Hero({
    */
 
   useEffect(() => {
+  let secondFrame = 0;
+
+  const firstFrame = requestAnimationFrame(() => {
     setIsTransitioning(false);
     setCurrentIndex(0);
 
-    const frame =
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setIsTransitioning(true);
-        });
-      });
+    secondFrame = requestAnimationFrame(() => {
+      setIsTransitioning(true);
+    });
+  });
 
-    return () =>
-      cancelAnimationFrame(frame);
-  }, [words]);
+  return () => {
+    cancelAnimationFrame(firstFrame);
+    cancelAnimationFrame(secondFrame);
+  };
+}, [words]);
 
   /*
    * =========================================================

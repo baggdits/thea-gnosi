@@ -61,13 +61,7 @@ export default function NavbarShell({
     };
   }, []);
 
-  /* =========================================
-     CLOSE MOBILE MENU AFTER NAVIGATION
-     ========================================= */
-
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
+ 
 
   /* =========================================
      LOCK BODY WHEN MENU IS OPEN
