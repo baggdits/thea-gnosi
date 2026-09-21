@@ -88,12 +88,12 @@
       "guid": {
         "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=35"
       },
-      "modified": "2026-09-20T10:45:38",
-      "modified_gmt": "2026-09-20T10:45:38",
-      "slug": "%ce%b4%ce%b9%ce%ba%cf%84%cf%85%ce%b1",
+      "modified": "2026-09-21T17:46:10",
+      "modified_gmt": "2026-09-21T17:46:10",
+      "slug": "networks",
       "status": "publish",
       "type": "lesson",
-      "link": "http://thea-gnosi.local/lessons/%ce%b4%ce%b9%ce%ba%cf%84%cf%85%ce%b1/",
+      "link": "http://thea-gnosi.local/lessons/networks/",
       "title": {
         "rendered": "ΔΙΚΤΥΑ"
       },
@@ -277,12 +277,12 @@
       "guid": {
         "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=34"
       },
-      "modified": "2026-09-20T10:42:30",
-      "modified_gmt": "2026-09-20T10:42:30",
-      "slug": "%cf%80%cf%81%ce%bf%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1%cf%84%ce%b9%cf%83%ce%bc%ce%bf%cf%83",
+      "modified": "2026-09-21T17:46:26",
+      "modified_gmt": "2026-09-21T17:46:26",
+      "slug": "programming",
       "status": "publish",
       "type": "lesson",
-      "link": "http://thea-gnosi.local/lessons/%cf%80%cf%81%ce%bf%ce%b3%cf%81%ce%b1%ce%bc%ce%bc%ce%b1%cf%84%ce%b9%cf%83%ce%bc%ce%bf%cf%83/",
+      "link": "http://thea-gnosi.local/lessons/programming/",
       "title": {
         "rendered": "ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ"
       },
@@ -466,12 +466,12 @@
       "guid": {
         "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=33"
       },
-      "modified": "2026-09-20T10:43:16",
-      "modified_gmt": "2026-09-20T10:43:16",
-      "slug": "%ce%b9%cf%83%cf%84%ce%bf%cf%81%ce%b9%ce%b1",
+      "modified": "2026-09-21T17:46:37",
+      "modified_gmt": "2026-09-21T17:46:37",
+      "slug": "history",
       "status": "publish",
       "type": "lesson",
-      "link": "http://thea-gnosi.local/lessons/%ce%b9%cf%83%cf%84%ce%bf%cf%81%ce%b9%ce%b1/",
+      "link": "http://thea-gnosi.local/lessons/history/",
       "title": {
         "rendered": "ΙΣΤΟΡΙΑ"
       },
@@ -653,12 +653,12 @@
       "guid": {
         "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=32"
       },
-      "modified": "2026-09-20T10:43:56",
-      "modified_gmt": "2026-09-20T10:43:56",
-      "slug": "%ce%bb%ce%b1%cf%84%ce%b9%ce%bd%ce%b9%ce%ba%ce%b1",
+      "modified": "2026-09-21T17:46:53",
+      "modified_gmt": "2026-09-21T17:46:53",
+      "slug": "latin",
       "status": "publish",
       "type": "lesson",
-      "link": "http://thea-gnosi.local/lessons/%ce%bb%ce%b1%cf%84%ce%b9%ce%bd%ce%b9%ce%ba%ce%b1/",
+      "link": "http://thea-gnosi.local/lessons/latin/",
       "title": {
         "rendered": "ΛΑΤΙΝΙΚΑ"
       },
@@ -840,12 +840,12 @@
       "guid": {
         "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=31"
       },
-      "modified": "2026-09-20T10:44:30",
-      "modified_gmt": "2026-09-20T10:44:30",
-      "slug": "%ce%b5%ce%ba%cf%86%cf%81%ce%b1%cf%83%ce%b7-%ce%b5%ce%ba%ce%b8%ce%b5%cf%83%ce%b7",
+      "modified": "2026-09-21T17:47:22",
+      "modified_gmt": "2026-09-21T17:47:22",
+      "slug": "essay",
       "status": "publish",
       "type": "lesson",
-      "link": "http://thea-gnosi.local/lessons/%ce%b5%ce%ba%cf%86%cf%81%ce%b1%cf%83%ce%b7-%ce%b5%ce%ba%ce%b8%ce%b5%cf%83%ce%b7/",
+      "link": "http://thea-gnosi.local/lessons/essay/",
       "title": {
         "rendered": "ΕΚΦΡΑΣΗ-ΕΚΘΕΣΗ"
       },
@@ -1027,8 +1027,8 @@
       "guid": {
         "rendered": "http://thea-gnosi.local/?post_type=lesson&#038;p=9"
       },
-      "modified": "2026-09-20T10:45:26",
-      "modified_gmt": "2026-09-20T10:45:26",
+      "modified": "2026-09-21T17:47:07",
+      "modified_gmt": "2026-09-21T17:47:07",
       "slug": "ancient-greek",
       "status": "publish",
       "type": "lesson",
